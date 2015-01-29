@@ -1,31 +1,30 @@
 Rails.application.routes.draw do
   # Routes for the User resource:
-  # CREATE
-  get('/users/new', { :controller => 'users', :action => 'new' })
-  get('/create_user', { :controller => 'users', :action => 'create' })
 
-  # READ
+  get "/" => 'static_pages#go'
+
+  # USERS
+  get '/users/new' => 'users#new'
+  get '/create_user' => 'users#create'
   get('/users', { :controller => 'users', :action => 'index' })
   get('/users/:id', { :controller => 'users', :action => 'show' })
-
-  # UPDATE
   get('/users/:id/edit', { :controller => 'users', :action => 'edit' })
   get('/update_user/:id', { :controller => 'users', :action => 'update' })
-
-  # DELETE
   get('/delete_user/:id', { :controller => 'users', :action => 'destroy' })
-  #------------------------------
 
+  # TRIPS
+
+  get "/trips/new" => "trips#new"
+  # get "/trips/show" # TIMER PAGE
+  # get "/trips/edit" # ENDING ODOMETER
+  # get "/trips/confirmation"
+
+  # PROTOTYPE
   get "/go", :controller => 'static_pages', :action => 'go'
-
   get "/stop", :controller => 'static_pages', :action => 'stop'
-
   get "/log", :controller => 'static_pages', :action => 'log'
-
   get "/confirm", :controller => 'static_pages', :action => 'confirm'
-
   get 'static_pages/home'
-
   get 'static_pages/help'
 
   # The priority is based upon order of creation: first created -> highest priority.

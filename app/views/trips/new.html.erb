@@ -1,0 +1,61 @@
+<div id="wrapper">
+
+  <header>
+    <nav class="main-nav">
+      <ul>
+        <li class="nav-left">
+          <a class ="back" href="#">Back</a>
+        </li>
+        <li class="nav-center">
+          <h1 class="screen-title">
+            Starting Trip Info
+          </h1>
+        </li>
+        <li class="nav-right">
+          <a href="stop.html" class="disabled">Next</a>
+        </li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <form action="./stop.html">
+
+      <fieldset>
+        <label for="company">
+          Who are you driving for?
+        </label>
+
+        <select id="company">
+          <option>Boston Market</option>
+          <option>Lyft</option>
+          <option>Uber</option>
+          <option>We Deliver</option>
+        </select>
+      </fieldset>
+
+      <fieldset>
+        <label for="shift">
+          How many hours is your shift?
+        </label>
+
+        <input id="shift" type="number" name="quantity">
+      </fieldset>
+
+      <fieldset>
+        <label for="odometer">
+          What's your starting odometer?
+        </label>
+
+        <input type="number" id="odometer" name="odometer" placeholder="Enter starting mileage" />
+      </fieldset>
+
+      <fieldset class="formAction">
+        <input
+          type="submit"
+          value="Start Trip"
+          class="btn btn-success btn-block" />
+      </fieldset>
+    </form>
+  </main>
+</div>
