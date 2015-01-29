@@ -1,0 +1,65 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+  <title></title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="initial-scale=1">
+  <link rel="stylesheet" type="text/css" href="stylesheets/main.css">
+</head>
+<body>
+  <div id="wrapper">
+
+    <header>
+      <nav class="main-nav">
+        <ul>
+          <li class="nav-left">
+            <a href="#">Back</a>
+          </li>
+          <li class="nav-center">
+            <h1 class="screen-title">
+              Mileage Filing 2 - 3
+            </h1>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <form action="#">
+
+        <h1>Please Confirm the Following information is accurate.</h1>
+
+        <fieldset>
+          When did you start using your car for work?
+          <input type="date" name="11">
+          <input type="submit">
+        </fieldset>
+
+        <fieldset>
+         <label for="yearStartOdometer">
+            What was your odometer for the years start?
+          </label>
+
+          <input type="number" id="yearStartOdometer" name="12A" placeholder="Enter starting mileage" />
+        </fieldset>
+
+        <fieldset>
+         <label for="bizMileage">
+            What was your total business mileage for the year?
+          </label>
+
+          <input type="number" id="bizMileage" name="13" placeholder="Enter business mileage" />
+        </fieldset>
+
+        <fieldset class="formAction">
+          <input
+            type="submit"
+            value="Confirm"
+            class="btn btn-success btn-block" />
+        </fieldset>
+      </form>
+    </main>
+  </div>
+</body>
+</html>

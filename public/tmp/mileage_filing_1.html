@@ -1,0 +1,89 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+  <title></title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="initial-scale=1">
+  <link rel="stylesheet" type="text/css" href="stylesheets/main.css">
+</head>
+<body>
+  <div id="wrapper">
+
+    <header>
+      <nav class="main-nav">
+        <ul>
+          <li class="nav-left">
+            <a href="#">Back</a>
+          </li>
+          <li class="nav-center">
+            <h1 class="screen-title">
+              Mileage Filing 1 - 3
+            </h1>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <form action="#">
+
+        <fieldset>
+         <label for="yearEndOdometer">
+            What's your odometer for the year's end?
+          </label>
+
+          <input type="number" id="yearEndOdometer" name="12B" placeholder="Enter ending mileage" />
+        </fieldset>
+
+        <fieldset>
+         <label for="commuteRoundtrip">
+            What's your averagae roundtrip commuting distance?
+          </label>
+
+          <input type="number" id="odometer" name="15" placeholder="Enter commute roundtrip" />
+        </fieldset>
+
+        <fieldset>
+          <label for="#">
+            Was your Vehicle availble for personal use during no-work hours?
+          </label>
+          <input type="radio" name="18" value="yes">yes
+          <input type="radio" name="18" value="no">no
+        </fieldset>
+
+        <fieldset>
+          <label for="#">
+            Did you (or your spouce) have another vehicle available for personal use?
+          </label>
+          <input type="radio" name="19" value="yes">yes
+          <input type="radio" name="19" value="no">no
+        </fieldset>
+
+        <fieldset>
+          <label for="#">
+            Aside from Tax Trax do you have other evidence to support your claim?
+          </label>
+          <input type="radio" name="20" value="yes">yes
+          <input type="radio" name="20" value="no">no
+        </fieldset>
+
+        <fieldset>
+          <label for="#">
+            If you answered "yes" is it written?
+          </label>
+          <input type="radio" name="21" value="yes">yes
+          <input type="radio" name="21" value="no">no
+        </fieldset>
+
+        <fieldset class="formAction">
+          <input
+            type="submit"
+            value="Confirm"
+            class="btn btn-success btn-block" />
+        </fieldset>
+      </form>
+    </main>
+  </div>
+</body>
+</html>

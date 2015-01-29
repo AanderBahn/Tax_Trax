@@ -1,0 +1,373 @@
+
+#wrapper {
+ width: 100%;
+ position: relative;
+}
+
+a {
+ cursor: pointer;
+ text-decoration: none;
+}
+
+.time {
+  margin-bottom: 0;
+  border-radius: 6px;
+  font-size: 50px;
+}
+
+#pageTheme {
+  text-align: center;
+  padding-left: -15px;
+  width: 1255px;
+}
+
+.backBtn {
+ height: 100%;
+ margin: -10px 2px 0 0;
+ padding: 12px;
+ float: left;
+ border: 1px solid #A7C9E0;
+ border-radius: 10px;
+ color: red;
+ font-weight: bold;
+ background: #33ADFF;
+ box-shadow: 5px 5px 10px #2479B2;
+}
+
+.backBtn:active {
+ box-shadow: inset 5px 5px 10px #2479B2;
+}
+
+.homeBtn {
+ height: 100%;
+ margin: -10px 2px 0 0;
+ padding: 12px;
+ float: right;
+ border: 1px solid #A7C9E0;
+ border-radius: 10px;
+ background: black;
+ color: red;
+ font-weight: bold;
+ background: #33ADFF;
+ box-shadow: 5px 5px 10px #2479B2;
+}
+
+.homeBtn:active {
+ box-shadow: inset 5px 5px 10px #2479B2;
+}
+
+
+ /* the "Main Menu" */
+
+ #menuSec {
+  position: relative;
+  width: 400px;
+  height: 500px;
+  padding: 10px 0;
+  margin: auto;
+  border: 1px solid black;
+  background: #eee;
+}
+
+ #menuMid{
+  clear: both;
+ }
+
+ .menuBtn {
+  width: 100px;
+  height: 100px
+ }
+
+#logInBtn {
+  margin: auto;
+  clear: both;
+  height: 0;
+  border-left: 50px solid transparent;
+  border-right: 50px solid transparent;
+  border-bottom: 100px solid pink;
+}
+
+#carBtn {
+  float: left;
+  clear: left;
+  width: 0;
+  height: 0;
+  border-top: 50px solid transparent;
+  border-right: 100px solid red;
+  border-bottom: 50px solid transparent;
+}
+
+#startBtn {
+ background: blue;
+}
+
+#recordBtn {
+ float: right;
+ clear: right;
+ width: 0;
+ height: 0;
+ border-top: 50px solid transparent;
+ border-left: 100px solid green;
+ border-bottom: 50px solid transparent;
+}
+
+#jobBtn {
+ margin: auto;
+ clear: both;
+ width: 0;
+ height: 0;
+ border-left: 50px solid transparent;
+ border-right: 50px solid transparent;
+ border-top: 100px solid yellow;
+}
+
+/* the "GO" page */
+
+#goMid h3 {
+ text-align: left;
+}
+
+.goField {
+    width: 100px;
+    margin-right: -5px;
+    padding: 5px 20px;
+    border: 1px solid black;
+    background: #DDD;
+    color: #DDD;
+  }
+
+#goDate input {
+    font-size: 20px;
+    border: 1px solid transparent;
+    margin: 0;
+    padding: 0;
+    background: #DDD;
+}
+
+.stopField {
+ font-size: 20px;
+ padding: 5px 20px;
+ display: inline-block;
+ border: 1px solid black;
+ border-radius: 5px;
+ background: #DDD;
+}
+
+.scrBtn {
+ padding: 5px;
+ border: 1px solid black;
+ border-right: none;
+}
+
+#goOdo input {
+ background: #DDD;
+}
+
+.addBtn {
+ font-weight: bold;
+ margin: 10px;
+ padding: 4px;
+ /*background: #66CCFF;*/
+ color: red;
+ border: 1px solid #A3E0FF;
+ border-radius: 20px;
+}
+
+.formAction {
+  text-align: center;
+}
+
+#goFormAction {
+  height: 70px;
+  margin: 20px;
+  padding-top: 12px;
+  display: inline-block;
+  background: #DDD;
+  line-height: 20px;
+  font-size: 20px;
+  font-weight: bold;
+  text-align: center;
+  border: 1px solid black;
+}
+
+#goCancel {
+ margin: auto;
+}
+
+/*#goFormAction a:active {
+  box-shadow: inset 5px 5px 10px black;
+}*/
+
+/* the "Stop" page */
+
+#stopMid {
+  width: 400px;
+  height: 450px;
+  padding: 50px 0 10px 0;
+  margin: auto;
+  /*border: 1px solid black;*/
+  text-align: center;
+  background: white;/*#cedce7; /* Old browsers */
+  /*background: linear-gradient(135deg, #cedce7 0%,#596a72 100%); /* W3C */
+}
+
+#stopBug {
+ width: 230px;
+}
+
+#stopTimer {
+ width: 230px;
+ margin: auto;
+ margin-top: -20px;
+}
+
+#stopTimer p {
+ margin-top: 60px;
+}
+
+#StopOdo {
+ width: 230px;
+}
+
+
+#stopStop {
+ font-weight: bold;
+ width: 100px;
+ height: 50px;
+ line-height:  47px;
+ margin: 100px auto 20px auto;
+ background: #DDD;
+ border: 1px solid black;
+ /*box-shadow: 5px 5px 10px black;*/
+}
+
+#stopStop a {
+ display: inline-block;
+ color: black;
+ font: bold;
+}
+
+#stopStop:active {
+ box-shadow: inset 5px 5px 20px #888888;
+}
+
+#stopStop:before {}
+
+#stopStop:after {}
+
+/* the "log" page */
+
+.cancel {
+ color: red;
+}
+
+#logMid {
+  width: 400px;
+  height: 500px;
+  padding: 10px 0;
+  padding-top: 50px;
+  margin: auto;
+  border: 1px solid black;
+  text-align: center;
+  background: #DDD;
+}
+
+#logTime {
+ margin-top: 50px;
+}
+
+#logTime a {
+ width: 200px;
+}
+
+#logTimer {
+ width: 200px;
+ margin: 0 auto;
+}
+
+#logMid select, #logMid input[type="text"] {
+ width: 200px;
+ font-size: 20px;
+ border: 1px solid transparent;
+ margin: 0;
+ padding: 0;
+ background: white;
+ border: 1px solid black;
+}
+
+#logOdo {
+ margin-top: 50px;
+}
+
+#logBott p {
+ margin-top: 50px;
+}
+
+#logFormAction {
+ display: inline-block;
+ height: 50px;
+ margin-top: 150px;
+ padding: 12px;
+ background: #CCC;
+ font-weight: bold;
+ font-size: 20px;
+ border: 1px solid black;
+ }
+
+/* the "log list" page */
+
+#mid {
+  width: 400px;
+  margin: auto;
+  background: #cedce7; /* Old browsers */
+  background: linear-gradient(135deg, #cedce7 0%,#596a72 100%); /* W3C */
+}
+
+table {
+ width: 100%;
+ text-align: center;
+}
+
+thead td {
+ font-weight: bold;
+ padding: 10px 0;
+ background: grey;
+ color: white;
+ font: bold;
+}
+
+table, table td {
+ padding: 5px 0;
+ outline: 1px solid black;
+}
+
+#weekTot {
+   background: papayawhip;
+   color: green;
+   padding: 5px 0;
+   text-align: center;
+   width: auto
+  }
+
+  footer {
+   width: 100px;
+   margin: auto;
+  }
+
+  footer p {
+   margin-top: 40px;
+  }
+
+  #newtripBtn {
+   font-weight: bold;
+   padding: 15px;
+   border-radius: 5px;
+   background: #66CCFF;
+   color: red;
+   border: 1px solid #A3E0FF;
+   box-shadow: 5px 5px 10px black;
+  }
+
+  #newtripBtn:active {
+   box-shadow: inset 5px 5px 10px black;
+  }
