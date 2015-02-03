@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150129215455) do
+ActiveRecord::Schema.define(version: 20150203204217) do
 
   create_table "jobs", force: true do |t|
     t.integer  "user_id"
@@ -24,6 +24,17 @@ ActiveRecord::Schema.define(version: 20150129215455) do
 
   add_index "jobs", ["user_id"], name: "index_jobs_on_user_id"
 
+  create_table "trips", force: true do |t|
+    t.integer  "job_id"
+    t.integer  "shift_hours"
+    t.float    "starting_odometer"
+    t.float    "ending_odometer"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "trips", ["job_id"], name: "index_trips_on_job_id"
+
   create_table "users", force: true do |t|
     t.string   "first_name"
     t.string   "last_name"
@@ -31,5 +42,18 @@ ActiveRecord::Schema.define(version: 20150129215455) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "vehicles", force: true do |t|
+    t.integer  "user_id"
+    t.string   "make"
+    t.string   "model"
+    t.integer  "year"
+    t.boolean  "personal_usage"
+    t.float    "starting_odometer"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "vehicles", ["user_id"], name: "index_vehicles_on_user_id"
 
 end

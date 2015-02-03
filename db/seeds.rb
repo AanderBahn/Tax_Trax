@@ -9,5 +9,4 @@ j1 = Job.new(name: "Boston Market", daily_commute: 5, industry: "Food Service")
 j1.user = alex
 j1.save
 
-
-
+alex.vehicles << Vehicle.new(make: "Toyota", model: "Rav 4", year: "2007", personal_usage: true, starting_odometer: 143_000.0)

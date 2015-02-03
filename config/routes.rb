@@ -15,9 +15,11 @@ Rails.application.routes.draw do
   # TRIPS
 
   get "/trips/new"     => "trips#new"
+  post "/trips"         => "trips#create"
   get "/trips/show"    => "trips#show"
   get "/trips/edit"    => "trips#edit"
   get "/trips/confirm" => "trips#confirm" #CONFIRM
+
 
   # PROTOTYPE
   get "/go", :controller => 'static_pages', :action => 'go'

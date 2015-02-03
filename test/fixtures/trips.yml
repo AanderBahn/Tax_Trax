@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  job_id: 
+  shift_hours: 1
+  starting_odometer: 1.5
+  ending_odometer: 1.5
+
+two:
+  job_id: 
+  shift_hours: 1
+  starting_odometer: 1.5
+  ending_odometer: 1.5
