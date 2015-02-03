@@ -1,0 +1,56 @@
+  <div id="wrapper">
+    <header>
+      <nav class="main-nav">
+        <ul>
+          <li class="nav-left">
+            <a href="./go.html">Back</a>
+          </li>
+          <li class="nav-center">
+            <h1 class="screen-title">
+              Trip in progress
+            </h1>
+          </li>
+          <li class="nav-right">
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+
+    <main class="stop-screen">
+      <div class="timer-container">
+        <p class="timer-caption">Time until reminder</p>
+        <h2 class="timer" id="timer">5:00</h2>
+      </div>
+
+      <p>You have not yet entered your trip data.<br>
+         Please click below when finished driving.</p>
+      <p>
+        <a href="edit.html" class="btn btn-success btn-block">End Trip</a>
+      </p>
+
+    </main>
+  </div>
+
+  <script type="text/javascript">
+    window.onload = function() {
+      var tickTack = function() {
+        var timer = document.getElementById("timer").innerHTML.split(':'),
+            minutes = parseInt(timer[0], 10),
+            seconds = parseInt(timer[1], 10);
+
+        seconds -= 1;
+
+        if (seconds < 0 && minutes != 0) {
+          minutes -= 1;
+          seconds = 59;
+        } else if (minutes == 0 && seconds == 0) {
+          return clearInterval(interval);
+        }
+
+        document.getElementById("timer").innerHTML = (minutes + ':' + seconds);
+      }
+
+      var interval = setInterval(tickTack, 1000);
+    };
+  </script>
