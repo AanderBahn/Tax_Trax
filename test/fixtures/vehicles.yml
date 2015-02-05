@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user_id: 
+  make: MyString
+  model: MyString
+  year: 1
+  personal_usage: false
+  starting_odometer: 1.5
+
+two:
+  user_id: 
+  make: MyString
+  model: MyString
+  year: 1
+  personal_usage: false
+  starting_odometer: 1.5
