@@ -3,7 +3,7 @@
       <nav class="main-nav">
         <ul>
           <li class="nav-left">
-            <a href="./go.html">Back</a>
+            <a href="/trips/new">Back</a>
           </li>
           <li class="nav-center">
             <h1 class="screen-title">
@@ -20,13 +20,13 @@
     <main class="stop-screen">
       <div class="timer-container">
         <p class="timer-caption">Time until reminder</p>
-        <h2 class="timer" id="timer">5:00</h2>
+        <h2 class="timer" id="timer"><%= @trip.shift_hours %>:00</h2>
       </div>
 
       <p>You have not yet entered your trip data.<br>
          Please click below when finished driving.</p>
       <p>
-        <a href="edit.html" class="btn btn-success btn-block">End Trip</a>
+        <a href="/trips/<%= @trip.id %>/edit" class="btn btn-success btn-block">End Trip</a>
       </p>
 
     </main>
@@ -36,21 +36,24 @@
     window.onload = function() {
       var tickTack = function() {
         var timer = document.getElementById("timer").innerHTML.split(':'),
-            minutes = parseInt(timer[0], 10),
-            seconds = parseInt(timer[1], 10);
+            hours = parseInt(timer[0], 10),
+            minutes = parseInt(timer[1], 10);
 
-        seconds -= 1;
+        minutes -= 1;
 
-        if (seconds < 0 && minutes != 0) {
-          minutes -= 1;
-          seconds = 59;
-        } else if (minutes == 0 && seconds == 0) {
-          return clearInterval(interval);
+        if (minutes < 0 && hours != 0) {
+          hours -= 1;
+          minutes = 59;
+        } else if (hours == 0 && minutes <= 0) {
+          clearInterval(interval);
         }
 
-        document.getElementById("timer").innerHTML = (minutes + ':' + seconds);
+        hours = (hours < 10) ? "0" + hours : hours;
+        minutes = (minutes < 10) ? "0" + minutes : minutes;
+
+        document.getElementById("timer").innerHTML = (hours + ':' + minutes);
       }
 
-      var interval = setInterval(tickTack, 1000);
+      var interval = setInterval(tickTack, 10);
     };
   </script>

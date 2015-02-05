@@ -21,12 +21,12 @@
     <main class="confirm-screen">
       <div class="confirm-screen-message">
         <p>
-          You just drove <strong>50 miles</strong><br/>
-          for <strong>Boston Market</strong>
+          You just drove <strong><%= @trip.miles %> miles</strong><br/>
+          for <strong><%= @trip.job.name%></strong>
         </p>
 
         <p>
-          <a href="new.html" class="btn">
+          <a href="/trips/new" class="btn">
             Start a new trip
           </a>
         </p>

@@ -9,25 +9,34 @@ class TripsController < ApplicationController
     @trip.job_id = params[:job_id]
     @trip.shift_hours = params[:shift_hours]
     @trip.starting_odometer = params[:starting_odometer]
-    @trip.save
 
-    redirect_to "/trips/show"
+    if @trip.save
+      redirect_to "/trips/#{@trip.id}"
+    else
+      render :new
+    end
   end
 
   def show
+    @trip = Trip.find(params[:id])
   end
 
   def edit
+    @trip = Trip.find(params[:id])
+  end
+
+  def update
+    @trip = Trip.find(params[:id])
+    @trip.ending_odometer = params[:ending_odometer]
+
+    if @trip.save
+      redirect_to "/trips/#{@trip.id}/confirm"
+    else
+      render :edit
+    end
   end
 
   def confirm
+    @trip = Trip.find(params[:id])
   end
-
-private
-
-  def current_user
-    @user ||= User.first
-  end
-  helper_method :current_user
-
 end

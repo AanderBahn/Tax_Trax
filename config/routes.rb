@@ -14,11 +14,12 @@ Rails.application.routes.draw do
 
   # TRIPS
 
-  get "/trips/new"     => "trips#new"
-  post "/trips"         => "trips#create"
-  get "/trips/show"    => "trips#show"
-  get "/trips/edit"    => "trips#edit"
-  get "/trips/confirm" => "trips#confirm" #CONFIRM
+  get "/trips/new"          => "trips#new"
+  post "/trips"             => "trips#create"
+  get "/trips/:id"          => "trips#show"
+  get "/trips/:id/edit"     => "trips#edit"
+  post "/trips/:id"         => "trips#update"
+  get "/trips/:id/confirm"  => "trips#confirm" #CONFIRM
 
 
   # PROTOTYPE

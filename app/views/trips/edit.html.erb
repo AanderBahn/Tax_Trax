@@ -18,7 +18,7 @@
     </header>
 
     <main class="log-screen">
-      <form action="./confirm.html">
+      <%= form_tag "/trips/#{@trip.id}" do %>
         <fieldset>
           <label for="odometer" class="txt-center">
             Enter your ending odometer
@@ -29,7 +29,9 @@
             type="number"
             class="txt-center"
             id="odometer"
-            name="odometer" />
+            placeholder="<%= @trip.starting_odometer %>"
+            name="ending_odometer"
+            min="0" />
         </fieldset>
 
         <fieldset class="formAction">
@@ -38,6 +40,6 @@
             value="Log Mileage"
             class="btn btn-success btn-block" />
         </fieldset>
-      </form>
+      <% end %>
     </main>
   </div>
