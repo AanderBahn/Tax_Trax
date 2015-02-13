@@ -1,41 +1,65 @@
-<div class="page-header">
-  <h1>Add User</h1>
-</div>
 
-<% if @user.errors.any? %>
-  <% @user.errors.full_messages.each do |message| %>
-    <div class="alert alert-dismissable alert-danger">
-      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-      <%= message %>
-    </div>
-  <% end %>
-<% end %>
+  <div id="wrapper">
 
+    <header>
+      <nav class="main-nav">
+        <ul>
+          <li class="nav-left">
+            <a href="#">Back</a>
+          </li>
+          <li class="nav-center">
+            <h1 class="screen-title">
+              Create New Account
+            </h1>
+          </li>
+        </ul>
+      </nav>
+    </header>
 
-<form action="/create_user" class="form-horizontal">
-  <!-- Label and input for car -->
-  <div class="form-group">
-    <label for="car" class="col-sm-2 control-label">
-      Car
-    </label>
-    <div class="col-sm-10">
-      <input type="text" id="car" name="car" placeholder="Car" class="form-control" value="<%= @user.car %>">
-    </div>
+    <main>
+      <%= form_tag '/create_user', :method => "post", :class => "form-horizontal" do %>
+
+        <fieldset>
+         <label for="firstnameC" class="col-sm-2 control-label">
+              First Name
+         </label>
+         <input type="text" id="firstnameC" name="firstnameC" placeholder="Enter your First Name" class="form-control" value="<%= @user.first_name %>">
+        </fieldset>
+
+        <fieldset>
+         <label for="lastname" class="col-sm-2 control-label">
+              Last Name
+         </label>
+         <input type="text" id="lastnameC" name="lastnameC" placeholder="Enter your Last Name" class="form-control" value="<%= @user.last_name %>">
+        </fieldset>
+
+        <fieldset>
+         <label for="emailname" class="col-sm-2 control-label">
+              Email
+         </label>
+         <input type="text" id="emailnameC" name="emailnameC" placeholder="Enter your Email address" class="form-control" value="<%= @user.email %>">
+        </fieldset>
+
+        <fieldset>
+         <label for="passwordC" class="col-sm-2 control-label">
+              Account Password
+         </label>
+         <input type="text" id="passwordC" name="passwordC" placeholder="Create account password" class="form-control" value="<%= @user.password %>">
+        </fieldset>
+
+        <fieldset class="formAction">
+          <input
+            type="submit"
+            value="Create Account"
+            class="btn btn-success btn-block" />
+        </fieldset>
+        <p>Want to know how Tax Trax can start helping you today?</p>
+        <a href="#">About</a>
+        <p>Want to get a hold of us?</p>
+        <a href="#">Contact Us</a>
+        <% end %>
+
+        <%= current_user.email%>
+
+    </main>
   </div>
-
-  <!-- Label and input for jobs -->
-  <div class="form-group">
-    <label for="jobs" class="col-sm-2 control-label">
-      Jobs
-    </label>
-    <div class="col-sm-10">
-      <input type="text" id="jobs" name="jobs" placeholder="Jobs" class="form-control" value="<%= @user.jobs %>">
-    </div>
-  </div>
-
-  <div class="form-group">
-    <div class="col-sm-offset-2 col-sm-10">
-      <input type="submit" value="Create User" class="btn btn-primary">
-    </div>
-  </div>
-</form>

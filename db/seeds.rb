@@ -5,7 +5,7 @@ User.create!([
 
 alex = User.find_by(email: "AanderBahn@gmail.com")
 
-j1 = Job.new(name: "Boston Market", daily_commute: 5, industry: "Food Service")
+j1 = Job.new(name: "Boston Market", daily_commute: 3, industry: "Food Service")
 j1.user = alex
 j1.save
 

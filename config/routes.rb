@@ -1,16 +1,17 @@
 Rails.application.routes.draw do
+  devise_for :users
   # Routes for the User resource:
 
-  get "/" => 'static_pages#go'
+  get "/" => 'users/sessions/new'
 
   # USERS
-  get '/users/new' => 'users#new'
-  get '/create_user' => 'users#create'
+  # get '/users/new' => 'users#new'
+  # post '/create_user' => 'users#create'
   get('/users', { :controller => 'users', :action => 'index' })
-  get('/users/:id', { :controller => 'users', :action => 'show' })
-  get('/users/:id/edit', { :controller => 'users', :action => 'edit' })
-  get('/update_user/:id', { :controller => 'users', :action => 'update' })
-  get('/delete_user/:id', { :controller => 'users', :action => 'destroy' })
+  # get('/users/:id', { :controller => 'users', :action => 'show' })
+  # get('/users/:id/edit', { :controller => 'users', :action => 'edit' })
+  # get('/update_user/:id', { :controller => 'users', :action => 'update' })
+  # get('/delete_user/:id', { :controller => 'users', :action => 'destroy' })
 
   # TRIPS
 
@@ -19,7 +20,7 @@ Rails.application.routes.draw do
   get "/trips/:id"          => "trips#show"
   get "/trips/:id/edit"     => "trips#edit"
   post "/trips/:id"         => "trips#update"
-  get "/trips/:id/confirm"  => "trips#confirm" #CONFIRM
+  get "/trips/:id/confirm"  => "trips#confirm"
 
 
   # PROTOTYPE
