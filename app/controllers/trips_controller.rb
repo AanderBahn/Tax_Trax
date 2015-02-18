@@ -38,4 +38,9 @@ class TripsController < ApplicationController
   def confirm
     @trip = Trip.find(params[:id])
   end
+
+  def my_trips
+
+  end
+
 end

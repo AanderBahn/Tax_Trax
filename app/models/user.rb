@@ -8,6 +8,6 @@ class User < ActiveRecord::Base
 
   has_many :jobs
   has_many :trips, through: :jobs
-  has_many :vehicles
+  # has_many :trips, through: :vehicles
 
 end

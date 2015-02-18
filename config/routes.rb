@@ -2,12 +2,12 @@ Rails.application.routes.draw do
   devise_for :users
   # Routes for the User resource:
 
-  get "/" => 'users/sessions/new'
+  get "/" => 'trips#new'
 
   # USERS
   # get '/users/new' => 'users#new'
   # post '/create_user' => 'users#create'
-  get('/users', { :controller => 'users', :action => 'index' })
+  #get('/users', { :controller => 'users', :action => 'index' })
   # get('/users/:id', { :controller => 'users', :action => 'show' })
   # get('/users/:id/edit', { :controller => 'users', :action => 'edit' })
   # get('/update_user/:id', { :controller => 'users', :action => 'update' })
@@ -21,6 +21,7 @@ Rails.application.routes.draw do
   get "/trips/:id/edit"     => "trips#edit"
   post "/trips/:id"         => "trips#update"
   get "/trips/:id/confirm"  => "trips#confirm"
+  get "/my_trips"           => "trips#my_trips"
 
 
   # PROTOTYPE
