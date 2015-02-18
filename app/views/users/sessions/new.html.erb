@@ -1,47 +1,52 @@
 <div id="wrapper">
-<h2>Log in Porky Pig</h2>
 
-<main>
-<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
- <fieldset>
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, :placeholder => "Enter your account email" %>
-  </div>
- </fieldset>
+  <header>
+    <nav class="main-nav">
+      <ul>
+        <li class="nav-left">
+        </li>
+        <li class="nav-center">
+          <h1 class="screen-title">
+            Log in Porky Pig
+          </h1>
+        </li>
+        <li class="nav-right">
+        </li>
+      </ul>
+    </nav>
+  </header>
 
- <fieldset>
-  <div class="field">
-    <%= f.label :password %><br />
-    <%= f.password_field :password, autocomplete: "off", :placeholder => "Enter your password" %>
-  </div>
- </fieldset>
+  <main>
+    <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+      <fieldset>
+        <%= f.label :email %>
+        <%= f.email_field :email, autofocus: true, :placeholder => "Enter your account email" %>
+      </fieldset>
 
-  <% if devise_mapping.rememberable? -%>
-   <fieldset>
-    <div class="field">
-      <%= f.check_box :remember_me %>
-      <%= f.label :remember_me %>
-    </div>
-   </fieldset>
-  <% end -%>
+      <fieldset>
+        <%= f.label :password %>
+        <%= f.password_field :password, autocomplete: "off", :placeholder => "Enter your password" %>
+      </fieldset>
 
-  <div class="btn btn-success btn-block">
-    <%= f.submit "Sign in" %>
-  </div>
-<% end %>
+      <% if devise_mapping.rememberable? -%>
+       <fieldset>
+        <label>
+          <%= f.check_box :remember_me %>
+          Remember me
+        </label>
+       </fieldset>
+      <% end -%>
 
-<%= render "users/shared/links" %>
+      <fieldset class="formAction">
+        <input
+          type="submit"
+          value="Sign in"
+          class="btn btn-success btn-block" />
+      </fieldset>
 
-      <form action="#">
+      <hr/>
 
-        <fieldset class="formAction">
-          <input
-            type="submit"
-            value="Sign In"
-            class="btn btn-success btn-block" />
-        </fieldset>
-      </form>
-    </main>
-  </div>
-
+      <%= render "users/shared/links" %>
+    <% end %>
+  </main>
+</div>

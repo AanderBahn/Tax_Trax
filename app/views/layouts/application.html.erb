@@ -14,29 +14,6 @@
 
 <body>
   <div id="wrapper">
-    <header>
-    <nav class="main-nav">
-      <ul>
-        <li class="nav-left">
-          <a class ="back" href="/">Back</a>
-        </li>
-        <li class="nav-center">
-          <h1 class="screen-title">
-            Starting Trip Info
-          </h1>
-        </li>
-        <li class="nav-right">
-          <% if current_user.present? %>
-          <%= current_user.email %>
-           <%= link_to 'Logout', destroy_user_session_url, method: :delete %>
-          <% else %>
-           <%= link_to 'Login', new_user_session_url %>
-          <% end %>
-
-        </li>
-      </ul>
-    </nav>
-  </header>
     <%= yield %>
   </div>
 </body>

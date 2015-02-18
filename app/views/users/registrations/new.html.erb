@@ -1,68 +1,73 @@
-<h2>Sign Hamburger up</h2>
-
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= devise_error_messages! %>
-
-<main>
 <div id="wrapper">
 
- <fieldset>
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, :placeholder => "Enter your email address" %>
-  </div>
- </fieldset>
+  <header>
+    <nav class="main-nav">
+      <ul>
+        <li class="nav-left">
+          <a class ="back" href="/">Back</a>
+        </li>
+        <li class="nav-center">
+          <h1 class="screen-title">
+            Sign Hamburger up
+          </h1>
+        </li>
+        <li class="nav-right">
+        </li>
+      </ul>
+    </nav>
+  </header>
 
- <fieldset>
-  <div class="field">
-    <%= f.label :password %>
-    <% if @validatable %>
-    <% end %><br />
-    <%= f.password_field :password, autocomplete: "off", :placeholder => "8 characters minimum" %>
-  </div>
- </fieldset>
+  <main>
+    <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+      <%= devise_error_messages! %>
 
- <fieldset>
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "off",:placeholder => "Confirm Password"  %>
-  </div>
- </fieldset>
+      <fieldset>
+        <%= f.label :first_name %>
+        <%= f.text_field :first_name %>
+      </fieldset>
 
-  <div class="actions">
-    <%= f.submit "Sign up" %>
-  </div>
-  <p>Want to know how Tax Trax can start helping you today?</p>
-        <a href="#">About</a>
-        <p>Want to get a hold of us?</p>
-        <a href="#">Contact Us</a>
-<% end %>
+      <fieldset>
+        <%= f.label :last_name %>
+        <%= f.text_field :last_name %>
+      </fieldset>
 
-<%= render "users/shared/links" %>
+      <fieldset>
+        <%= f.label :email %>
+        <%= f.email_field :email, autofocus: true, :placeholder => "Enter your email address" %>
+      </fieldset>
 
-      <%= form_tag '/create_user', :method => "post", :class => "form-horizontal" do %>
+      <fieldset>
+        <%= f.label :password %>
+        <%= f.password_field :password,
+              autocomplete: "off",
+              :placeholder => "8 characters minimum" %>
+      </fieldset>
 
-        <fieldset>
-         <label for="firstnameC" class="col-sm-2 control-label">
-              First Name
-         </label>
-         <input type="text" id="firstnameC" name="firstnameC" placeholder="Enter your First Name" class="form-control" value="<%= @user.first_name %>">
-        </fieldset>
+     <fieldset>
+      <%= f.label :password_confirmation %><br />
+      <%= f.password_field :password_confirmation,
+            autocomplete: "off",
+            :placeholder => "Confirm Password"  %>
+     </fieldset>
 
-        <fieldset>
-         <label for="lastname" class="col-sm-2 control-label">
-              Last Name
-         </label>
-         <input type="text" id="lastnameC" name="lastnameC" placeholder="Enter your Last Name" class="form-control" value="<%= @user.last_name %>">
-        </fieldset>
+      <fieldset class="formAction">
+        <%= f.submit "Sign up", class: "btn btn-success btn-block" %>
+      </fieldset>
+    <% end %>
 
-        <fieldset class="formAction">
-          <input
-            type="submit"
-            value="Create Account"
-            class="btn btn-success btn-block" />
-        </fieldset>
-        <% end %>
+    <hr/>
 
-    </main>
-  </div>
+    <p>
+      Want to know how Tax Trax can
+      start helping you today? <a href="#">About Us</a>
+    </p>
+
+    <p>
+      Want to get a hold of us? <a href="#">Contact Us</a>
+    </p>
+  </main>
+</div>
+
+
+
+

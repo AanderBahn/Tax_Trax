@@ -1,5 +1,21 @@
 <div id="wrapper">
 
+  <header>
+    <nav class="main-nav">
+      <ul>
+        <li class="nav-left">
+          <a class ="back" href="/">Back</a>
+        </li>
+        <li class="nav-center">
+          <h1 class="screen-title">
+            Starting Trip Info
+          </h1>
+        </li>
+        <li class="nav-right"></li>
+      </ul>
+    </nav>
+  </header>
+
   <main>
     <%= form_tag "/trips" do %>
       <fieldset>
@@ -7,13 +23,11 @@
           Who are you driving for?
         </label>
 
-        <% if current_user.present? %>
         <select id="job" name="job_id" required>
           <% current_user.jobs.each do |job| %>
             <option value="<%= job.id %>"><%= job.name %></option>
           <% end %>
         </select>
-        <% end %>
       </fieldset>
 
       <fieldset>

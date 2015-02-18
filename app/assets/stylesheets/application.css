@@ -47,6 +47,11 @@ a.disabled {
   color: #B1B1B1;
 }
 
+hr {
+  border: 1px solid #CCCCCC;
+  border-width: 1px 0 0 0;
+}
+
 /* MISC */
 
 .txt-center {
@@ -129,7 +134,6 @@ select,
 input[type="text"],
 input[type="date"],
 input[type="number"],
-input[type="submit"],
 #passwordSignIn,
 #emailSignIn,
 input {
@@ -139,6 +143,11 @@ input {
   width: 100%;
   font-size: 20px;
   padding: 8px 12px;
+}
+
+input[type="checkbox"] {
+  display: inline-block;
+  width: auto;
 }
 
 fieldset {
