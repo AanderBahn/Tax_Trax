@@ -1,9 +1,11 @@
 Rails.application.routes.draw do
   devise_for :users
+  root to: 'static_pages#mainmenu'
+
+  # Routes for Static Pages
+  get "/mainmenu", :controller => 'static_pages', :action => 'mainmenu', :as => 'main_menu'
+
   # Routes for the User resource:
-
-  get "/" => 'trips#new'
-
   # USERS
   # get '/users/new' => 'users#new'
   # post '/create_user' => 'users#create'
@@ -23,6 +25,14 @@ Rails.application.routes.draw do
   get "/trips/:id/confirm"  => "trips#confirm"
   get "/my_trips"           => "trips#my_trips"
 
+  #Vehicle
+  get  "/vehicles/new"          => "vehicles#new"
+  post "/vehicles"              => "vehicles#create"
+  get  "/vehicles/:id"          => "vehicles#show"
+  get  "/vehicles/:id/edit"     => "vehicles#edit"
+  post "/vehicles/:id"          => "vehicles#update"
+  get  "/vehicles/:id/confirm"  => "vehicles#confirm"
+  get  "/my_vehicles"           => "vehicles#my_vehicles"
 
   # PROTOTYPE
   get "/go", :controller => 'static_pages', :action => 'go'

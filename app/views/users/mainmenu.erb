@@ -1,0 +1,20 @@
+<div class="page-header">
+  <h1>Main Menu</h1>
+</div>
+
+<% if errors.any? %>
+  <% errors.full_messages.each do |message| %>
+    <div class="alert alert-dismissable alert-danger">
+      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+      <%= message %>
+    </div>
+  <% end %>
+<% end %>
+
+
+<ul>
+  <li><a href="/trips/new">New Trip</a></li>
+  <li><a href="#news">User Info</a></li>
+  <li><a href="#contact">Vehicle i</a></li>
+  <li><a href="#about">Sign Out</a></li>
+</ul>

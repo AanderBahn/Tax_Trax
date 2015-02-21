@@ -14,4 +14,7 @@ class StaticPagesController < ApplicationController
   def confirm
     render 'confirm'
   end
+
+  def mainmenu
+  end
 end
