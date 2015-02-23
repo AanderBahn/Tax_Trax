@@ -17,13 +17,13 @@ Rails.application.routes.draw do
 
   # TRIPS
 
-  get "/trips/new"          => "trips#new"
-  post "/trips"             => "trips#create"
-  get "/trips/:id"          => "trips#show"
-  get "/trips/:id/edit"     => "trips#edit"
-  post "/trips/:id"         => "trips#update"
-  get "/trips/:id/confirm"  => "trips#confirm"
-  get "/my_trips"           => "trips#my_trips"
+  get  "/trips/new"          => "trips#new"
+  post "/trips"              => "trips#create"
+  get  "/trips/:id"          => "trips#show"
+  get  "/trips/:id/edit"     => "trips#edit"
+  post "/trips/:id"          => "trips#update"
+  get  "/trips/:id/confirm"  => "trips#confirm"
+  get  "/my_trips"           => "trips#my_trips"
 
   #Vehicle
   get  "/vehicles/new"          => "vehicles#new"
