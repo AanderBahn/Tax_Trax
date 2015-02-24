@@ -33,8 +33,6 @@ ActiveRecord::Schema.define(version: 20150212205836) do
     t.datetime "updated_at"
   end
 
-  add_index "trips", ["job_id"], name: "index_trips_on_job_id"
-
   create_table "users", force: true do |t|
     t.string   "first_name"
     t.string   "last_name"
@@ -59,13 +57,11 @@ ActiveRecord::Schema.define(version: 20150212205836) do
     t.integer  "user_id"
     t.string   "make"
     t.string   "model"
-    t.integer  "year"
+    t.date     "year"
     t.boolean  "personal_usage"
     t.float    "starting_odometer"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
-
-  add_index "vehicles", ["user_id"], name: "index_vehicles_on_user_id"
 
 end

@@ -28,11 +28,22 @@ Rails.application.routes.draw do
   #Vehicle
   get  "/vehicles/new"          => "vehicles#new"
   post "/vehicles"              => "vehicles#create"
+  get  "/vehicles/index"        => "vehicles#index"
   get  "/vehicles/:id"          => "vehicles#show"
   get  "/vehicles/:id/edit"     => "vehicles#edit"
   post "/vehicles/:id"          => "vehicles#update"
   get  "/vehicles/:id/confirm"  => "vehicles#confirm"
   get  "/my_vehicles"           => "vehicles#my_vehicles"
+
+  #Job
+  get  "/jobs/new"          => "jobs#new"
+  post "/jobs"              => "jobs#create"
+  get  "/jobs/index"        => "jobs#index"
+  get  "/jobs/:id"          => "jobs#show"
+  get  "/jobs/:id/edit"     => "jobs#edit"
+  post "/jobs/:id"          => "jobs#update"
+  get  "/jobs/:id/confirm"  => "jobs#confirm"
+  get  "/my_jobs"           => "jobs#my_jobs"
 
   # PROTOTYPE
   get "/go", :controller => 'static_pages', :action => 'go'

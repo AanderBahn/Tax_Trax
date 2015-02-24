@@ -6,35 +6,29 @@
         </li>
         <li class="nav-center">
           <h1 class="screen-title">
-            Your Vehicles
+            Your Jobs
           </h1>
         </li>
-        <a class="nav-right" href="/vehicles/new">Add New Vehicle</a>
+        <a class="nav-right" href="/jobs/new">Add New Job</a>
       </ul>
     </nav>
   </header>
-
-<p>Your Current Vehicle</p>
 
 <div class="table-responsive">
   <table class="table table-striped table-bordered table-hover">
     <thead>
       <tr>
-       <th>Make</th>
-       <th>Model</th>
-       <th>Year</th>
-       <th>Starting Odometer</th>
-       <th>Personal</th>
+       <th>Company</th>
+       <th>Industry</th>
+       <th>Daliy Commute</th>
+       <th></th>
       </tr>
     </thead>
 
     <tbody>
-      <%= content_tag_for(:tr, @vehicles) do |vehicle| %>
-        <td><%= vehicle.make %></td>
-        <td><%= vehicle.model %></td>
-        <td><%= vehicle.year %></td>
-        <td><%= vehicle.starting_odometer %></td>
-        <td><%= vehicle.personal_usage %></td>
+      <%= content_tag_for(:tr, @jobs) do |job| %>
+        <td><%= job.name %></td>
+        <td><%= job.industry %></td>
         <td><%= link_to 'Show', job %></td>
         <td><%= link_to 'Edit', edit_job_path(job) %></td>
         <td><%= link_to 'Destroy', job, method: :delete, data: { confirm: 'Are you sure?' } %></td>
