@@ -7,19 +7,20 @@ def new
 
   def create
     @job = Job.new
-    @job.user_id       = params[:user_id]
+    @job.user_id       = current_user
     @job.name          = params[:name]
     @job.daily_commute = params[:daily_commute]
     @job.industry      = params[:industry]
 
     if @job.save
-      redirect_to "/jobs/#{@job.id}"
+      redirect_to "/jobs/index"
     else
       render :new
     end
   end
 
   def index
+    @job = Job.all
   end
 
   def show
@@ -38,6 +39,14 @@ def new
     else
       render :edit
     end
+  end
+
+  def destroy
+    @job = Job.find(params[:id])
+
+    @job.destroy
+
+    redirect_to job_url, :notice => "Job Deleted."
   end
 
   def confirm

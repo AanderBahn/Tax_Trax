@@ -2,7 +2,7 @@ class VehiclesController < ApplicationController
   before_action :authenticate_user!
 
   def index
-    @vehicles = Vehicle.all
+    @vehicle = Vehicle.all
   end
 
   def show
@@ -15,16 +15,15 @@ class VehiclesController < ApplicationController
 
   def create
     @vehicle = Vehicle.new
-    @vehicle.user_id = params[:user_id]
-    @vehicle.make = params[:make]
-    @vehicle.model = params[:model]
-    @vehicle.year = params[:year]
-    @vehicle.personal_usage = params[:personal_usage]
-    @vehicle.starting_odometer = params[:starting_odometer]
-    @vehicle.float = params[:float]
+    @vehicle.user_id            = current_user
+    @vehicle.make               = params[:make]
+    @vehicle.cmodel             = params[:cmodel]
+    @vehicle.year               = params[:year]
+    @vehicle.personal_usage     = params[:personal_usage]
+    @vehicle.starting_odometer  = params[:starting_odometer]
 
     if @vehicle.save
-      redirect_to "/vehicles", :notice => "Vehicle created successfully."
+      redirect_to "/vehicles/index", :notice => "Vehicle created successfully."
     else
       render 'new'
     end
@@ -37,13 +36,13 @@ class VehiclesController < ApplicationController
   def update
     @vehicle = Vehicle.find(params[:id])
 
-    @vehicle.user_id = params[:user_id]
-    @vehicle.make = params[:make]
-    @vehicle.model = params[:model]
-    @vehicle.year = params[:year]
-    @vehicle.personal_usage = params[:personal_usage]
+    @vehicle.user_id           = params[:user_id]
+    @vehicle.make              = params[:make]
+    @vehicle.model             = params[:model]
+    @vehicle.year              = params[:year]
+    @vehicle.personal_usage    = params[:personal_usage]
     @vehicle.starting_odometer = params[:starting_odometer]
-    @vehicle.float = params[:float]
+    @vehicle.float             = params[:float]
 
     if @vehicle.save
       redirect_to "/vehicles", :notice => "Vehicle updated successfully."

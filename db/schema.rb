@@ -56,10 +56,10 @@ ActiveRecord::Schema.define(version: 20150212205836) do
   create_table "vehicles", force: true do |t|
     t.integer  "user_id"
     t.string   "make"
-    t.string   "model"
+    t.string   "cmodel"
     t.date     "year"
+    t.string   "starting_odometer"
     t.boolean  "personal_usage"
-    t.float    "starting_odometer"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

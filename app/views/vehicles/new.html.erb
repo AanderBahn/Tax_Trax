@@ -14,6 +14,8 @@
     </nav>
   </header>
 
+<!-- Validation failure messages -->
+
 <% if @vehicle.errors.any? %>
   <% @vehicle.errors.full_messages.each do |message| %>
     <div class="alert alert-dismissable alert-danger">
@@ -24,17 +26,66 @@
 <% end %>
 
 
-<form action="/create_vehicle" class="form-horizontal">
-  <!-- Label and input for user_id -->
-  <div class="form-group">
-    <div class="col-sm-10">
-      <input type="text" id="user_id" name="user_id" placeholder="User" class="form-control" value="<%= @vehicle.user_id %>">
-    </div>
-  </div>
+<!-- Responsive panel example -->
 
-  <div class="form-group">
-    <div class="col-sm-offset-2 col-sm-10">
-      <input type="submit" value="Create Vehicle" class="btn btn-primary">
+<div class="row">
+  <div class="col-sm-offset-1 col-sm-10 col-md-offset-2 col-md-8">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3 class="panel-title">Add A Vehicle</h3>
+      </div>
+      <div class="panel-body">
+        <%= form_for @vehicle, :html => { :class => "form-horizontal" } do |f| %>
+
+          <!-- Label and input for name -->
+          <div class="form-group">
+            <%= f.label :make, class: "col-sm-2 control-label" %>
+            <div class="col-sm-10">
+              <%= f.text_field :make, placeholder: "Car Manufacturer", class: "form-control" %>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <%= f.label :cmodel, class: "col-sm-2 control-label" %>
+            <div class="col-sm-10">
+              <%= f.text_field :cmodel, placeholder: "Car Model", class: "form-control" %>
+            </div>
+          </div>
+
+          <!-- Label and input for bio -->
+          <div class="form-group">
+            <%= f.label :year, class: "col-sm-2 control-label" %>
+            <div class="col-sm-10">
+              <%= f.text_field :year, placeholder: "Year of the Model", class: "form-control" %>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <%= f.label :starting_odometer, class: "col-sm-2 control-label" %>
+            <div class="col-sm-10">
+              <%= f.text_field :starting_odometer, placeholder: "Car's Starting Odometer", class: "form-control" %>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <%= f.label :personal_usage, class: "col-sm-2 control-label" %>
+            <div class="col-sm-10">
+              <%= f.text_field :personal_usage, placeholder: "Will this car be availbe to you outside of work?", class: "form-control" %>
+            </div>
+          </div>
+
+
+          <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-10">
+              <%= f.submit class: "btn btn-success" %>
+              or
+              <a href="/vehicles">Cancel</a>
+            </div>
+          </div>
+        <% end %>
+      </div>
     </div>
   </div>
-</form>
+</div>
+
+<!-- End responsive panel example -->
