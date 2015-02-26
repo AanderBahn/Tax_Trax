@@ -57,7 +57,7 @@ ActiveRecord::Schema.define(version: 20150212205836) do
     t.integer  "user_id"
     t.string   "make"
     t.string   "cmodel"
-    t.date     "year"
+    t.integer  "year"
     t.string   "starting_odometer"
     t.boolean  "personal_usage"
     t.datetime "created_at"

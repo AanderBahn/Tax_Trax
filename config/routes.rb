@@ -34,6 +34,7 @@ Rails.application.routes.draw do
   post "/vehicles/:id"          => "vehicles#update"
   get  "/vehicles/:id/confirm"  => "vehicles#confirm"
   get  "/my_vehicles"           => "vehicles#my_vehicles"
+  delete "/vehicles/:id"        => "vehicles#destroy"
 
   #Job
   get  "/jobs/new"          => "jobs#new"

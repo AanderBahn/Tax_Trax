@@ -35,47 +35,41 @@
         <h3 class="panel-title">Add Job</h3>
       </div>
       <div class="panel-body">
-        <%= form_tag jobs_url, :method => "post", :class => "form-horizontal" do %>
+       <%= form_for @job, :html => { :class => "form-horizontal" } do |f| %>
 
           <!-- Label and input for name -->
           <div class="form-group">
-            <label for="name" class: "col-sm-2 control-label">
-             Company Name
-            </label>
+            <%= f.label :name, class: "col-sm-2 control-label" %>
             <div class="col-sm-10">
-             <input type="text" id="name" name="name" palceholder="Enter Company Name" class="form-controll" value="<%= @job.name %>">
+              <%= f.text_field :name, placeholder: "Company Name", class: "form-control" %>
             </div>
           </div>
 
           <div class="form-group">
-            <label for="industry" class: "col-sm-2 control-label">
-             Job Industry
-            </label>
+            <%= f.label :industry, class: "col-sm-2 control-label" %>
             <div class="col-sm-10">
-             <input type="text" id="industry" name="industry" palceholder="Enter Job Industry" class="form-controll" value="<%= @industry.name %>">
+              <%= f.text_field :industry, placeholder: "Company Industry", class: "form-control" %>
             </div>
           </div>
 
+          <!-- Label and input for bio -->
           <div class="form-group">
-            <label for="daily_commute" class: "col-sm-2 control-label">
-             Daily Commute to work
-            </label>
+            <%= f.label :daily_commute, class: "col-sm-2 control-label" %>
             <div class="col-sm-10">
-             <input type="text" id="daily_commute" name="daily_commute" palceholder="Enter daily commute distance" class="form-controll" value="<%= @daily_commute.name %>">
+              <%= f.text_field :daily_commute, placeholder: "Your daily Commute", class: "form-control" %>
             </div>
           </div>
+
 
           <div class="form-group">
             <div class="col-sm-offset-2 col-sm-10">
-              <input type="submit" value="Add Job" class "btn btn-success">
+              <%= f.submit class: "btn btn-success" %>
               or
-              <a href="/jobs/index">Cancel</a>
+              <a href="/vehicles">Cancel</a>
             </div>
-          </div>
-        <% end %>
       </div>
+      <% end %>
     </div>
   </div>
+ </div>
 </div>
-
-<!-- End responsive panel example -->

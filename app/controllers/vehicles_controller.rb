@@ -14,13 +14,9 @@ class VehiclesController < ApplicationController
   end
 
   def create
-    @vehicle = Vehicle.new
-    @vehicle.user_id            = current_user
-    @vehicle.make               = params[:make]
-    @vehicle.cmodel             = params[:cmodel]
-    @vehicle.year               = params[:year]
-    @vehicle.personal_usage     = params[:personal_usage]
-    @vehicle.starting_odometer  = params[:starting_odometer]
+    @vehicle = Vehicle.new(vehicle_params)
+    @vehicle.user_id  = current_user
+
 
     if @vehicle.save
       redirect_to "/vehicles/index", :notice => "Vehicle created successfully."
@@ -38,11 +34,10 @@ class VehiclesController < ApplicationController
 
     @vehicle.user_id           = params[:user_id]
     @vehicle.make              = params[:make]
-    @vehicle.model             = params[:model]
+    @vehicle.cmodel             = params[:cmodel]
     @vehicle.year              = params[:year]
     @vehicle.personal_usage    = params[:personal_usage]
     @vehicle.starting_odometer = params[:starting_odometer]
-    @vehicle.float             = params[:float]
 
     if @vehicle.save
       redirect_to "/vehicles", :notice => "Vehicle updated successfully."
@@ -56,6 +51,14 @@ class VehiclesController < ApplicationController
 
     @vehicle.destroy
 
-    redirect_to "/vehicles", :notice => "Vehicle deleted."
+    redirect_to "/vehicles/index", :notice => "Vehicle deleted."
   end
+
+  private
+
+  def vehicle_params
+    params.require(:vehicle).permit(:make, :cmodel, :year, :personal_usage, :starting_odometer)
+  end
+
+
 end

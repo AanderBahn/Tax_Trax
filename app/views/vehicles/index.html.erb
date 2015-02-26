@@ -41,9 +41,9 @@
           <dt>Personal usage</dt>
           <dd><%= vehicle.personal_usage %></dd>
 
-          <td><%= link_to '/vehicles/show' %></td>
+          <td><%= link_to 'Show', "/vehicles/#{vehicle.id}" %></td>
           <td><%= link_to '/vehicles/edit' %></td>
-          <td><%= link_to '/vehicles/destroy', method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          <td><%= link_to 'Destroy', "/vehicles/#{vehicle.id}", method: :delete %></td>
 
         </dl>
         <div class="btn-group btn-group-justified">

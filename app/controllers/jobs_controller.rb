@@ -6,16 +6,13 @@ def new
   end
 
   def create
-    @job = Job.new
+    @job = Job.new(job_params)
     @job.user_id       = current_user
-    @job.name          = params[:name]
-    @job.daily_commute = params[:daily_commute]
-    @job.industry      = params[:industry]
 
     if @job.save
-      redirect_to "/jobs/index"
+      redirect_to "/jobs/index", :notice => "Job created successfully."
     else
-      render :new
+      render 'new'
     end
   end
 
@@ -54,7 +51,13 @@ def new
   end
 
   def my_jobs
-
   end
+
+  private
+
+  def job_params
+    params.require(:job).permit(:name, :daily_commute, :industry)
+  end
+
 
 end
