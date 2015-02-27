@@ -7,7 +7,7 @@ def new
 
   def create
     @job = Job.new(job_params)
-    @job.user_id       = current_user
+    @job.user = current_user
 
     if @job.save
       redirect_to "/jobs/index", :notice => "Job created successfully."
@@ -31,10 +31,10 @@ def new
   def update
     @job = Job.find(params[:id])
 
-    if @job.save
-      redirect_to "/jobs/#{@job.id}/confirm"
+    if @job.update_attributes(job_params)
+      redirect_to jobs_path, :notice => "Job updated successfully."
     else
-      render :edit
+      render jobs_path
     end
   end
 
@@ -43,7 +43,7 @@ def new
 
     @job.destroy
 
-    redirect_to job_url, :notice => "Job Deleted."
+    redirect_to jobs_path, :notice => "Job deleted."
   end
 
   def confirm

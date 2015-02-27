@@ -3,6 +3,11 @@ class VehiclesController < ApplicationController
 
   def index
     @vehicle = Vehicle.all
+
+    respond_to do |format|
+     format.html # index.html.erb
+     format.json { render json: @users }
+   end
   end
 
   def show
@@ -15,11 +20,11 @@ class VehiclesController < ApplicationController
 
   def create
     @vehicle = Vehicle.new(vehicle_params)
-    @vehicle.user_id  = current_user
+    @vehicle.user  = current_user
 
 
     if @vehicle.save
-      redirect_to "/vehicles/index", :notice => "Vehicle created successfully."
+      redirect_to vehicles_path, :notice => "Vehicle created successfully."
     else
       render 'new'
     end
@@ -32,17 +37,11 @@ class VehiclesController < ApplicationController
   def update
     @vehicle = Vehicle.find(params[:id])
 
-    @vehicle.user_id           = params[:user_id]
-    @vehicle.make              = params[:make]
-    @vehicle.cmodel             = params[:cmodel]
-    @vehicle.year              = params[:year]
-    @vehicle.personal_usage    = params[:personal_usage]
-    @vehicle.starting_odometer = params[:starting_odometer]
 
-    if @vehicle.save
-      redirect_to "/vehicles", :notice => "Vehicle updated successfully."
+    if @vehicle.update_attributes(vehicle_params)
+      redirect_to vehicles_path, :notice => "Vehicle updated successfully."
     else
-      render 'edit'
+      render vehicles_path
     end
   end
 
@@ -51,7 +50,7 @@ class VehiclesController < ApplicationController
 
     @vehicle.destroy
 
-    redirect_to "/vehicles/index", :notice => "Vehicle deleted."
+    redirect_to vehicles_path, :notice => "Vehicle deleted."
   end
 
   private
@@ -60,5 +59,10 @@ class VehiclesController < ApplicationController
     params.require(:vehicle).permit(:make, :cmodel, :year, :personal_usage, :starting_odometer)
   end
 
-
 end
+
+
+
+
+
+
