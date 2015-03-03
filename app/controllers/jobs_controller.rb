@@ -10,7 +10,7 @@ def new
     @job.user = current_user
 
     if @job.save
-      redirect_to "/jobs/index", :notice => "Job created successfully."
+      redirect_to "/jobs", :notice => "Job created successfully."
     else
       render 'new'
     end

@@ -16,12 +16,13 @@
     </nav>
   </header>
 
+
 <div class="row isotope-container">
 <% @vehicle.each do |vehicle| %>
   <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 isotope-item">
     <div class="panel panel-default">
       <div class="panel-heading">
-        <h3 class="panel-title">Vehicle #<%= '#{vehicle.id}' %></h3>
+        <h3 class="panel-title">Vehicle</h3>
       </div>
       <div class="panel-body">
         <dl>
@@ -42,10 +43,15 @@
           <dd><%= vehicle.personal_usage %></dd>
 
           <td><%= link_to 'Show', "/vehicles/#{vehicle.id}" %></td>
-          <td><%= link_to 'Edit', edit_vehicle_url(vehicle) %></td>
+          <td><%= link_to 'Edit', "edit_vehicle_url(vehicle)" %></td>
           <td><%= link_to 'Destroy', "/vehicles/#{vehicle.id}", method: :delete %></td>
 
         </dl>
         <div class="btn-group btn-group-justified">
         </div>
 <% end %>
+   </div>
+  </div>
+ </div>
+</div>
+

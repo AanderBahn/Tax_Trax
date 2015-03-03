@@ -1,6 +1,20 @@
-<div class="page-header">
-  <h1>Trips</h1>
-</div>
+<header>
+    <nav class="main-nav">
+      <ul>
+        <li class="nav-left">
+          <a class ="back" href="/">Back</a>
+        </li>
+        <li class="nav-center">
+          <h1 class="screen-title">
+            Driving Log
+          </h1>
+        </li>
+        <li>
+         <a class="nav-right" href="#"></a>
+        </li>
+      </ul>
+    </nav>
+  </header>
 
 <p><a href="/trips/new" class="btn btn-primary">Add a New Trip</a></p>
 
@@ -20,10 +34,10 @@
   <tbody>
     <% @trips.each do |trip| %>
       <tr>
-        <td><%= trip.job_id %></td>
-        <td><%= trip.shift_hours_ %></td>
-        <td><%= trip.starting_odometer %></td>
-        <td><%= trip.ending_odometer %></td>
+        <td><%= @trip.job_id %></td>
+        <td><%= @trip.shift_hours %></td>
+        <td><%= @trip.starting_odometer %></td>
+        <td><%= @trip.ending_odometer %></td>
         <td>
           <a href="/trips/<%= trip.id %>" class="btn btn-primary">
             <i class="fa fa-search-plus"></i>

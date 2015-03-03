@@ -1,0 +1,37 @@
+<header>
+    <nav class="main-nav">
+      <ul>
+        <li class="nav-left">
+          <a class ="back" href="/jobs">Back</a>
+        </li>
+        <li class="nav-center">
+          <h1 class="screen-title">
+            Job #<%= @job.id %>
+          </h1>
+        </li>
+        <li>
+         <a class="nav-right"></a>
+        </li>
+      </ul>
+    </nav>
+  </header>
+
+<div class="panel panel-default">
+      <div class="panel-heading">
+        <h3 class="panel-title">Job #<%= @job.id %></h3>
+      </div>
+      <div class="panel-body">
+        <dl>
+
+          <dt>Company</dt>
+          <dd><%= @job.name %></dd>
+
+          <dt>Industry</dt>
+          <dd><%= @job.industry %></dd>
+
+          <dt>Daliy Commute</dt>
+          <dd><%= @job.daily_commute %></dd>
+
+        </dl>
+        <div class="btn-group btn-group-justified">
+        </div>
