@@ -18,6 +18,10 @@ class TripsController < ApplicationController
     end
   end
 
+  def index
+    @trip = Trip.all
+  end
+
   def show
     @trip = Trip.find(params[:id])
   end
@@ -42,7 +46,7 @@ class TripsController < ApplicationController
   end
 
   def my_trips
-
+   @trip = Trip.all
   end
 
 end

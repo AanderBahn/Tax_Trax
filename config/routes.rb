@@ -17,11 +17,12 @@ Rails.application.routes.draw do
 
   # TRIPS
 
-  #resources :trips
-  get  "/trips/new"          => "trips#new"
-  post "/trips"              => "trips#create"
+  resources :trips
+  #get  "/jobs/index"        => "jobs#index"
+  #get  "/trips/new"          => "trips#new"
+  #post "/trips"              => "trips#create"
   get  "/trips/:id"          => "trips#show"
-  get  "/trips/:id/edit"     => "trips#edit"
+  #get  "/trips/:id/edit"     => "trips#edit"
   post "/trips/:id"          => "trips#update"
   get  "/trips/:id/confirm"  => "trips#confirm"
   get  "/my_trips"           => "trips#my_trips"

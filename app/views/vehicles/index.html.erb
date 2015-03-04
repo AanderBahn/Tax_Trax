@@ -16,7 +16,7 @@
     </nav>
   </header>
 
-
+<main>
 <div class="row isotope-container">
 <% @vehicle.each do |vehicle| %>
   <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 isotope-item">
@@ -43,7 +43,7 @@
           <dd><%= vehicle.personal_usage %></dd>
 
           <td><%= link_to 'Show', "/vehicles/#{vehicle.id}" %></td>
-          <td><%= link_to 'Edit', "edit_vehicle_url(vehicle)" %></td>
+          <td><%= link_to 'Edit', "/vehicles/#{vehicle.id}/edit" %></td>
           <td><%= link_to 'Destroy', "/vehicles/#{vehicle.id}", method: :delete %></td>
 
         </dl>
@@ -54,4 +54,4 @@
   </div>
  </div>
 </div>
-
+</main>
