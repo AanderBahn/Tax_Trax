@@ -1,51 +1,46 @@
 <header>
-    <nav class="main-nav">
-      <ul>
-        <li class="nav-left">
-          <a class ="back" href="/">Back</a>
-        </li>
-        <li class="nav-center">
-          <h1 class="screen-title">
-            Your Jobs
-          </h1>
-        </li>
-        <li>
-         <a class="nav-right" href="/jobs/new">Add New Job</a>
-        </li>
-      </ul>
-    </nav>
-  </header>
+  <nav class="main-nav">
+    <ul>
+      <li class="nav-left">
+        <a class ="back" href="/">Back</a>
+      </li>
+      <li class="nav-center">
+        <h1 class="screen-title">
+          Your Jobs
+        </h1>
+      </li>
+      <li>
+        <a class="nav-right" href="/jobs/new">Add New Job</a>
+      </li>
+    </ul>
+  </nav>
+</header>
+<main>
+</main>
 
 <main>
-<div class="row isotope-container">
-<% @job.each do |job| %>
-  <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 isotope-item">
-    <div class="panel panel-default">
-      <div class="panel-heading">
-        <h3 class="panel-title">Job #<%= job.id %></h3>
-      </div>
-      <div class="panel-body">
-        <dl>
-
-          <dt>Company</dt>
-          <dd><%= job.name %></dd>
-
-          <dt>Industry</dt>
-          <dd><%= job.industry %></dd>
-
-          <dt>Daliy Commute</dt>
-          <dd><%= job.daily_commute %></dd>
-
-          <td><%= link_to 'Show',    "/jobs/#{job.id}" %></td>
-          <td><%= link_to 'Edit',    "/jobs/#{job.id}/edit" %></td>
-          <td><%= link_to 'Destroy', "/jobs/#{job.id}", method: :delete %></td>
-
-        </dl>
-        <div class="btn-group btn-group-justified">
+  <div class="row isotope-container">
+    <% @job.each do |job| %>
+      <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 isotope-item">
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h3 class="panel-title">Job #<%= job.id %></h3>
+          </div>
+          <div class="panel-body">
+            <dl>
+              <dt>Company</dt>
+              <dd><%= job.name %></dd>
+              <dt>Industry</dt>
+              <dd><%= job.industry %></dd>
+              <dt>Daliy Commute</dt>
+              <dd><%= job.daily_commute %></dd>
+              <dt><%= link_to 'Show',    "/jobs/#{job.id}" %></dt>
+              <dt><%= link_to 'Edit',    "/jobs/#{job.id}/edit" %></dt>
+              <dt><%= link_to 'Destroy', "/jobs/#{job.id}", method: :delete %></dt>
+            </dl>
+          </div>
         </div>
       </div>
-     </div>
-    </div>
+    <% end %>
   </div>
-<% end %>
 </main>
