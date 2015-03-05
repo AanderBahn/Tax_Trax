@@ -31,7 +31,7 @@
             id="odometer"
             placeholder="<%= @trip.starting_odometer %>"
             name="ending_odometer"
-            min="0" />
+            min="<%= @trip.starting_odometer %>" />
         </fieldset>
 
         <fieldset class="formAction">

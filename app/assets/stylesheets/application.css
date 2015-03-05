@@ -19,6 +19,22 @@
 
 /* SHARED ELEMENTS */
 
+.modalDialog {
+  position: fixed;
+  font-family: Arial, Helvetica, sans-serif;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: rgba(0,0,0,0.8);
+  z-index: 99999;
+  opacity:0;
+  -webkit-transition: opacity 400ms ease-in;
+  -moz-transition: opacity 400ms ease-in;
+  transition: opacity 400ms ease-in;
+  pointer-events: none;
+}
+
 main, .panel, .panel-default, .col-xs-12, .col-sm-6, .col-md-4, .col-lg-3, .isotope-item {
   margin: auto;
 }
