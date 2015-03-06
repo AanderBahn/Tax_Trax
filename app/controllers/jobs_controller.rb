@@ -17,7 +17,7 @@ def new
   end
 
   def index
-    @job = Job.all
+    @job = current_user.jobs
   end
 
   def show

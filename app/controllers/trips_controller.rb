@@ -46,7 +46,7 @@ class TripsController < ApplicationController
   end
 
   def my_trips
-   @trip = Trip.all
+   @trip = current_user.trips
   end
 
 end
