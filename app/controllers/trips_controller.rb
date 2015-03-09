@@ -47,7 +47,7 @@ class TripsController < ApplicationController
 
     @trip.destroy
 
-    render 'my_trips', :notice => "Trip deleted."
+    redirect_to my_trips_url, :notice => "Trip deleted."
   end
 
   def confirm
