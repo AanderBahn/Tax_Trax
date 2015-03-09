@@ -9,6 +9,7 @@ class TripsController < ApplicationController
     @trip = Trip.new
     @trip.job_id = params[:job_id]
     @trip.shift_hours = params[:shift_hours]
+    @trip.vehicle_id = params[:vehicle_id]
     @trip.starting_odometer = params[:starting_odometer]
 
     if @trip.save
@@ -39,6 +40,14 @@ class TripsController < ApplicationController
     else
       render :edit
     end
+  end
+
+  def destroy
+    @trip = Trip.find(params[:id])
+
+    @trip.destroy
+
+    render 'my_trips', :notice => "Trip deleted."
   end
 
   def confirm

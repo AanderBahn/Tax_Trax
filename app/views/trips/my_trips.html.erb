@@ -6,44 +6,48 @@
         </li>
         <li class="nav-center">
           <h1 class="screen-title">
-            Your Vehicles
+            Your Trips
           </h1>
         </li>
         <li>
-         <a class="nav-right" href="/vehicles/new">Add New Vehicle</a>
+         <a class="nav-right" href="#"></a>
         </li>
       </ul>
     </nav>
   </header>
 
+
+
 <main>
 <div class="row isotope-container">
-<% @vehicles.each do |vehicle| %>
+<% @trip.each do |trip| %>
   <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 isotope-item">
     <div class="panel panel-default">
       <div class="panel-heading">
-        <h3 class="panel-title">Vehicle</h3>
+        <h3 class="panel-title">Trips</h3>
       </div>
       <div class="panel-body">
         <dl>
 
-          <dt>Make & Model</dt>
-          <dd><%= vehicle.make_model %></dd>
+          <dt>Company</dt>
+          <dd><%= trip.job.name %></dd>
 
-          <dt>Year</dd>
-          <dd><%= vehicle.year %></dd>
+          <dt>Miles</dd>
+          <dd><%= trip.miles %></dd>
+
+          <dt>Vehicle</dd>
+          <dd><%= trip.vehicle.make_model %></dd>
 
           <dt>Starting Odometer</dd>
-          <dd><%= vehicle.starting_odometer %></dd>
+          <dd><%= trip.starting_odometer %></dd>
 
-          <dt>Personal usage</dd>
-          <dd><%= vehicle.personal_usage %></dd>
+          <dt>Ending Odometer</dd>
+          <dd><%= trip.ending_odometer %></dd>
 
           <br>
 
-          <td><%= link_to 'Show', "/vehicles/#{vehicle.id}" %></td>
-          <td><%= link_to 'Edit', "/vehicles/#{vehicle.id}/edit" %></td>
-          <td><%= link_to 'Destroy', "/vehicles/#{vehicle.id}", method: :delete %></td>
+          <%= link_to 'Edit', "/trips/#{trip.id}/edit" %>
+          <%= link_to 'Destroy', "/trips/#{trip.id}", method: :delete %>
 
         </dl>
         <div class="btn-group btn-group-justified">

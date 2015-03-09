@@ -39,6 +39,18 @@
       </fieldset>
 
       <fieldset>
+        <label for="vehicle">
+          Which vehicle are you driving?
+        </label>
+
+        <select id="vehicle" name="vehicle_id" required>
+          <% current_user.vehicles.each do |vehicle| %>
+            <option value="<%= vehicle.id %>"><%= vehicle.make_model %></option>
+          <% end %>
+        </select>
+      </fieldset>
+
+      <fieldset>
         <label for="odometer">
           What's your starting odometer?
         </label>

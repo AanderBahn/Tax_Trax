@@ -1,6 +1,6 @@
 class Trip < ActiveRecord::Base
   belongs_to :job
-  belongs_to :vehicles
+  belongs_to :vehicle
   has_one    :user, through: :job
 
   validates :job_id, presence: true

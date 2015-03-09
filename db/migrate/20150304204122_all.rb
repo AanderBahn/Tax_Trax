@@ -42,8 +42,7 @@ class All < ActiveRecord::Migration
 
     create_table "vehicles", force: true do |t|
       t.integer  "user_id"
-      t.string   "make"
-      t.string   "cmodel"
+      t.string   "make_model"
       t.integer  "year"
       t.string   "starting_odometer"
       t.boolean  "personal_usage"
