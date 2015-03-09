@@ -15,16 +15,16 @@
     </nav>
   </header>
 
-<a href="#openModal">Open Modal</a>
-
-<div id="openModal" class="modalDialog">
-  <div>
-    <a href="#close" title="Close" class="close">X</a>
-    <h2>Welcome to Tax Trax</h2>
-    <p>To get started, before you drive, click on the Job and Vehicle info to add
+<% if current_user.sign_in_count == 1 %>
+ <div id="triggerModal" class="modalDialog">
+   <div>
+     <a href="#triggerModal" title="Close" class="close">X</a>
+     <h2>Welcome to Tax Trax</h2>
+     <p>To get started, before you drive, click on the Job and Vehicle info to add
        add information to get started.</p>
-  </div>
-</div>
+   </div>
+ </div>
+ <% end %>
 
 <ul>
   <li><a href="/trips/new">New Trip</a></li>
@@ -33,8 +33,3 @@
   <li><a href="/my_trips">Driving Log</a></li>
   <li><a href="#">File for Taxes</a></li>
 </ul>
-
-<a href="#openModal">Open Modal</a>
-
-<div id="openModal" class="modalDialog">
-</div>

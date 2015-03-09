@@ -16,7 +16,9 @@
 /* FONTS */
 
 @import url(http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,400);
-
+dl {
+ text-align: left;
+}
 /* SHARED ELEMENTS */
 
 .modalDialog {
@@ -28,16 +30,16 @@
   left: 0;
   background: rgba(0,0,0,0.8);
   z-index: 99999;
-  opacity:0;
+  opacity:1;
   -webkit-transition: opacity 400ms ease-in;
   -moz-transition: opacity 400ms ease-in;
   transition: opacity 400ms ease-in;
-  pointer-events: none;
+  pointer-events: auto;
 }
 
 .modalDialog:target {
-  opacity:1;
-  pointer-events: auto;
+  opacity:0;
+  pointer-events: none;
 }
 
 .modalDialog > div {
@@ -191,7 +193,8 @@ input[type="date"],
 input[type="number"],
 #passwordSignIn,
 #emailSignIn,
-input {
+input,
+dd {
   background: #FFF;
   border-radius: 0;
   border: 1px solid #CCCCCC;

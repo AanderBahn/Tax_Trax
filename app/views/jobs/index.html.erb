@@ -26,7 +26,10 @@
           <div class="panel-heading">
             <h3 class="panel-title">Job #<%= job.id %></h3>
           </div>
+
           <div class="panel-body">
+           <div class="form-group">
+           <div class="col-sm-10">
             <dl>
               <dt>Company</dt>
               <dd><%= job.name %></dd>
@@ -34,11 +37,14 @@
               <dd><%= job.industry %></dd>
               <dt>Daliy Commute</dt>
               <dd><%= job.daily_commute %></dd>
-              <dt><%= link_to 'Show',    "/jobs/#{job.id}" %></dt>
-              <dt><%= link_to 'Edit',    "/jobs/#{job.id}/edit" %></dt>
-              <dt><%= link_to 'Destroy', "/jobs/#{job.id}", method: :delete %></dt>
+              <td><%= link_to 'Show',    "/jobs/#{job.id}" %></td>
+              <td><%= link_to 'Edit',    "/jobs/#{job.id}/edit" %></td>
+              <td><%= link_to 'Destroy', "/jobs/#{job.id}", method: :delete %></td>
             </dl>
+           </div>
+           </div>
           </div>
+
         </div>
       </div>
     <% end %>
