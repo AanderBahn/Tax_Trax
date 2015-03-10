@@ -1,0 +1,107 @@
+  <style>
+  table, th, tr, td {
+  outline: 1px solid black;
+  }
+
+  table {
+   text-align: left;
+  }
+  </style>
+<body>
+  <div id="wrapper">
+
+    <header>
+      <nav class="main-nav">
+        <ul>
+          <li class="nav-left">
+            <a href="/">Back</a>
+          </li>
+          <li class="nav-center">
+            <h1 class="screen-title">
+              Vehicle Expense
+            </h1>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+     <table style="width:100%">
+  <tr>
+    <th>Section A-General Information (You must complete this section if you are calming vehicle expenses.)</th>
+    <td></td>
+    <th>(a) Vehicle</th>
+    <th>(b) Vehicle</th>
+  </tr>
+  <tr>
+    <td>11. Enter the date the vehicle was placed in service</td>
+    <td>11</td>
+    <td><%= @user.vehicle.created_at %></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>12. Total miles vehicle was driven during 2014</td>
+    <td>12</td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>13. Business miles included on line 12</td>
+    <td>13</td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>14. Percent of business use. Divide line 13 by line 12</td>
+    <td>14</td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>15. Average daily roundtrip commuting distance</td>
+    <td>15</td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>16. Commuting miles included on line 12</td>
+    <td>16</td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>17. Other miles. Add lines 13 and 16 and subtract the total from line 12</td>
+    <td>17</td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>18. Was your vehicle available for personal use during off-duty hours?</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>19. Do you or your spouce have another vehicle availble for personal use?</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>20. Do you have evidence to support your deduction?</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>21. If "Yes", is the evidence written?</td>
+    <td></td>
+  </tr>
+  <tr>
+  <th>Section B -Standard Mileage Rate</th>
+  </tr>
+  <tr>
+  <td>22. Multiply line 13 by .56 cents(.56)</td>
+  <td></td>
+  </tr>
+</table>
+
+</body>
+</html>
+    </main>
+  </div>
+</body>

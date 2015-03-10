@@ -4,6 +4,8 @@ Rails.application.routes.draw do
 
   # Routes for Static Pages
   get "/mainmenu", :controller => 'static_pages', :action => 'mainmenu', :as => 'main_menu'
+  get "/mileagefilingdisplay"  => 'static_pages#mileagefilingdisplay'
+  get "/disclaimer_filing"     => 'static_pages#disclaimer_filing'
 
   # Routes for the User resource:
   # USERS
