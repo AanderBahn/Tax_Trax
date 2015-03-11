@@ -20,14 +20,19 @@ Rails.application.routes.draw do
   # TRIPS
 
   resources :trips
-  #get  "/jobs/index"        => "jobs#index"
+  #get  "/jobs/index"         => "jobs#index"
   #get  "/trips/new"          => "trips#new"
   #post "/trips"              => "trips#create"
-  get  "/trips/:id"          => "trips#show"
+  get  "/trips/:id"           => "trips#show"
   #get  "/trips/:id/edit"     => "trips#edit"
-  post "/trips/:id"          => "trips#update"
-  get  "/trips/:id/confirm"  => "trips#confirm"
-  get  "/my_trips"           => "trips#my_trips"
+  post "/trips/:id"           => "trips#update"
+  get  "/trips/:id/confirm"   => "trips#confirm"
+  get  "/my_trips"            => "trips#my_trips"
+  get  "/filing1"             => "trips#filing1"
+  get  "/filing2"             => "trips#filing2"
+  get  "/filing3"             => "trips#filing3"
+  get "/mileagefilingdisplay" => 'trips#mileagefilingdisplay'
+
 
   #Vehicle
   resources :vehicles

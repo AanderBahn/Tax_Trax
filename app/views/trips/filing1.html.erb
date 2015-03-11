@@ -1,0 +1,79 @@
+<header>
+      <nav class="main-nav">
+        <ul>
+          <li class="nav-left">
+            <a href="/">Back</a>
+          </li>
+          <li class="nav-center">
+            <h1 class="screen-title">
+              Filing 1 0f 3
+            </h1>
+          </li>
+          <li class="nav-right">
+          </li>
+        </ul>
+      </nav>
+</header>
+
+<main>
+ <fieldset>
+  <label for="year_end_odometer">
+   What is your odometer for the years end?
+  </label>
+
+   <input type="number" id="odometer" name="year_end_odometer" placeholder="Enter ending mileage for the year" required/>
+  </select>
+ </fieldset>
+
+ <fieldset>
+  <label for="daily_commute">
+   What is your daily round trip commute?
+  </label>
+
+   <input type="number" id="round_trip_commute" name="daily_commute" placeholder="Enter average daily commuting miles." required/>
+  </select>
+ </fieldset>
+
+ <fieldset>
+  <label for="car_available_offduty">
+   Was your vehicle availble for personal use during off-duty hours?
+  </label>
+   <input type="radio" name="offdutyuse" value="true">True<br>
+   <input type="radio" name="offdutyuse" value="false">False
+  </select>
+ </fieldset>
+
+ <fieldset>
+  <label for="another_car_available">
+   Did you (or your spouse) have another vehicle available for personal use?
+  </label>
+   <input type="radio" name="another_car_available" value="true">True<br>
+   <input type="radio" name="another_car_available" value="false">False
+  </select>
+ </fieldset>
+
+ <fieldset>
+  <label for="other_evidence">
+   Aside from Tax Trax, do you have evidence to support your deduction?
+  </label>
+   <input type="radio" name="other_evidence" value="true">True<br>
+   <input type="radio" name="other_evidence" value="false">False
+  </select>
+ </fieldset>
+
+ <fieldset>
+  <label for="evidence_written">
+   If you have other evidence, is it written?
+  </label>
+   <input type="radio" name="evidence_written" value="true">True<br>
+   <input type="radio" name="evidence_written" value="false">False
+  </select>
+ </fieldset>
+
+ <fieldset class="formAction">
+  <input
+   type="submit"
+   value="Submit"
+   class="btn btn-success btn-block" />
+ </fieldset>
+</main>

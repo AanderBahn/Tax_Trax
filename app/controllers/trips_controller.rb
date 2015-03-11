@@ -58,4 +58,16 @@ class TripsController < ApplicationController
    @trip = current_user.trips
   end
 
+  def mileagefilingdisplay
+  end
+
+  def filing1
+  end
+
+  def filing2
+  end
+
+  def filing3
+  end
+
 end
