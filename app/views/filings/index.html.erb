@@ -1,0 +1,39 @@
+<h1>Listing filings</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Year end odometer</th>
+      <th>Average daily commute</th>
+      <th>Personal use off duty</th>
+      <th>Another vehicle personal</th>
+      <th>Has evidence</th>
+      <th>Written evidence</th>
+      <th>User</th>
+      <th>For year</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @filings.each do |filing| %>
+      <tr>
+        <td><%= filing.year_end_odometer %></td>
+        <td><%= filing.average_daily_commute %></td>
+        <td><%= filing.personal_use_off_duty %></td>
+        <td><%= filing.another_vehicle_personal %></td>
+        <td><%= filing.has_evidence %></td>
+        <td><%= filing.written_evidence %></td>
+        <td><%= filing.user %></td>
+        <td><%= filing.for_year %></td>
+        <td><%= link_to 'Show', filing %></td>
+        <td><%= link_to 'Edit', edit_filing_path(filing) %></td>
+        <td><%= link_to 'Destroy', filing, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Filing', new_filing_path %>

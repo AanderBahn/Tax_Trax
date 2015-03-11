@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  year_end_odometer: 1
+  average_daily_commute: 1.5
+  personal_use_off_duty: false
+  another_vehicle_personal: false
+  has_evidence: false
+  written_evidence: false
+  user_id: 
+  for_year: 1
+
+two:
+  year_end_odometer: 1
+  average_daily_commute: 1.5
+  personal_use_off_duty: false
+  another_vehicle_personal: false
+  has_evidence: false
+  written_evidence: false
+  user_id: 
+  for_year: 1

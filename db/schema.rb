@@ -11,7 +11,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150309161819) do
+ActiveRecord::Schema.define(version: 20150311171038) do
+
+  create_table "filings", force: true do |t|
+    t.integer  "year_end_odometer"
+    t.float    "average_daily_commute"
+    t.boolean  "personal_use_off_duty"
+    t.boolean  "another_vehicle_personal"
+    t.boolean  "has_evidence"
+    t.boolean  "written_evidence"
+    t.integer  "user_id"
+    t.integer  "for_year"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "filings", ["user_id"], name: "index_filings_on_user_id"
 
   create_table "jobs", force: true do |t|
     t.integer  "user_id"

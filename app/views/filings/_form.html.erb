@@ -1,0 +1,59 @@
+<%= form_for(@filing) do |f| %>
+  <% if @filing.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@filing.errors.count, "error") %> prohibited this filing from being saved:</h2>
+
+      <ul>
+      <% @filing.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= f.label :for_year %><br>
+    <%= f.number_field :for_year %>
+  </div>
+  <br>
+  <hr>
+  <div class="form-group">
+    <%= f.label :year_end_odometer %><br>
+    <%= f.number_field :year_end_odometer %>
+  </div>
+  <br>
+  <hr>
+  <div class="form-group">
+    <%= f.label :average_daily_commute %><br>
+    <%= f.text_field :average_daily_commute %>
+  </div>
+  <br>
+  <hr>
+  <div class="form-group">
+    <%= f.label :personal_use_off_duty %><br>
+    <%= f.check_box :personal_use_off_duty %>
+  </div>
+  <br>
+  <hr>
+  <div class="form-group">
+    <%= f.label :another_vehicle_personal %><br>
+    <%= f.check_box :another_vehicle_personal %>
+  </div>
+  <br>
+  <hr>
+  <div class="form-group">
+    <%= f.label :has_evidence %><br>
+    <%= f.check_box :has_evidence %>
+  </div>
+  <br>
+  <hr>
+  <div class="form-group">
+    <%= f.label :written_evidence %><br>
+    <%= f.check_box :written_evidence %>
+  </div>
+  <br>
+  <hr>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

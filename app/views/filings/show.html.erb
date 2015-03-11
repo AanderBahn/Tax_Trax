@@ -1,0 +1,70 @@
+<h2>You told us:</h2>
+<p>
+  <strong>Year end odometer:</strong>
+  <%= @filing.year_end_odometer %>
+</p>
+
+<p>
+  <strong>Average daily commute:</strong>
+  <%= @filing.average_daily_commute %>
+</p>
+
+<p>
+  <strong>Personal use off duty:</strong>
+  <%= @filing.personal_use_off_duty %>
+</p>
+
+<p>
+  <strong>Another vehicle personal:</strong>
+  <%= @filing.another_vehicle_personal %>
+</p>
+
+<p>
+  <strong>Has evidence:</strong>
+  <%= @filing.has_evidence %>
+</p>
+
+<p>
+  <strong>Written evidence:</strong>
+  <%= @filing.written_evidence %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @filing.user_id %>
+</p>
+
+<p>
+  <strong>For year:</strong>
+  <%= @filing.for_year %>
+</p>
+
+<%= link_to 'Edit', edit_filing_path(@filing) %> |
+<%= link_to 'Back', filings_path %>
+
+<h2>So, we calculate:</h2>
+
+<dl>
+  <dt>Date placed in service (date of oldest trip):</dt>
+  <!-- TODO: scope this down to year of filing -->
+  <dd><%= @filing.user.trips.order("created_at ASC").first.created_at.strftime('%Y') %></dd>
+
+  <dt>Total miles vehicle was driven</dt>
+  <!-- TODO: switch Vehicle starting_odometer column datatype to integer///- - @filing.user.vehicles  -->
+  <dd><%= @filing.year_end_odometer - @filing.user.vehicles.starting_odometer %></dd>
+
+
+  <dt>Business miles included in total miles</dt>
+  <dd><%= @filing.user.trips.miles  %></dd>
+
+  <dt>Commuting miles included in total miles</dt>
+  <dd><%= @filing.user.trips.count * @filing.average_daily_commute %></dd>
+
+  <dt>Other miles</dt>
+  <dd><%= (@filing.year_end_odometer - @filing.user.vehicles.starting_odometer) - (@filing.user.trips.miles + (@filing.user.trips.count * @filing.average_daily_commute)) %></dd>
+
+    <!-- Move the year_end_odometer column to the vehicles table -->
+
+
+</dl>
+
