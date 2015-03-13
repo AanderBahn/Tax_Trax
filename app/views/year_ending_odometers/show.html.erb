@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Year:</strong>
+  <%= @year_ending_odometer.year %>
+</p>
+
+<p>
+  <strong>Reading:</strong>
+  <%= @year_ending_odometer.reading %>
+</p>
+
+<p>
+  <strong>Vehicle:</strong>
+  <%= @year_ending_odometer.vehicle %>
+</p>
+
+<%= link_to 'Edit', edit_year_ending_odometer_path(@year_ending_odometer) %> |
+<%= link_to 'Back', year_ending_odometers_path %>

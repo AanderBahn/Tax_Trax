@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150311171038) do
+ActiveRecord::Schema.define(version: 20150313164434) do
 
   create_table "filings", force: true do |t|
     t.integer  "year_end_odometer"
@@ -78,5 +78,15 @@ ActiveRecord::Schema.define(version: 20150311171038) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "year_ending_odometers", force: true do |t|
+    t.integer  "year"
+    t.integer  "reading"
+    t.integer  "vehicle_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "year_ending_odometers", ["vehicle_id"], name: "index_year_ending_odometers_on_vehicle_id"
 
 end

@@ -1,0 +1,29 @@
+<h1>Listing year_ending_odometers</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Year</th>
+      <th>Reading</th>
+      <th>Vehicle</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @year_ending_odometers.each do |year_ending_odometer| %>
+      <tr>
+        <td><%= year_ending_odometer.year %></td>
+        <td><%= year_ending_odometer.reading %></td>
+        <td><%= year_ending_odometer.vehicle %></td>
+        <td><%= link_to 'Show', year_ending_odometer %></td>
+        <td><%= link_to 'Edit', edit_year_ending_odometer_path(year_ending_odometer) %></td>
+        <td><%= link_to 'Destroy', year_ending_odometer, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Year ending odometer', new_year_ending_odometer_path %>

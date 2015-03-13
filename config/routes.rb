@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :year_ending_odometers
+
   resources :filings
 
   devise_for :users
