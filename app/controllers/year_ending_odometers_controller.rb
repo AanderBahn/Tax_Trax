@@ -23,7 +23,7 @@ class YearEndingOdometersController < ApplicationController
   def create
     @year_ending_odometer = YearEndingOdometer.new(year_ending_odometer_params)
     @year_ending_odometer.save
-    respond_with(@year_ending_odometer)
+    redirect_to :back
   end
 
   def update

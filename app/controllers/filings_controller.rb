@@ -43,6 +43,6 @@ class FilingsController < ApplicationController
     end
 
     def filing_params
-      params.require(:filing).permit(:year_end_odometer, :average_daily_commute, :personal_use_off_duty, :another_vehicle_personal, :has_evidence, :written_evidence, :user_id, :for_year)
+      params.require(:filing).permit(:average_daily_commute, :personal_use_off_duty, :another_vehicle_personal, :has_evidence, :written_evidence, :user_id, :for_year)
     end
 end

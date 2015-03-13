@@ -1,8 +1,4 @@
 <h2>You told us:</h2>
-<p>
-  <strong>Year end odometer:</strong>
-  <%= @filing.year_end_odometer %>
-</p>
 
 <p>
   <strong>Average daily commute:</strong>
@@ -42,51 +38,58 @@
 <%= link_to 'Edit', edit_filing_path(@filing) %> |
 <%= link_to 'Back', filings_path %>
 
-<h2>And the trips you logged were:</h2>
+<% current_user.vehicles.each do |vehicle| %>
+  <h1><%= vehicle.make_model %></h1>
+  <h2>Starting: <%= vehicle.starting_odometer %></h2>
+  <h2>Year Ending: <%= vehicle_year_ending_odometer = vehicle.year_ending_odometers.find_by(:year => @filing.for_year).reading %></h2>
 
-<table>
-  <tr>
-    <th>ID</th>
-    <th>Starting Odometer</th>
-    <th>Ending Odometer</th>
-    <th>Trip Miles</th>
-    <th>Grand Total Trip Miles</th>
-  </tr>
-<% total_trip_miles = 0 %>
-<% current_user.trips.each do |trip| %>
-  <tr>
-    <td><%= trip.id %></td>
-    <td><%= trip.starting_odometer %></td>
-    <td><%= trip.ending_odometer %></td>
-    <td><%= trip.ending_odometer - trip.starting_odometer %></td>
-    <td><%= total_trip_miles = total_trip_miles + (trip.ending_odometer - trip.starting_odometer) %></td>
-  </tr>
+
+  <h2>And the trips you logged were:</h2>
+
+  <table>
+    <tr>
+      <th>ID</th>
+      <th>Starting Odometer</th>
+      <th>Ending Odometer</th>
+      <th>Trip Miles</th>
+      <th>Grand Total Trip Miles</th>
+    </tr>
+  <% total_trip_miles = 0 %>
+  <% vehicle.trips.each do |trip| %>
+    <tr>
+      <td><%= trip.id %></td>
+      <td><%= trip.starting_odometer %></td>
+      <td><%= trip.ending_odometer %></td>
+      <td><%= trip.ending_odometer - trip.starting_odometer %></td>
+      <td><%= total_trip_miles = total_trip_miles + (trip.ending_odometer - trip.starting_odometer) %></td>
+    </tr>
+  <% end %>
+  </table>
+
+  <h2>So, we calculate:</h2>
+
+  <dl>
+    <dt>Date placed in service (date of oldest trip):</dt>
+    <!-- TODO: scope this down to year of filing -->
+    <dd><%= @filing.user.trips.order("created_at ASC").first.created_at.strftime('%Y') %></dd>
+
+    <dt>Total miles vehicle was driven</dt>
+    <!-- TODO: switch Vehicle starting_odometer column datatype to integer///- - @filing.user.vehicles  -->
+    <dd><%= total_miles_driven = vehicle_year_ending_odometer - vehicle.starting_odometer.to_i %></dd>
+
+    <!-- first car starting: <%= @filing.user.vehicles.first.starting_odometer.to_i %> -->
+
+    <dt>Business miles included in total miles</dt>
+    <dd><%= total_trip_miles %></dd>
+
+    <dt>Commuting miles included in total miles</dt>
+    <dd><%= commuting_miles = @filing.user.trips.count * @filing.average_daily_commute %></dd>
+
+    <dt>Other miles</dt>
+    <dd><%= total_miles_driven - (total_trip_miles + commuting_miles) %></dd>
+
+  </dl>
 <% end %>
-</table>
-
-<h2>So, we calculate:</h2>
-
-<dl>
-  <dt>Date placed in service (date of oldest trip):</dt>
-  <!-- TODO: scope this down to year of filing -->
-  <dd><%= @filing.user.trips.order("created_at ASC").first.created_at.strftime('%Y') %></dd>
-
-  <dt>Total miles vehicle was driven</dt>
-  <!-- TODO: switch Vehicle starting_odometer column datatype to integer///- - @filing.user.vehicles  -->
-  <dd><%= total_miles_driven = @filing.year_end_odometer - @filing.user.vehicles.first.starting_odometer.to_i %></dd>
-
-  <!-- first car starting: <%= @filing.user.vehicles.first.starting_odometer.to_i %> -->
-
-  <dt>Business miles included in total miles</dt>
-  <dd><%= total_trip_miles %></dd>
-
-  <dt>Commuting miles included in total miles</dt>
-  <dd><%= commuting_miles = @filing.user.trips.count * @filing.average_daily_commute %></dd>
-
-  <dt>Other miles</dt>
-  <dd><%= total_miles_driven - (total_trip_miles + commuting_miles) %></dd>
-
-</dl>
 
 
 

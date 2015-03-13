@@ -11,10 +11,9 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150313164434) do
+ActiveRecord::Schema.define(version: 20150313165828) do
 
   create_table "filings", force: true do |t|
-    t.integer  "year_end_odometer"
     t.float    "average_daily_commute"
     t.boolean  "personal_use_off_duty"
     t.boolean  "another_vehicle_personal"

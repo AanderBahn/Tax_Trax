@@ -21,7 +21,7 @@
   </div>
   <div class="field">
     <%= f.label :vehicle_id %><br>
-    <%= f.text_field :vehicle_id %>
+    <%= f.collection_select :vehicle_id, current_user.vehicles, :id, :make_model %>
   </div>
   <div class="actions">
     <%= f.submit %>

@@ -37,6 +37,30 @@
           <dt>Personal usage</dt>
           <dd><%= @vehicle.personal_usage %></dd>
 
+          <dt>Year Ending Odometer Readings</dt>
+          <dd>
+            <table>
+              <tr>
+                <th>Year</th>
+                <th>Reading</th>
+              </tr>
+              <% @vehicle.year_ending_odometers.order("year ASC").each do |year_ending_odometer| %>
+              <tr>
+                <td><%= year_ending_odometer.year %></td>
+                <td><%= year_ending_odometer.reading %></td>
+              </tr>
+              <% end %>
+            </table>
+            <%= form_for YearEndingOdometer.new(:vehicle => @vehicle) do |f| %>
+              <%= f.hidden_field :vehicle_id %>
+              <%= f.label :year %>
+              <%= f.number_field :year, :placeholder => "What year?" %>
+              <%= f.label :reading %>
+              <%= f.number_field :reading, :placeholder => "What is the reading?" %>
+              <%= f.submit %>
+            <% end %>
+          </dd>
+
         </dl>
         <div class="btn-group btn-group-justified">
         </div>

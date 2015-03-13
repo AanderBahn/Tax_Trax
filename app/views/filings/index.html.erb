@@ -3,7 +3,6 @@
 <table>
   <thead>
     <tr>
-      <th>Year end odometer</th>
       <th>Average daily commute</th>
       <th>Personal use off duty</th>
       <th>Another vehicle personal</th>
@@ -18,7 +17,6 @@
   <tbody>
     <% @filings.each do |filing| %>
       <tr>
-        <td><%= filing.year_end_odometer %></td>
         <td><%= filing.average_daily_commute %></td>
         <td><%= filing.personal_use_off_duty %></td>
         <td><%= filing.another_vehicle_personal %></td>
