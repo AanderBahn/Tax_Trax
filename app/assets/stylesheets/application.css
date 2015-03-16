@@ -194,8 +194,7 @@ input[type="number"],
 #passwordSignIn,
 #emailSignIn,
 input,
-dd,
-ul li {
+dd {
   background: #FFF;
   border-radius: 0;
   border: 1px solid #CCCCCC;
@@ -300,6 +299,17 @@ ul {
 }
 
 
+/* Main Menu */
+#mainmenuoptions {
+  background: #FFF;
+  border-radius: 0;
+  width: 100%;
+  font-size: 20px;
+  padding: 8px 12px;
+  margin: 10px 0;
+}
 
-
-
+#mainmenuoptions li {
+  list-style: none;
+  margin: 10px 0;
+}

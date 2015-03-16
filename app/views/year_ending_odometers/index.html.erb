@@ -15,7 +15,7 @@
       <tr>
         <td><%= year_ending_odometer.year %></td>
         <td><%= year_ending_odometer.reading %></td>
-        <td><%= year_ending_odometer.vehicle %></td>
+        <td><%= year_ending_odometer.vehicle.make_model %></td>
         <td><%= link_to 'Show', year_ending_odometer %></td>
         <td><%= link_to 'Edit', edit_year_ending_odometer_path(year_ending_odometer) %></td>
         <td><%= link_to 'Destroy', year_ending_odometer, method: :delete, data: { confirm: 'Are you sure?' } %></td>
