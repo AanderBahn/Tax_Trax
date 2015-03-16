@@ -194,7 +194,8 @@ input[type="number"],
 #passwordSignIn,
 #emailSignIn,
 input,
-dd {
+dd,
+ul li {
   background: #FFF;
   border-radius: 0;
   border: 1px solid #CCCCCC;
@@ -208,7 +209,8 @@ input[type="checkbox"] {
   width: auto;
 }
 
-fieldset {
+fieldset,
+ul {
   width: 90%;
   margin: auto auto 20px auto;
   border: none;

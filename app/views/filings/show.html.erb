@@ -49,15 +49,17 @@
   <table>
     <tr>
       <th>ID</th>
+      <th>Date</th>
       <th>Starting Odometer</th>
       <th>Ending Odometer</th>
       <th>Trip Miles</th>
       <th>Grand Total Trip Miles</th>
     </tr>
   <% total_trip_miles = 0 %>
-  <% vehicle.trips.each do |trip| %>
+  <% vehicle.trips_for_year(@filing.for_year).each do |trip| %>
     <tr>
       <td><%= trip.id %></td>
+      <td><%= trip.created_at %></td>
       <td><%= trip.starting_odometer %></td>
       <td><%= trip.ending_odometer %></td>
       <td><%= trip.miles %></td>
