@@ -313,3 +313,14 @@ ul {
   list-style: none;
   margin: 10px 0;
 }
+
+/* Filing Show/ Mileage Filing Display */
+
+table, th, tr, td {
+  outline: 1px solid black;
+  }
+
+  table {
+   text-align: left;
+   width:      100%;
+  }
