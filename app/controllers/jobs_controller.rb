@@ -1,7 +1,7 @@
 class JobsController < ApplicationController
   before_action :authenticate_user!
 
-def new
+  def new
     @job = Job.new
   end
 

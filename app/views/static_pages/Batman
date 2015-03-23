@@ -1,96 +1,10 @@
-<dl>
-    <dt>11. Date placed in service (date of oldest trip):</dt>
-    <dd><%= vehicle.service_start_date %></dd>
+Main
+<a class="btn btn-info btn-block" href="/vehicles">Vehicle Info</a>
 
-    <dt>12. Total miles vehicle was driven</dt>
-    <!-- TODO: switch Vehicle starting_odometer column datatype to integer///- - @filing.user.vehicles  -->
-    <dd><%= vehicle.total_miles(@filing.for_year) %></dd>
-
-    <dt>13. Business miles included in total miles</dt>
-    <dd><%= vehicle.business_miles(@filing.for_year) %></dd>
-
-    <dt>14. Percent of business use</dt>
-    <dd><%= vehicle.percent_business_use(@filing.for_year) %></dd>
-
-    <dt>15. Average daily roundtrip commuting distance</dt>
-    <dd><%= vehicle.average_daily_commute(@filing.for_year) %></dd>
-
-    <dt>16. Commuting miles included in total miles</dt>
-    <dd><%= vehicle.commuting_miles(@filing.for_year) %></dd>
-
-    <dt>17. Other miles</dt>
-    <dd><%= vehicle.other_miles(@filing.for_year) %></dd>
-
-  </dl>
-<% end %>
-
-
-
-<p>
-  <strong>Average daily commute:</strong>
-  <%= @filing.average_daily_commute %>
-</p>
-
-<p>
-  <strong>Personal use off duty:</strong>
-  <%= @filing.personal_use_off_duty %>
-</p>
-
-<p>
-  <strong>Another vehicle personal:</strong>
-  <%= @filing.another_vehicle_personal %>
-</p>
-
-<p>
-  <strong>Has evidence:</strong>
-  <%= @filing.has_evidence %>
-</p>
-
-<p>
-  <strong>Written evidence:</strong>
-  <%= @filing.written_evidence %>
-</p>
-
-<p>
-  <strong>User:</strong>
-  <%= @filing.user_id %>
-</p>
-
-<p>
-  <strong>For year:</strong>
-  <%= @filing.for_year %>
-</p>
-
-<%= link_to 'Edit', edit_filing_path(@filing) %> |
-<%= link_to 'Back', filings_path %>
-
-<% current_user.vehicles.each do |vehicle| %>
-  <h1><%= vehicle.make_model %></h1>
-  <h2>Starting: <%= vehicle.starting_odometer %></h2>
-  <h2>Year Ending: <%= vehicle.year_ending_odometer(@filing.for_year) %></h2>
-
-
-  <h2>And the trips you logged were:</h2>
-
-  <table>
-    <tr>
-      <th>ID</th>
-      <th>Date</th>
-      <th>Starting Odometer</th>
-      <th>Ending Odometer</th>
-      <th>Trip Miles</th>
-      <th>Job</th>
-      <th>Job Distance</th>
-    </tr>
-  <% vehicle.trips_for_year(@filing.for_year).each do |trip| %>
-    <tr>
-      <td><%= trip.id %></td>
-      <td><%= trip.created_at %></td>
-      <td><%= trip.starting_odometer %></td>
-      <td><%= trip.ending_odometer %></td>
-      <td><%= trip.miles %></td>
-      <td><%= trip.job.name %></td>
-      <td><%= trip.job.daily_commute %></td>
-    </tr>
-  <% end %>
-  </table>
+</tbody>
+<% @vehicles.each do |vehicle| %>
+    <ul>
+     <li><%= vehicle.make_model %></li><li><%= vehicle.total_miles(Date.today.year) %></li>
+    </ul>
+   <% end %>
+<%= link_to "Jobs", jobs_url %>

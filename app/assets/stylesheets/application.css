@@ -300,6 +300,11 @@ ul {
 
 
 /* Main Menu */
+
+#mainmain {
+ position: relative;
+}
+
 #mainmenuoptions {
   background: #FFF;
   border-radius: 0;
@@ -312,6 +317,49 @@ ul {
 #mainmenuoptions li {
   list-style: none;
   margin: 10px 0;
+}
+
+.profiling {
+  clear: both;
+}
+
+.profilingLft {
+  float: left;
+}
+
+.profilingRt {
+  float: left;
+}
+
+.profile-pic {
+  height: 325px;
+  width: 250px;
+  margin: 10px;
+}
+
+#NewTrip {
+ width: 200px;
+ margin: auto;
+}
+
+#profile_vehicle {
+  clear: both;
+}
+
+#profile_job {}
+
+.spam {
+ height: 75px;
+}
+
+.main-table-title {
+ float: left;
+ clear: left;
+}
+
+.main-table-add {
+ float: right;
+ clear: right;
 }
 
 /* Filing Show/ Mileage Filing Display */
