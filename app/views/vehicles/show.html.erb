@@ -6,7 +6,7 @@
         </li>
         <li class="nav-center">
           <h1 class="screen-title">
-            Vehicle <%= @vehicle.id %>
+            Vehicle
           </h1>
         </li>
         <li>
@@ -26,23 +26,24 @@
         <dl>
 
           <dt>Make & Model</dt>
-          <dd><%= @vehicle.make_model %></dd>
-
+          <dd class="shower"><%= @vehicle.make_model %></dd>
+          <br>
           <dt>Year</dt>
-          <dd><%= @vehicle.year %></dd>
-
+          <dd class="shower"><%= @vehicle.year %></dd>
+          <br>
           <dt>Starting Odometer</dt>
-          <dd><%= @vehicle.starting_odometer %></dd>
-
+          <dd class="shower"><%= @vehicle.starting_odometer %></dd>
+          <br>
           <dt>Personal usage</dt>
-          <dd><%= @vehicle.personal_usage %></dd>
-
+          <dd class="shower"><%= @vehicle.personal_usage %></dd>
+          <br>
           <dt>Year Ending Odometer Readings</dt>
-          <dd>
+          <dd class="shower">
             <table>
               <tr>
                 <th>Year</th>
                 <th>Reading</th>
+                <br>
               </tr>
               <% @vehicle.year_ending_odometers.order("year ASC").each do |year_ending_odometer| %>
               <tr>
@@ -53,8 +54,10 @@
             </table>
             <%= form_for YearEndingOdometer.new(:vehicle => @vehicle) do |f| %>
               <%= f.hidden_field :vehicle_id %>
+              <br>
               <%= f.label :year %>
               <%= f.number_field :year, :placeholder => "What year?" %>
+              <br>
               <%= f.label :reading %>
               <%= f.number_field :reading, :placeholder => "What is the reading?" %>
               <%= f.submit %>

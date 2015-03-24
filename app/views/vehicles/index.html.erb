@@ -28,17 +28,16 @@
         <dl>
 
           <dt>Make & Model</dt>
-          <dd><%= vehicle.make_model %></dd>
-
+          <dd class="shower"><%= vehicle.make_model %></dd>
+          <br>
           <dt>Year</dd>
-          <dd><%= vehicle.year %></dd>
-
+          <dd class="shower"><%= vehicle.year %></dd>
+          <br>
           <dt>Starting Odometer</dd>
-          <dd><%= vehicle.starting_odometer %></dd>
-
+          <dd class="shower"><%= vehicle.starting_odometer %></dd>
+          <br>
           <dt>Personal usage</dd>
-          <dd><%= vehicle.personal_usage %></dd>
-
+          <dd class="shower"><%= vehicle.personal_usage %></dd>
           <br>
 
           <td><%= link_to 'Show', "/vehicles/#{vehicle.id}" %></td>

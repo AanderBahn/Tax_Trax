@@ -6,6 +6,8 @@ gem 'seed_dump'
 
 gem 'font-awesome-sass', '~> 4.3.0'
 
+gem 'carrierwave'
+
 gem 'starter_generators', :git => 'https://github.com/rbetina/starter_generators', :branch => 'kiei925'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'

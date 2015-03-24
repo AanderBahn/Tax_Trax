@@ -353,6 +353,7 @@ ul {
 }
 
 .main-table-title {
+ padding-top: 15px;
  float: left;
  clear: left;
 }
@@ -360,6 +361,12 @@ ul {
 .main-table-add {
  float: right;
  clear: right;
+}
+
+/* Vehicle Show page*/
+
+.shower {
+ margin-left: -0px;
 }
 
 /* Filing Show/ Mileage Filing Display */
