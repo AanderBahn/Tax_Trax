@@ -19,6 +19,10 @@
 dl {
  text-align: left;
 }
+
+td {
+ padding-left: 10px;
+}
 /* SHARED ELEMENTS */
 
 .modalDialog {

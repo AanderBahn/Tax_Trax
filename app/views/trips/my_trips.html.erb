@@ -30,20 +30,23 @@
         <dl>
 
           <dt>Company</dt>
-          <dd><%= trip.job.name %></dd>
+          <dd class="shower"><%= trip.job.name %></dd>
+          <br>
 
           <dt>Miles</dd>
-          <dd><%= trip.miles %></dd>
+          <dd class="shower"><%= trip.miles %></dd>
+          <br>
 
           <dt>Vehicle</dd>
-          <dd><%= trip.vehicle.make_model %></dd>
+          <dd class="shower"><%= trip.vehicle.make_model %></dd>
+          <br>
 
           <dt>Starting Odometer</dd>
-          <dd><%= trip.starting_odometer %></dd>
+          <dd class="shower"><%= trip.starting_odometer %></dd>
+          <br>
 
           <dt>Ending Odometer</dd>
-          <dd><%= trip.ending_odometer %></dd>
-
+          <dd class="shower"><%= trip.ending_odometer %></dd>
           <br>
 
           <%= link_to 'Edit', "/trips/#{trip.id}/edit" %>

@@ -7,6 +7,7 @@ gem 'seed_dump'
 gem 'font-awesome-sass', '~> 4.3.0'
 
 gem 'carrierwave'
+gem "paperclip", "~> 4.2"
 
 gem 'starter_generators', :git => 'https://github.com/rbetina/starter_generators', :branch => 'kiei925'
 

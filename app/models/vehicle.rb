@@ -33,9 +33,17 @@ class Vehicle < ActiveRecord::Base
     self.trips.order("created_at ASC").first.created_at
   end
 
-  def total_miles(year)
-    return self.year_ending_odometer(year) - self.year_starting_odometer(year)
+    def total_miles
+    total = 0
+    self.trips.each do |trip|
+      total += trip.miles
+    end
+    return total
   end
+
+  # def total_miles(year)
+  #   return self.year_ending_odometer(year) - self.year_starting_odometer(year)
+  # end
 
   def business_miles(year)
     running_total = 0
