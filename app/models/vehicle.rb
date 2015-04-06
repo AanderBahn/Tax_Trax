@@ -1,7 +1,6 @@
 class Vehicle < ActiveRecord::Base
   belongs_to :user
   has_many :year_ending_odometers
-
   has_many :trips
   has_many :jobs, :through => :trips
 
@@ -33,7 +32,7 @@ class Vehicle < ActiveRecord::Base
     self.trips.order("created_at ASC").first.created_at
   end
 
-    def total_miles
+    def total_miless
     total = 0
     self.trips.each do |trip|
       total += trip.miles
@@ -41,9 +40,9 @@ class Vehicle < ActiveRecord::Base
     return total
   end
 
-  # def total_miles(year)
-  #   return self.year_ending_odometer(year) - self.year_starting_odometer(year)
-  # end
+   def total_miles(year)
+     return self.year_ending_odometer(year) - self.year_starting_odometer(year)
+   end
 
   def business_miles(year)
     running_total = 0
@@ -83,5 +82,9 @@ class Vehicle < ActiveRecord::Base
 
   def other_miles(year)
     return self.total_miles(year) - (self.business_miles(year) + self.commuting_miles(year))
+  end
+
+  def rebaite_rate
+    return business_miles(year) * 0.56
   end
 end

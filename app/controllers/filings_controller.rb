@@ -37,6 +37,10 @@ class FilingsController < ApplicationController
     respond_with(@filing)
   end
 
+  def profile
+   @profile.user = current_user
+  end
+
   private
     def set_filing
       @filing = Filing.find(params[:id])

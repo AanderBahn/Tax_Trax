@@ -30,11 +30,12 @@
 
   <!-- Label and input for name -->
   <div class="form-group">
-    <%= f.label :make, class: "col-sm-2 control-label" %>
+    <%= f.label :car_type, class: "col-sm-2 control-label" %>
     <div class="col-sm-10">
-      <%= f.text_field :make_model, placeholder: "MAke and Model", class: "form-control" %>
+      <%= f.text_field :make_model, placeholder: "Car Make & Model", class: "form-control" %>
     </div>
   </div>
+  <br>
 
   <!-- Label and input for bio -->
   <div class="form-group">
@@ -54,7 +55,7 @@
   <div class="form-group">
     <%= f.label :personal_usage, class: "col-sm-2 control-label" %>
     <div class="col-sm-10">
-      <%= f.text_field :personal_usage, placeholder: "Will this car be availbe to you outside of work?", class: "form-control" %>
+      <%= f.text_field :personal_usage, placeholder: "True or False? This car be availbe to  you outside of work?", class: "form-control" %>
     </div>
   </div>
 

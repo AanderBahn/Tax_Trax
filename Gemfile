@@ -4,7 +4,7 @@ gem 'devise'
 
 gem 'seed_dump'
 
-gem 'font-awesome-sass', '~> 4.3.0'
+gem "font-awesome-rails"
 
 gem 'carrierwave'
 gem "paperclip", "~> 4.2"

@@ -12,38 +12,40 @@
   <% end %>
 
   <div class="form-group">
-    <%= f.label :for_year %><br>
-    <%= f.number_field :for_year %>
+    <%= f.label :tax_year %><br>
+    <%= f.number_field :for_year, placeholder: "Year you are filing for" %>
+  </div>
+  <br>
+
+  <div class="form-group">
+    <%= f.label :average_daily_commute %><br>
+    <%= f.text_field :average_daily_commute, placeholder: "Your average daily commute" %>
   </div>
   <br>
   <hr>
 
+  <p><strong>Click the sections below if True</strong></p>
+
   <div class="form-group">
-    <%= f.label :average_daily_commute %><br>
-    <%= f.text_field :average_daily_commute %>
-  </div>
-  <br>
-  <hr>
-  <div class="form-group">
-    <%= f.label :personal_use_off_duty %><br>
+    <%= f.label :vehicle_available_for_personal_use_outside_of_work %><br>
     <%= f.check_box :personal_use_off_duty %>
   </div>
   <br>
   <hr>
   <div class="form-group">
-    <%= f.label :another_vehicle_personal %><br>
-    <%= f.check_box :another_vehicle_personal %>
+    <%= f.label :another_vehicle_available_your_use %><br>
+    <%= f.check_box :another_vehicle_personal, class: "TorF" %>
   </div>
   <br>
   <hr>
   <div class="form-group">
-    <%= f.label :has_evidence %><br>
+    <%= f.label :you_have_other_evidence %><br>
     <%= f.check_box :has_evidence %>
   </div>
   <br>
   <hr>
   <div class="form-group">
-    <%= f.label :written_evidence %><br>
+    <%= f.label :is_the_other_evidence_written %><br>
     <%= f.check_box :written_evidence %>
   </div>
   <br>

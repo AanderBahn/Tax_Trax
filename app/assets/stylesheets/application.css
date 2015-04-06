@@ -131,6 +131,7 @@ header {
 .main-nav ul {
   margin: 0;
   padding: 0;
+  padding-left: 130px;
   height: 50px;
 }
 
@@ -243,10 +244,16 @@ ul {
 }
 
 .btn-small {
-  height: 30px;
+  height: 25px;
   line-height: 30px;
   padding: 0 20px;
   font-size: 14px;
+}
+
+.btn-sm {
+ height: 35px;
+ margin-left: 10px;
+ margin-right: 10px;
 }
 
 .btn-success {
@@ -263,6 +270,19 @@ ul {
   box-shadow: none;
 }
 
+.btn-primary {
+  font-weight: 500;
+  color: white;
+  background: #33CCFF;
+  box-shadow: none;
+}
+
+.btn-warning {
+  font-weight: 500;
+  color: white;
+  background: #FFCC00;
+  box-shadow: none;
+}
 /* TIMER */
 
 .timer-container {
@@ -329,10 +349,12 @@ ul {
 
 .profilingLft {
   float: left;
+  margin-right: 10px;
 }
 
 .profilingRt {
   float: left;
+  margin-left: 35px;
 }
 
 .profile-pic {
@@ -347,6 +369,7 @@ ul {
 }
 
 #profile_vehicle {
+  margin-top: 20px;
   clear: both;
 }
 
@@ -362,9 +385,21 @@ ul {
  clear: left;
 }
 
+thead tr th {
+ padding: 5px;
+}
+
 .main-table-add {
  float: right;
  clear: right;
+}
+
+.VehicTable {
+ width: 25%;
+}
+
+.JobTable{
+ width: 25%;
 }
 
 /* Vehicle Show page*/
@@ -383,3 +418,11 @@ table, th, tr, td {
    text-align: left;
    width:      100%;
   }
+
+ input .TorF {
+ background-color: red;
+}
+
+#topper {
+ margin: 20px;
+}

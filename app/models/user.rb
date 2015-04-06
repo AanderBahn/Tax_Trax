@@ -1,7 +1,4 @@
 class User < ActiveRecord::Base
-  has_attached_file :avatar, :styles => { :medium => "300x300>", :thumb => "100x100>" }, :default_url => "/images/:style/missing.png"
-  validates_attachment_content_type :avatar, :content_type => /\Aimage\/.*\Z/
-
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
@@ -10,6 +7,9 @@ class User < ActiveRecord::Base
   has_many :vehicles
   has_many :jobs
   has_many :trips, through: :jobs
-  # has_many :trips, through: :vehicles
   has_many :filings
+  # has_many :trips, through: :vehicles
+
+   has_attached_file :avatar, :styles => { :medium => "300x300>", :thumb => "100x100>" }, :default_url => "/images/:style/missing.png"
+  validates_attachment_content_type :avatar, :content_type => /\Aimage\/.*\Z/
 end

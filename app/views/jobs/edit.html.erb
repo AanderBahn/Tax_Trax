@@ -6,7 +6,7 @@
         </li>
         <li class="nav-center">
           <h1 class="screen-title">
-            Edit Job #<%= @job.id %>
+            Edit Job
           </h1>
         </li>
         <li class="nav-right"></li>
@@ -43,6 +43,7 @@
               <%= f.text_field :name, placeholder: "Company Name", class: "form-control" %>
             </div>
           </div>
+          <br>
 
           <div class="form-group">
             <%= f.label :industry, class: "col-sm-2 control-label" %>
@@ -50,6 +51,7 @@
               <%= f.text_field :industry, placeholder: "Company Industry", class: "form-control" %>
             </div>
           </div>
+          <br>
 
           <!-- Label and input for bio -->
           <div class="form-group">
@@ -58,7 +60,6 @@
               <%= f.text_field :daily_commute, placeholder: "Your daily Commute", class: "form-control" %>
             </div>
           </div>
-
           <br>
 
           <div class="form-group">

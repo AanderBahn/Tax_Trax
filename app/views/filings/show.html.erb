@@ -2,39 +2,38 @@
       <nav class="main-nav">
         <ul>
           <li class="nav-left">
-            <a href="/filings/new">Back</a>
+            <a href="/">Main Menu</a>
           </li>
           <li class="nav-center">
             <h1 class="screen-title">
-              You told us:
+              Calculated 2106
             </h1>
           </li>
           <li class="nav-right">
+           <%= link_to 'Edit', edit_filing_path(@filing) %>
           </li>
         </ul>
       </nav>
 </header>
 
+<div id="topper">
 <p>
   <strong>Average daily commute:</strong>
   <%= @filing.average_daily_commute %>
 </p>
 
-<p>
+<h2>
   <strong>User:</strong>
-  <%= @filing.user_id %>
-</p>
-
-<%= link_to 'Edit', edit_filing_path(@filing) %> |
-<%= link_to 'Back', filings_path %>
+  <%= current_user.first_name %>
+</h2>
 
 <% current_user.vehicles.each do |vehicle| %>
-  <h1><%= vehicle.make_model %></h1>
-  <h2>Starting: <%= vehicle.starting_odometer %></h2>
-  <h2>Year Ending: <%= vehicle.year_ending_odometer(@filing.for_year) %></h2>
+  <h3><%= vehicle.make_model %></h3>
+  <h4>Starting: <%= vehicle.starting_odometer %></h4>
+  <h4>Year Ending: <%= vehicle.year_ending_odometer(@filing.for_year) %></h4>
 
 
-  <h2>And the trips you logged were:</h2>
+  <h2>Logged Trips for the Year:</h2>
 
   <table>
     <tr>
@@ -58,9 +57,9 @@
     </tr>
   <% end %>
   </table>
+  </div>
 
-<p>I AM BATMAN--------------------------------------------------------------</p>
-<h2>So, we calculate:</h2>
+<h2>Calculated 2106 Section A:</h2>
   <main>
      <table>
   <tr>
@@ -137,6 +136,7 @@
   <tr>
   <td>22. Multiply line 13 by .56 cents(.56)</td>
   <td></td>
+  <td>24.64<td>
   </tr>
 </table>
 </main>
