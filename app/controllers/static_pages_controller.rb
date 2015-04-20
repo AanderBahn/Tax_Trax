@@ -4,6 +4,7 @@ class StaticPagesController < ApplicationController
   def mainmenu
     @vehicles = current_user.vehicles
     @jobs = current_user.jobs
+    #@trips = current_user.jobs.trip
   end
 
   def mileagefilingdisplay

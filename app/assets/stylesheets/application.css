@@ -25,6 +25,7 @@ td {
 }
 /* SHARED ELEMENTS */
 
+
 .modalDialog {
   position: fixed;
   font-family: Arial, Helvetica, sans-serif;
@@ -127,7 +128,9 @@ hr {
 /* HEADER */
 
 header {
- height: 50px;
+ height: 72px;
+ width: 100%;
+ display: inline-block;
 }
 
 /* MAIN NAV */
@@ -337,6 +340,15 @@ ul {
 
 /* Main Menu */
 
+.mainly {
+ width: 35%;
+ margin: auto;
+}
+
+dd p {
+ margin: 10px 10px;
+}
+
 #mainmain {
  position: relative;
 }
@@ -383,9 +395,16 @@ ul {
 }
 
 #NewTrip {
+ height: 60px;
  width: 200px;
  margin: auto;
+ color: white;
+ background-color: rgb(32, 135, 252);
+ border: 1px solid white;
+ padding-top: 10px;
+ border-radius: 20px
 }
+
 
 #profile_vehicle {
   margin-top: 20px;

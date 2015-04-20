@@ -19,45 +19,19 @@
 
 
 <main>
-<div class="row isotope-container">
-<% @trip.each do |trip| %>
-  <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 isotope-item">
-    <div class="panel panel-default">
-      <div class="panel-heading">
-        <h3 class="panel-title">Trips</h3>
-      </div>
-      <div class="panel-body">
-        <dl>
+ <div class="mainly">
+  <h3 class="panel-title">Trips</h3>
+  <% @trip.each do |trip| %>
+   <dl>
+    <dd class="shower"><p><strong><%= trip.miles %></strong>&nbsp;miles</strong>&nbsp;driven for <strong><%= trip.job.name %></strong></p></dd>
+    <dd class="shower"><p><strong><%= trip.vehicle.make_model %></strong>&nbsp; saved $<strong><%= %></strong></p></dd>
+    <br>
 
-          <dt>Company</dt>
-          <dd class="shower"><%= trip.job.name %></dd>
-          <br>
+    <%= link_to 'Edit', "/trips/#{trip.id}/edit" %>
+    <%= link_to 'Destroy', "/trips/#{trip.id}", method: :delete %>
+    <br>
 
-          <dt>Miles</dd>
-          <dd class="shower"><%= trip.miles %></dd>
-          <br>
-
-          <dt>Vehicle</dd>
-          <dd class="shower"><%= trip.vehicle.make_model %></dd>
-          <br>
-
-          <dt>Starting Odometer</dd>
-          <dd class="shower"><%= trip.starting_odometer %></dd>
-          <br>
-
-          <dt>Ending Odometer</dd>
-          <dd class="shower"><%= trip.ending_odometer %></dd>
-          <br>
-
-          <%= link_to 'Edit', "/trips/#{trip.id}/edit" %>
-          <%= link_to 'Destroy', "/trips/#{trip.id}", method: :delete %>
-
-        </dl>
-        <div class="btn-group btn-group-justified">
-        </div>
-<% end %>
-   </div>
-  </div>
+    </dl>
+  <% end %>
  </div>
-</div>
 </main>
