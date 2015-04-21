@@ -1,35 +1,30 @@
   <div id="wrapper">
-
-    <header>
-      <nav class="main-nav">
-        <ul>
-          <li class="nav-left">
-            <%= link_to "Change", edit_trip_path(@trip) %>
-          </li>
-          <li class="nav-center">
-            <h1 class="screen-title">
-              Your last trip
-            </h1>
-          </li>
-          <li class="nav-right">
-            <a href="/">Menu</a>
-          </li>
-        </ul>
-      </nav>
-    </header>
+  <header>
+   <nav class="main-nav">
+    <h1 class="screen-title col-md-6 col-md-offset-5">Your last trip</h1>
+   </nav>
+  </header>
 
     <main class="confirm-screen">
-      <div class="confirm-screen-message">
+     <div class="col-md-6 col-md-offset-3 isotope-item">
+     <div class="panel panel-default">
+     <div class="panel-heading">
+     </div>
+
+      <div class="panel-body text-center">
         <p>
           You just drove <strong><%= @trip.miles %> miles</strong><br/>
           for <strong><%= @trip.job.name%></strong>
         </p>
 
         <p>
-          <a href="/trips/new" class="btn">
+          <a href="/trips/new" class="btn btn-info">
             Start a new trip
           </a>
         </p>
       </div>
+     </div>
+     </div>
     </main>
+
   </div>

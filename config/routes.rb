@@ -1,10 +1,13 @@
 Rails.application.routes.draw do
+  root to: 'static_pages#mainmenu'
+
   resources :year_ending_odometers
 
   resources :filings
 
-  devise_for :users
-  root to: 'static_pages#mainmenu'
+  devise_for :users do
+    get '/users/sign_out' => 'devise/sessions#destroy'
+  end
 
   # Routes for Static Pages
   get "/mainmenu", :controller => 'static_pages', :action => 'mainmenu', :as => 'main_menu'

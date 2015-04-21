@@ -1,76 +1,72 @@
 <div id="wrapper">
 
   <header>
-    <nav class="main-nav">
-      <ul>
-        <li class="nav-left">
+    <nav class="main-nav col-md-6 col-md-offset-3">
           <a class ="back" href="/">Sign In</a>
-        </li>
-        <li class="nav-center">
-          <h1 class="screen-title">
-            Sign up
-          </h1>
-        </li>
-      </ul>
+          <h1 class="screen-title">Sign up</h1>
     </nav>
   </header>
-
-  <main>
 
     <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
       <%= devise_error_messages! %>
 
-      <fieldset>
+  <div class="form-group">
+      <fieldset class="col-md-6 col-md-offset-3">
         <%= f.label :first_name %>
         <%= f.text_field :first_name %>
       </fieldset>
+  </div>
 
-      <fieldset>
+  <div class="form-group">
+      <fieldset class="col-md-6 col-md-offset-3">
         <%= f.label :last_name %>
         <%= f.text_field :last_name %>
       </fieldset>
+  </div>
 
-      <fieldset>
+  <div class="form-group">
+      <fieldset class="col-md-6 col-md-offset-3">
         <%= f.label :email %>
         <%= f.email_field :email, autofocus: true, :placeholder => "Enter your email address" %>
       </fieldset>
+  </div>
 
-      <fieldset>
+  <div class="form-group">
+      <fieldset class="col-md-6 col-md-offset-3">
       <%= f.label :profile_picture %>
       <%= f.file_field :avatar %>
       </fieldset>
+  </div>
 
-      <fieldset>
+  <div class="form-group">
+      <fieldset class="col-md-6 col-md-offset-3">
         <%= f.label :password %>
         <%= f.password_field :password,
               autocomplete: "off",
               :placeholder => "8 characters minimum" %>
       </fieldset>
+  </div>
 
-     <fieldset>
+  <div class="form-group">
+     <fieldset class="col-md-6 col-md-offset-3">
       <%= f.label :password_confirmation %><br />
       <%= f.password_field :password_confirmation,
             autocomplete: "off",
             :placeholder => "Confirm Password"  %>
      </fieldset>
+  </div>
 
-      <fieldset class="formAction">
+      <fieldset class="formAction col-md-6 col-md-offset-3">
         <%= f.submit "Sign up", class: "btn btn-success btn-block" %>
       </fieldset>
     <% end %>
 
     <hr>
 
-    <p>
-      Want to know how Tax Trax can
-      start helping you today?
-    </p>
-    <a href="#">About Us</a>
-
-    <p>
-      Want to get a hold of us?
-    </p>
-    <a href="#">Contact Us</a>
+    <p class="col-md-6 col-md-offset-3">Want to know how Tax Trax can start helping you today?</p>
+    <a href="#" class="col-md-6 col-md-offset-3">About Us</a>
+    <p class="col-md-6 col-md-offset-3">Want to get a hold of us?</p>
+    <a href="#" class="col-md-6 col-md-offset-3">Contact Us</a>
   </main>
 </div>
 

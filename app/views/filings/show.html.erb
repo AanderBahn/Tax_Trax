@@ -1,41 +1,30 @@
 <header>
-      <nav class="main-nav">
-        <ul>
-          <li class="nav-left">
-            <a href="/">Main Menu</a>
-          </li>
-          <li class="nav-center">
-            <h1 class="screen-title">
-              Calculated 2106
-            </h1>
-          </li>
-          <li class="nav-right">
-           <%= link_to 'Edit', edit_filing_path(@filing) %>
-          </li>
-        </ul>
-      </nav>
+ <nav class="main-nav">
+  <h1 class="screen-title col-md-6 col-md-offset-4">Calculated 2106</h1>
+   <!--li class="nav-right"><%= link_to 'Edit', edit_filing_path(@filing) %></li-->
+  </nav>
 </header>
 
-<div id="topper">
-<p>
+<div id="topper ">
+<p class="col-md-6 col-md-offset-4">
   <strong>Average daily commute:</strong>
   <%= @filing.average_daily_commute %>
 </p>
 
-<h2>
+<h2 class="col-md-6 col-md-offset-4">
   <strong>User:</strong>
   <%= current_user.first_name %>
 </h2>
 
 <% current_user.vehicles.each do |vehicle| %>
-  <h3><%= vehicle.make_model %></h3>
-  <h4>Starting: <%= vehicle.starting_odometer %></h4>
-  <h4>Year Ending: <%= vehicle.year_ending_odometer(@filing.for_year) %></h4>
+  <h3 class="col-md-6 col-md-offset-4"><%= vehicle.make_model %></h3>
+  <h4 class="col-md-6 col-md-offset-4">Starting: <%= vehicle.starting_odometer %></h4>
+  <h4 class="col-md-6 col-md-offset-4">Year Ending: <%= vehicle.year_ending_odometer(@filing.for_year) %></h4>
 
+ <div class="form-group">
+  <h2 class="col-md-6 col-md-offset-4">Logged Trips for the Year:</h2>
 
-  <h2>Logged Trips for the Year:</h2>
-
-  <table>
+  <table class="table">
     <tr>
       <th>ID</th>
       <th>Date</th>
@@ -58,10 +47,11 @@
   <% end %>
   </table>
   </div>
+  </div>
 
 <h2>Calculated 2106 Section A:</h2>
   <main>
-     <table>
+     <table class="table table-bordered">
   <tr>
     <th>Section A-General Information (You must complete this section if you are calming vehicle expenses.)</th>
     <td></td>
@@ -112,22 +102,22 @@
   </tr>
   <tr>
     <td>18. Was your vehicle available for personal use during off-duty hours?</td>
-    <td></td>
+    <td>18</td>
     <td><%= @filing.personal_use_off_duty %></td>
   </tr>
   <tr>
     <td>19. Do you or your spouce have another vehicle availble for personal use?</td>
-    <td></td>
+    <td>19</td>
     <td><%= @filing.another_vehicle_personal %></td>
   </tr>
   <tr>
     <td>20. Do you have evidence to support your deduction?</td>
-    <td></td>
+    <td>20</td>
     <td><%= @filing.has_evidence %></td>
   </tr>
   <tr>
     <td>21. If "Yes", is the evidence written?</td>
-    <td></td>
+    <td>21</td>
     <td><%= @filing.written_evidence %></td>
   </tr>
   <tr>

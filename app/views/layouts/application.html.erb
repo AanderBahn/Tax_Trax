@@ -1,20 +1,21 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>TaxTrax</title>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="initial-scale=1">
+  <head>
+    <title>TaxTrax</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="initial-scale=1">
 
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <link rel="stylesheet" type="text/css" href="stylesheets/main.css">
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
+    <link rel="stylesheet" type="text/css" href="stylesheets/main.css">
 
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
-</head>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    <%= csrf_meta_tags %>
+  </head>
 
-<body>
-  <div id="wrapper">
-    <%= yield %>
-  </div>
-</body>
+  <body>
+    <div id="wrapper">
+      <%= render 'layouts/navbar.html.erb' %>
+      <%= yield %>
+    </div>
+  </body>
 </html>

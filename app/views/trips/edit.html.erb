@@ -1,23 +1,18 @@
   <div id="wrapper">
-
     <header>
-      <nav class="main-nav">
-        <ul>
-          <li class="nav-left">
-            <a href="/my_trips">Back</a>
-          </li>
-          <li class="nav-center">
-            <h1 class="screen-title">
-              End trip data
-            </h1>
-          </li>
-          <li class="nav-right">
-          </li>
-        </ul>
-      </nav>
+     <nav class="main-nav">
+      <h1 class="screen-title col-md-6 col-md-offset-5">End trip data</h1>
+     </nav>
     </header>
 
     <main class="log-screen">
+     <div class="col-md-6 col-md-offset-3 isotope-item">
+     <div class="panel panel-default">
+     <div class="panel-heading">
+     </div>
+
+      <div class="panel-body text-center">
+      <div class="form-group">
       <%= form_tag "/trips/#{@trip.id}" do %>
         <fieldset>
           <label for="odometer" class="txt-center">
@@ -33,6 +28,7 @@
             name="ending_odometer"
             min="<%= @trip.starting_odometer %>" />
         </fieldset>
+        </div>
 
         <fieldset class="formAction">
           <input
@@ -41,5 +37,9 @@
             class="btn btn-success btn-block" />
         </fieldset>
       <% end %>
+      </div>
+
+     </div>
+     </div>
     </main>
   </div>

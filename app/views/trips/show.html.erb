@@ -1,34 +1,28 @@
   <div id="wrapper">
     <header>
       <nav class="main-nav">
-        <ul>
-          <li class="nav-left">
-            <a href="/trips/new">Back</a>
-          </li>
-          <li class="nav-center">
-            <h1 class="screen-title">
-              Trip in progress
-            </h1>
-          </li>
-          <li class="nav-right">
-          </li>
-        </ul>
+       <h1 class="screen-title col-md-6 col-md-offset-4">Trip in progress</h1>
       </nav>
     </header>
 
 
     <main class="stop-screen">
-      <div class="timer-container">
+      <div class="col-md-6 col-md-offset-3 isotope-item">
+      <div class="panel panel-default">
+      <div class="panel-heading">
+      </div>
+       <div class="panel-body text-center">
         <p class="timer-caption">Time until reminder</p>
         <h2 class="timer" id="timer"><%= @trip.shift_hours %>:00</h2>
-      </div>
 
       <p>You have not yet entered your trip data.<br>
          Please click below when finished driving.</p>
       <p>
         <a href="/trips/<%= @trip.id %>/edit" class="btn btn-success btn-block">End Trip</a>
       </p>
-
+      </div>
+     </div>
+     </div>
     </main>
   </div>
 

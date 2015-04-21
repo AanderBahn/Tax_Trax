@@ -2,6 +2,8 @@ source 'https://rubygems.org'
 
 gem 'devise'
 
+gem 'possessive'
+
 gem 'seed_dump'
 
 gem "font-awesome-rails"
@@ -10,6 +12,8 @@ gem 'carrierwave'
 gem "paperclip", "~> 4.2"
 
 gem 'starter_generators', :git => 'https://github.com/rbetina/starter_generators', :branch => 'kiei925'
+
+gem 'bootstrap-sass', '~> 3.3.4'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.8'

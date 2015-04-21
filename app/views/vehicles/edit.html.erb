@@ -1,18 +1,6 @@
 <header>
     <nav class="main-nav">
-      <ul>
-        <li class="nav-left">
-          <a class ="back" href="/vehicles">Back</a>
-        </li>
-        <li class="nav-center">
-          <h1 class="screen-title">
-            Edit Vehicle
-          </h1>
-        </li>
-        <li>
-         <a></a>
-        </li>
-      </ul>
+     <h1 class="screen-title col-md-6 col-md-offset-5">Edit Vehicle</h1>
     </nav>
   </header>
 
@@ -26,6 +14,11 @@
 <% end %>
 
 <main>
+<div class="col-md-6 col-md-offset-3 isotope-item">
+<div class="panel panel-default">
+<div class="panel-heading">
+</div>
+<div class="panel-body text-center">
 <%= form_for @vehicle, :html => { :class => "form-horizontal" } do |f| %>
 
   <!-- Label and input for name -->
@@ -66,5 +59,8 @@
       <%= f.submit class: "btn btn-success" %>
     </div>
   </div>
+</div>
+</div>
+</div>
 <% end %>
 </main>

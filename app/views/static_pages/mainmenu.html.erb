@@ -1,37 +1,10 @@
-<style>
- #statBar {
-  border: 1px solid black;
-  width: 100%;
-  height: 50px;
-  text-align: center;
- }
+<header class="col-md-8 col-md-offset-2">
+ <h2 class="text-center"><%= current_user.first_name.possessive %> Data</h2>
+</header>
 
- #statBar tr {
-  text-align: center;
- }
-
- .stat{
-  color: green;
-  padding: 10px;
- }
-
- .stat strong {
-  color: black;
- }
-
-</style>
-
-<header>
-    <nav class="main-nav">
-      <h1 class="sign-in">Tax Trax</h1>
-      <h1 class="screen-title">Main Menu</h1>
-      <%= image_tag current_user.avatar.url(:medium), class: "img-rounded" %>
-    </nav>
-  </header>
-
-  <div id="statBar">
+<div id="statBar" class="col-md-8 col-md-offset-2 table-responsive">
    <% @vehicles.each do |vehicle| %>
-    <table>
+    <table class="col-md-5 col-md-offset-2 table">
      <tr>
       <td class="stat"><%= vehicle.trips.count %>&nbsp;<strong>Trips</strong></td>
       <td class="stat"><%= vehicle.total_miless %>&nbsp;<strong>Miles</strong></td>
@@ -39,9 +12,9 @@
      </tr>
     </table>
    <% end %>
-  </div>
+</div>
 
-  <% if current_user.sign_in_count == 1 %>
+<% if current_user.sign_in_count == 1 %>
   <div id="triggerModal" class="modalDialog">
    <div>
      <a href="#triggerModal" title="Close" class="close">X</a>
@@ -54,20 +27,37 @@
   </div>
   <% end %>
 
-<main id="mainmain">
+<main id="mainmain" class="col-md-8 col-md-offset-2">
 
-  <h2><%= current_user.first_name %></h2>
-
-<div>
- <a id="NewTrip" class="btn" href="/trips/new">+ New Trip</a>
+<div class="text-center">
+ <a id="NewTrip" class="btn btn-default btn-lg" href="/trips/new">+ New Trip</a>
 </div>
 
-
-<ul id="mainmenuoptions">
-  <li><a href="/my_trips" class="btn btn-sm">Driving Log</a></li>
-  <li><a href="/disclaimer_filing" class="btn btn-sm">Tax Filing</a></li>
-</ul>
+<div class="btn-group" role="group" id="mainmenuoptions">
+  <!--button type="button" class="btn btn-default"><a href="/my_trips" class="btn btn-sm">Driving Log</a></button-->
+  <button type="button" class="btn btn-default text-center"><a href="/disclaimer_filing" class="btn btn-sm">Tax Filing</a></button>
+</div>
 
 <hr>
-<h3 class="panel-title">Trips</h3>
+ <h2 class="screen-title text-center">Driving Log</h2>
+ <div class="mainly text-center" >
+  <% @trips.each do |trip| %>
+   <dl>
+   <div class="col-md-6 col-md-offset-3 isotope-item">
+   <div class="panel panel-default">
+   <div class="panel-heading">
+   </div>
+    <dd class="shower"><p><strong><%= trip.miles %></strong>&nbsp;miles</strong>&nbsp;driven for <strong><%= trip.job.name %></strong></p></dd>
+    <dd class="shower"><p><strong><%= trip.vehicle.make_model %></strong>&nbsp; saved $<strong><%= %></strong></p></dd>
+    <br>
+
+    <%= link_to 'Edit', "/trips/#{trip.id}/edit", :class => 'btn btn-default btn-xs' %>
+    <%= link_to 'Destroy', "/trips/#{trip.id}", method: :delete, :class => 'btn btn-default btn-xs' %>
+    </div>
+    <br>
+
+    </dl>
+  <% end %>
+ </div>
+ </div>
 </main>

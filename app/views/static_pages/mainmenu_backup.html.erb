@@ -1,0 +1,73 @@
+<style>
+ #statBar {
+  border: 1px solid black;
+  width: 100%;
+  height: 50px;
+  text-align: center;
+ }
+
+ #statBar tr {
+  text-align: center;
+ }
+
+ .stat{
+  color: green;
+  padding: 10px;
+ }
+
+ .stat strong {
+  color: black;
+ }
+
+</style>
+
+<header>
+    <nav class="main-nav">
+      <h1 class="sign-in">Tax Trax</h1>
+      <h1 class="screen-title">Main Menu</h1>
+      <%= image_tag current_user.avatar.url(:medium), class: "img-rounded" %>
+    </nav>
+  </header>
+
+  <div id="statBar">
+   <% @vehicles.each do |vehicle| %>
+    <table>
+     <tr>
+      <td class="stat"><%= vehicle.trips.count %>&nbsp;<strong>Trips</strong></td>
+      <td class="stat"><%= vehicle.total_miless %>&nbsp;<strong>Miles</strong></td>
+      <td class="stat"><strong>$</strong>&nbsp;<%= vehicle.rebaite_rate %><%= vehicle.rebaite_rate %></td>
+     </tr>
+    </table>
+   <% end %>
+  </div>
+
+  <% if current_user.sign_in_count == 1 %>
+  <div id="triggerModal" class="modalDialog">
+   <div>
+     <a href="#triggerModal" title="Close" class="close">X</a>
+     <h2>Welcome to Tax Trax</h2>
+     <ol>
+       <li>Add a <%= link_to('vehicle', new_vehicle_path) %>  to your profile. You can add additional vehicles by selecting "Vehicle Info" on the main menu.</li>
+       <li>Add your <%= link_to('job', new_job_path) %>  to your profile. You can add additional jobs by selecting "Job Info" on the main menu.</li>
+     </ol>
+   </div>
+  </div>
+  <% end %>
+
+<main id="mainmain">
+
+  <h2><%= current_user.first_name %></h2>
+
+<div>
+ <a id="NewTrip" class="btn" href="/trips/new">+ New Trip</a>
+</div>
+
+
+<ul id="mainmenuoptions">
+  <li><a href="/my_trips" class="btn btn-sm">Driving Log</a></li>
+  <li><a href="/disclaimer_filing" class="btn btn-sm">Tax Filing</a></li>
+</ul>
+
+<hr>
+<h3 class="panel-title">Trips</h3>
+</main>

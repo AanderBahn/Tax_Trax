@@ -1,25 +1,14 @@
 <header>
     <nav class="main-nav">
-      <ul>
-        <li class="nav-left">
-          <a class ="back" href="/">Back</a>
-        </li>
-        <li class="nav-center">
-          <h1 class="screen-title">
-            Your Vehicles
-          </h1>
-        </li>
-        <li>
-         <a class="nav-right" href="/vehicles/new">Add New Vehicle</a>
-        </li>
-      </ul>
+     <h1 class="screen-title col-md-6 col-md-offset-3">Your Vehicles</h1>
+     <a class="nav-right btn btn-group-xs" href="/vehicles/new">Add New Vehicle</a>
     </nav>
   </header>
 
 <main>
 <div class="row isotope-container">
 <% @vehicles.each do |vehicle| %>
-  <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 isotope-item">
+  <div class="col-md-6 col-md-offset-3 isotope-item">
     <div class="panel panel-default">
       <div class="panel-heading">
         <h3 class="panel-title">Vehicle</h3>
@@ -40,9 +29,11 @@
           <dd class="shower"><%= vehicle.personal_usage %></dd>
           <br>
 
-          <td><%= link_to 'Show', "/vehicles/#{vehicle.id}" %></td>
-          <td><%= link_to 'Edit', "/vehicles/#{vehicle.id}/edit" %></td>
-          <td><%= link_to 'Destroy', "/vehicles/#{vehicle.id}", method: :delete %></td>
+          <div class="btn-group btn-group-lg" role="group">
+          <td><%= link_to 'Show', "/vehicles/#{vehicle.id}", :class => 'btn btn-group btn-group-xs' %></td>
+          <td><%= link_to 'Edit', "/vehicles/#{vehicle.id}/edit", :class => 'btn btn-group btn-group-xs' %></td>
+          <td><%= link_to 'Destroy', "/vehicles/#{vehicle.id}", method: :delete, :class => 'btn btn-group btn-group-xs' %></td>
+          </div>
 
         </dl>
         <div class="btn-group btn-group-justified">
