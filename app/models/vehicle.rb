@@ -85,6 +85,6 @@ class Vehicle < ActiveRecord::Base
   end
 
   def rebaite_rate
-    return business_miles(2013) * 0.56
+    return (business_miles(2013) * 0.56).round(2)
   end
 end

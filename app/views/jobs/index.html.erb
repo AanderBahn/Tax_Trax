@@ -1,19 +1,18 @@
 <header>
   <nav class="main-nav">
    <h1 class="screen-title col-md-6 col-md-offset-3">Your Jobs</h1>
-   <a class="nav-right btn btn-group-xs" href="/jobs/new">Add New Job</a>
   </nav>
 </header>
 <main>
 </main>
 
 <main>
-  <div class="row isotope-container">
+
     <% @job.each do |job| %>
       <div class="col-md-6 col-md-offset-3 isotope-item">
         <div class="panel panel-default">
           <div class="panel-heading">
-            <h3 class="panel-title">Job</h3>
+            <h3 class="panel-title"></h3>
           </div>
 
           <div class="panel-body">
@@ -28,13 +27,15 @@
               <dd class="shower"><%= job.daily_commute %></dd>
               <br>
 
+         <div class="text-center">
               <div class="btn-group btn-group-lg" role="group">
-              <td><%= link_to 'Show',    "/jobs/#{job.id}", :class => 'btn btn-group btn-group-xs' %></td>
-              <td><%= link_to 'Edit',    "/jobs/#{job.id}/edit", :class => 'btn btn-group btn-group-xs' %></td>
-              <td><%= link_to 'Destroy', "/jobs/#{job.id}", method: :delete, :class => 'btn btn-group btn-group-xs' %></td>
+              <td><%= link_to 'Show',    "/jobs/#{job.id}", :class => 'btn btn-info btn-group btn-group-xs' %></td>
+              <td><%= link_to 'Edit',    "/jobs/#{job.id}/edit", :class => 'btn btn-warning btn-group btn-group-xs' %></td>
+              <td><%= link_to 'Destroy', "/jobs/#{job.id}", method: :delete, :class => 'btn btn-danger btn-group btn-group-xs' %></td>
               </div>
             </dl>
           </div>
+         </div>
 
         </div>
       </div>

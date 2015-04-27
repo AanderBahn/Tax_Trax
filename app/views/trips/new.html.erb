@@ -1,15 +1,14 @@
 <div id="wrapper">
  <header>
   <nav class="main-nav">
-   <h1 class="screen-title col-md-6 col-md-offset-4">Starting Trip Info</h1>
+   <h2 class="screen-title col-md-6 text-center">Starting Trip Info</h2>
   </nav>
  </header>
 
   <main>
   <div class="col-md-6 col-md-offset-3 isotope-item">
   <div class="panel panel-default">
-  <div class="panel-heading">
-  </div>
+
 
    <div class="panel-body">
     <%= form_tag "/trips" do %>
@@ -62,11 +61,11 @@
       </fieldset>
      </div>
 
-      <fieldset class="formAction">
+      <fieldset class="formAction text-center">
         <input
           type="submit"
           value="Start Trip"
-          class="btn btn-success btn-block" />
+          class="btn btn-success" />
       </fieldset>
     <% end %>
    </div>

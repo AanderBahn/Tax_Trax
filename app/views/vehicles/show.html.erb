@@ -40,6 +40,8 @@
               </tr>
               <% end %>
             </table>
+
+            <div class="form-group">
             <%= form_for YearEndingOdometer.new(:vehicle => @vehicle) do |f| %>
               <%= f.hidden_field :vehicle_id %>
               <br>
@@ -52,7 +54,8 @@
             <% end %>
           </dd>
 
+          </div>
         </dl>
-        <div class="btn-group btn-group-justified">
+        <div class="btn btn-success btn-group-justified">
         </div>
 </main>

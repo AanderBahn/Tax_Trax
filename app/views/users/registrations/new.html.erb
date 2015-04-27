@@ -1,12 +1,13 @@
 <div id="wrapper">
 
   <header>
-    <nav class="main-nav col-md-6 col-md-offset-3">
+    <nav class="main-nav col-md-6 col-md-offset-4">
           <a class ="back" href="/">Sign In</a>
           <h1 class="screen-title">Sign up</h1>
     </nav>
   </header>
 
+ <form>
     <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
       <%= devise_error_messages! %>
 
@@ -57,17 +58,15 @@
   </div>
 
       <fieldset class="formAction col-md-6 col-md-offset-3">
-        <%= f.submit "Sign up", class: "btn btn-success btn-block" %>
+        <%= f.submit "Sign up" %>
       </fieldset>
     <% end %>
-
-    <hr>
-
-    <p class="col-md-6 col-md-offset-3">Want to know how Tax Trax can start helping you today?</p>
-    <a href="#" class="col-md-6 col-md-offset-3">About Us</a>
-    <p class="col-md-6 col-md-offset-3">Want to get a hold of us?</p>
-    <a href="#" class="col-md-6 col-md-offset-3">Contact Us</a>
-  </main>
+ </form>
+  <hr>
+  <p class="col-md-6 col-md-offset-3">Want to know how Tax Trax can start helping you today?</p>
+  <a href="#" class="col-md-6 col-md-offset-3">About Us</a>
+  <p class="col-md-6 col-md-offset-3">Want to get a hold of us?</p>
+  <a href="#" class="col-md-6 col-md-offset-3">Contact Us</a>
 </div>
 
 

@@ -18,7 +18,7 @@
 <div class="panel panel-default">
 <div class="panel-heading">
 </div>
-<div class="panel-body text-center">
+<div class="panel-body">
 <%= form_for @vehicle, :html => { :class => "form-horizontal" } do |f| %>
 
   <!-- Label and input for name -->
@@ -54,8 +54,8 @@
 
   <br>
 
-  <div class="form-group">
-    <div class="col-sm-offset-2 col-sm-10">
+  <div class="form-group text-center">
+    <div class="col-sm-offset-1 col-sm-10">
       <%= f.submit class: "btn btn-success" %>
     </div>
   </div>
