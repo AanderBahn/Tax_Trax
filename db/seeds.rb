@@ -482,15 +482,13 @@ Trip.create!([
   {job_id: 4, shift_hours: 4, starting_odometer: 5692.2, ending_odometer: 5696.2, vehicle_id: 1, created_at: "2015-05-02 18:56:01"},
   {job_id: 1, shift_hours: 4, starting_odometer: 5705.6, ending_odometer: 5710.6, vehicle_id: 1, created_at: "2015-05-03 18:56:01"},
   {job_id: 4, shift_hours: 4, starting_odometer: 5710.6, ending_odometer: 5714.6, vehicle_id: 1, created_at: "2015-05-03 18:56:01"},
+  {job_id: 1, shift_hours: 4, starting_odometer: 5724.0, ending_odometer: 5729.0, vehicle_id: 1, created_at: "2015-05-04 18:56:01"},
+  {job_id: 4, shift_hours: 4, starting_odometer: 5729.0, ending_odometer: 5733.0, vehicle_id: 1, created_at: "2015-05-04 18:56:01"},
+  {job_id: 1, shift_hours: 4, starting_odometer: 5742.4, ending_odometer: 5747.4, vehicle_id: 1, created_at: "2015-05-05 18:56:01"},
+  {job_id: 4, shift_hours: 4, starting_odometer: 5747.4, ending_odometer: 5751.4, vehicle_id: 1, created_at: "2015-05-05 18:56:01"},
 
-  {job_id: 1, shift_hours: 4, starting_odometer: 0000.0, ending_odometer: 0000.0, vehicle_id: 1, created_at: "2015-05-04 18:56:01"},
-  {job_id: 4, shift_hours: 4, starting_odometer: 0.0, ending_odometer: 0.0, vehicle_id: 1, created_at: "2015-05-04 18:56:01"},
-
-  {job_id: 1, shift_hours: 4, starting_odometer: 0000.0, ending_odometer: 0000.0, vehicle_id: 1, created_at: "2015-05-05 18:56:01"},
-  {job_id: 4, shift_hours: 4, starting_odometer: 0.0, ending_odometer: 0.0, vehicle_id: 1, created_at: "2015-05-05 18:56:01"},
-
-  {job_id: 1, shift_hours: 4, starting_odometer: 0000.0, ending_odometer: 0000.0, vehicle_id: 1, created_at: "2015-05-06 18:56:01"},
-  {job_id: 4, shift_hours: 4, starting_odometer: 0.0, ending_odometer: 0.0, vehicle_id: 1, created_at: "2015-05-06 18:56:01"},
+  {job_id: 1, shift_hours: 4, starting_odometer: 5760.8, ending_odometer: 5765.8, vehicle_id: 1, created_at: "2015-05-06 18:56:01"},
+  {job_id: 4, shift_hours: 4, starting_odometer: 0.8, ending_odometer: 0.8, vehicle_id: 1, created_at: "2015-05-06 18:56:01"},
 
   {job_id: 1, shift_hours: 4, starting_odometer: 0000.0, ending_odometer: 0000.0, vehicle_id: 1, created_at: "2015-05-07 18:56:01"},
   {job_id: 4, shift_hours: 4, starting_odometer: 0.0, ending_odometer: 0.0, vehicle_id: 1, created_at: "2015-05-07 18:56:01"},

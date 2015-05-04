@@ -45,6 +45,8 @@ gem 'spring', group: :development
 group :production, :test do
   gem 'rails_12factor'
 end
+
+ruby "2.2.0"
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
