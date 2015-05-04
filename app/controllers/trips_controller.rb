@@ -25,6 +25,7 @@ class TripsController < ApplicationController
     @trip = Trip.all(:order => 'created_at DESC')
     @trip = Trip.order('created_at').page params[:page]
     @trip = Trip.page(params[:page]).per(10)
+  end
 
   def show
     @trip = Trip.find(params[:id])
