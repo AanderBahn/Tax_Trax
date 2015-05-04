@@ -13,6 +13,9 @@
 
 ActiveRecord::Schema.define(version: 20150325185034) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "filings", force: true do |t|
     t.float    "average_daily_commute"
     t.boolean  "personal_use_off_duty"
@@ -25,7 +28,7 @@ ActiveRecord::Schema.define(version: 20150325185034) do
     t.datetime "updated_at"
   end
 
-  add_index "filings", ["user_id"], name: "index_filings_on_user_id"
+  add_index "filings", ["user_id"], name: "index_filings_on_user_id", using: :btree
 
   create_table "jobs", force: true do |t|
     t.integer  "user_id"
@@ -36,7 +39,7 @@ ActiveRecord::Schema.define(version: 20150325185034) do
     t.datetime "updated_at"
   end
 
-  add_index "jobs", ["user_id"], name: "index_jobs_on_user_id"
+  add_index "jobs", ["user_id"], name: "index_jobs_on_user_id", using: :btree
 
   create_table "trips", force: true do |t|
     t.integer  "job_id"
@@ -69,8 +72,8 @@ ActiveRecord::Schema.define(version: 20150325185034) do
     t.datetime "avatar_updated_at"
   end
 
-  add_index "users", ["email"], name: "index_users_on_email", unique: true
-  add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+  add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
+  add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
   create_table "vehicles", force: true do |t|
     t.integer  "user_id"
@@ -90,6 +93,6 @@ ActiveRecord::Schema.define(version: 20150325185034) do
     t.datetime "updated_at"
   end
 
-  add_index "year_ending_odometers", ["vehicle_id"], name: "index_year_ending_odometers_on_vehicle_id"
+  add_index "year_ending_odometers", ["vehicle_id"], name: "index_year_ending_odometers_on_vehicle_id", using: :btree
 
 end
