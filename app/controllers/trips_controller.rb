@@ -1,6 +1,8 @@
 class TripsController < ApplicationController
   before_action :authenticate_user!
 
+ #@trips = Trip.order('created_at').page params[:page]
+
   def new
     @trip = Trip.new
   end
@@ -20,8 +22,9 @@ class TripsController < ApplicationController
   end
 
   def index
-    @trip = Trip.all
-  end
+    @trip = Trip.all(:order => 'created_at DESC')
+    @trip = Trip.order('created_at').page params[:page]
+    @trip = Trip.page(params[:page]).per(10)
 
   def show
     @trip = Trip.find(params[:id])

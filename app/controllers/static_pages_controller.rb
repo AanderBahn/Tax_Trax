@@ -4,7 +4,9 @@ class StaticPagesController < ApplicationController
   def mainmenu
     @vehicles = current_user.vehicles
     @jobs = current_user.jobs
-    @trips = current_user.trips
+    @trips = current_user.trips(:order => 'created_at DESC')
+    @trips = current_user.trips.page(params[:page]).per(10)
+
   end
 
   def mileagefilingdisplay

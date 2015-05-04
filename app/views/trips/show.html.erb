@@ -10,6 +10,7 @@
       <div class="col-md-6 col-md-offset-3 isotope-item">
       <div class="panel panel-default">
       <div class="panel-heading">
+       <strong class="text-center">Please drive safely. </strong>
       </div>
        <div class="panel-body text-center">
         <p class="timer-caption">Time until reminder</p>
@@ -28,10 +29,11 @@
 
   <script type="text/javascript">
     window.onload = function() {
-      var tickTack = function() {
+      var tickTock = function() {
         var timer = document.getElementById("timer").innerHTML.split(':'),
             hours = parseInt(timer[0], 10),
-            minutes = parseInt(timer[1], 10);
+            minutes = parseInt(timer[1], 10),
+            seconds = parseInt(timer[2], 10);
 
         minutes -= 1;
 
@@ -42,12 +44,23 @@
           clearInterval(interval);
         }
 
+        seconds -= 1;
+
+        if (seconds < 0 && minutes != 0) {
+          minutes -= 1;
+          seconds = 59;
+        } else if (minutes == 0 && seconds <= 0) {
+          clearInterval(interval);
+        }
+
+
         hours = (hours < 10) ? "0" + hours : hours;
         minutes = (minutes < 10) ? "0" + minutes : minutes;
+        seconds = (seconds < 10) ? "0" + seconds : seconds;
 
         document.getElementById("timer").innerHTML = (hours + ':' + minutes);
       }
 
-      var interval = setInterval(tickTack, 60000);
+      var interval = setInterval(tickTock, 1000);
     };
   </script>

@@ -4,18 +4,17 @@
 
 <div id="statBar" class="col-md-8 col-md-offset-2 table-responsive    contextual-interest">
    <% @vehicles.each do |vehicle| %>
+   <!--% @current_user.vehicles.last do %-->
     <table class="col-md-5 col-md-offset-2 col-xs-8 table">
      <tr>
-      <td class="stat"><i class="text-interest"><%= vehicle.trips.count %></i>&nbsp;<strong>Trips</strong></td>
-      <td class="stat"><i class="text-interest"><%= vehicle.total_miless %></i>&nbsp;<strong>Miles</strong></td>
+      <td class="stat"><i class=""><%= vehicle.trips.count %></i>&nbsp;<strong>Trips</strong></td>
+      <td class="stat"><i class="t"><%= vehicle.total_miless %></i>&nbsp;<strong>Miles</strong></td>
       <td class="stat"><strong>$</strong>&nbsp;<i class="text-interest"><%= vehicle.rebaite_rate %></i>&nbsp;<strong>savings</strong></td>
      </tr>
     </table>
    <% end %>
 </div>
 
-<div class="form-group">
-</div>
 
 <% if current_user.sign_in_count == 1 %>
   <div id="triggerModal" class="modalDialog">
@@ -42,7 +41,10 @@
 
 <hr>
  <h3 class="screen-title text-center">Driving Log</h3>
- <div class="mainly text-center" >
+ <div class="mainly text-center">
+
+
+  <%= paginate @trips %>
   <% @trips.each do |trip| %>
    <dl>
    <div class="col-md-6 col-md-offset-3 isotope-item">
@@ -51,7 +53,7 @@
    </div>
     <dd class="shower"><p><strong><%= trip.vehicle.make_model %></strong>&nbsp;driven for&nbsp;<strong><%= trip.job.name %></strong></p>
     </dd>
-    <dd class="shower"><p>$<strong><i class="text-interest"><%= trip.vehicle.rebaite_rate %></i></strong>&nbsp; saved on <strong><i class="text-interest"><%= trip.miles %></i></strong>&nbsp;miles</p>
+    <dd class="shower"><p>$<strong><i class="text-interest"><%= trip.rebate %></i></strong>&nbsp; saved on <strong><i class="text-interest"><%= trip.miles %></i></strong>&nbsp;miles</p>
     </dd>
     <br>
 

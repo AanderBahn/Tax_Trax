@@ -1,22 +1,22 @@
-<header>
-  <nav class="main-nav">
-   <h1 class="screen-title col-md-6 col-md-offset-3">Your Jobs</h1>
-  </nav>
-</header>
-<main>
-</main>
+<h1 class="text-center">Your Jobs</h1>
+<div class="text-center">
+ <a class="btn btn-success" href="/jobs/new">Add New Job</a>
+</div>
+
 
 <main>
 
+   <div>
     <% @job.each do |job| %>
-      <div class="col-md-6 col-md-offset-3 isotope-item">
+
+    <dl>
+     <div class="col-md-4 panel-body">
         <div class="panel panel-default">
           <div class="panel-heading">
             <h3 class="panel-title"></h3>
           </div>
 
           <div class="panel-body">
-            <dl>
               <dt>Company</dt>
               <dd class="shower"><%= job.name %></dd>
               <br>
@@ -33,12 +33,13 @@
               <td><%= link_to 'Edit',    "/jobs/#{job.id}/edit", :class => 'btn btn-warning btn-group btn-group-xs' %></td>
               <td><%= link_to 'Destroy', "/jobs/#{job.id}", method: :delete, :class => 'btn btn-danger btn-group btn-group-xs' %></td>
               </div>
-            </dl>
-          </div>
-         </div>
+              </div>
+              </div>
 
-        </div>
-      </div>
+         </div>
+     </div>
+    </dl>
+
     <% end %>
-  </div>
+</div>
 </main>

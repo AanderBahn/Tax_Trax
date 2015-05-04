@@ -1,49 +1,46 @@
-<header>
- <nav class="main-nav">
-  <h1 class="screen-title col-md-6 col-md-offset-3">Your Vehicles</h1>
- </nav>
-</header>
+<h1 class="text-center">Your Vehicles</h1>
+<div class="text-center">
+ <a class="btn btn-success" href="/vehicles/new">Add New Vehicle</a>
+</div>
+
 
 <main>
 
-<!--% @vehicles.each do |vehicle| %-->
-  <div class="col-md-6 col-md-offset-3 row">
+  <div>
   <% @vehicles.each do |vehicle| %>
-    <div class="panel panel-default">
-      <div class="panel-heading">
-        <h3 class="panel-title"></h3>
-      </div>
 
-        <dl>
-         <div class="panel-body">
-          <dt>Make & Model</dt>
-          <dd class="shower"><%= vehicle.make_model %></dd>
-          <br>
-          <dt>Year</dd>
-          <dd class="shower"><%= vehicle.year %></dd>
-          <br>
-          <dt>Starting Odometer</dd>
-          <dd class="shower"><%= vehicle.starting_odometer %></dd>
-          <br>
-          <dt>Personal usage</dd>
-          <dd class="shower"><%= vehicle.personal_usage %></dd>
-          <br>
+       <dl>
+         <div class="col-md-4 panel-body">
+         <div class="panel panel-default">
+          <div class="panel-heading">
+           <h3 class="panel-title"></h3>
+          </div>
 
+       <div class="panel-body">
+        <dt>Make & Model</dt>
+        <dd class="shower"><%= vehicle.make_model %></dd>
+        <br>
+        <dt>Year</dt>
+        <dd class="shower"><%= vehicle.year %></dd>
+        <br>
+        <dt>Starting Odometer</dt>
+        <dd class="shower"><%= vehicle.starting_odometer %></dd>
+        <br>
+        <dt>Personal usage</dt>
+        <dd class="shower"><%= vehicle.personal_usage %></dd>
+        <br>
 
          <div class="text-center">
           <div class="btn-group btn-group-lg" role="group">
           <td><%= link_to 'Show', "/vehicles/#{vehicle.id}", :class => 'btn btn-info btn-group btn-group-xs' %></td>
           <td><%= link_to 'Edit', "/vehicles/#{vehicle.id}/edit", :class => 'btn btn-warning btn-group btn-group-xs' %></td>
           <td><%= link_to 'Delete', "/vehicles/#{vehicle.id}", method: :delete, :class => 'btn btn-danger btn-group btn-group-xs' %></td>
+           </div>
           </div>
           </div>
-
-        </dl>
-
+         </div>
+        </div>
+       </dl>
   <% end %>
-
-
-
-
-
+</div>
 </main>
