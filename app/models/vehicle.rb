@@ -32,7 +32,7 @@ class Vehicle < ActiveRecord::Base
     self.trips.order("created_at ASC").first.created_at
   end
 
-    def total_miless
+  def total_miless
     total = 0
     self.trips.each do |trip|
       total += trip.miles
