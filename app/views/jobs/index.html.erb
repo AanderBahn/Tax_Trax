@@ -1,10 +1,32 @@
 <h1 class="text-center">Your Jobs</h1>
 <div class="text-center">
+<% if current_user.jobs.count > 0 %>
  <a class="btn btn-success" href="/jobs/new">Add New Job</a>
+<% end %>
 </div>
 
 
 <main>
+
+
+ <% if current_user.jobs.count < 1 %>
+   <div class="col-md-6 col-md-offset-3 text-center">
+    <div class="panel panel-default text-center ">
+    <div class="panel-heading"><h3 class="panel-title"></h3></div>
+   <div id="triggerModal" class="modalDialog">
+    <div class="text-center">
+     <h3 class="panel-title"><a href="#triggerModal" title="Close" class="close"></a></h3>
+     <h2 class="screen-title text-center">No job entered</h2>
+     <h5 class="text-center">
+       <a class="btn btn-success" href="/jobs/new">Add New Job</a>
+     </h5>
+    </div>
+   </div>
+    </div>
+   </div>
+   <% end %>
+
+
 
    <div>
     <% @job.each do |job| %>
