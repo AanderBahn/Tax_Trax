@@ -8,18 +8,22 @@ class Trip < ActiveRecord::Base
   # validates :ending_odometer, presence: true
   validates :shift_hours, presence: true
 
-  default_scope { order("created_at DESC") }
+  default_scope { order("date(trips.created_at) DESC") }
 
   Trip.page(1).per(50)
 
   #@trip = Trip.order('created_at').page params[:page]
 
   def miles
+   if (self.ending_odometer && self.starting_odometer).present?
     self.ending_odometer - self.starting_odometer
+   end
   end
 
   def rebate
+   if miles.present?
    (miles * 0.56).round(2)
+   end
   end
 
 # def roundtrip_commute

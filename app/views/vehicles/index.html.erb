@@ -55,7 +55,9 @@
           <div class="btn-group btn-group-lg" role="group">
           <td><%= link_to 'Show', "/vehicles/#{vehicle.id}", :class => 'btn btn-info btn-group btn-group-xs' %></td>
           <td><%= link_to 'Edit', "/vehicles/#{vehicle.id}/edit", :class => 'btn btn-warning btn-group btn-group-xs' %></td>
+         <%- if vehicle.trips.count <= 0 %>
           <td><%= link_to 'Delete', "/vehicles/#{vehicle.id}", method: :delete, :class => 'btn btn-danger btn-group btn-group-xs' %></td>
+         <% end -%>
            </div>
           </div>
           </div>

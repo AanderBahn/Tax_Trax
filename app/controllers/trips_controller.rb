@@ -51,7 +51,7 @@ class TripsController < ApplicationController
 
     @trip.destroy
 
-    redirect_to my_trips_url, :notice => "Trip deleted."
+    redirect_to root_url, :notice => "Trip deleted."
   end
 
   def confirm

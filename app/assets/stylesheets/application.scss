@@ -17,10 +17,22 @@
 }
 
 .spacer {
+ clear: both;
  height: 100px;
+}
+
+.spacer-md {
+  clear: both;
+  height: 50px;
+}
+
+.spacer-sm {
+  clear: both;
+  height: 25px;
 }
 
 .navbar-image {
   height: 50px;
   border-radius: 50%;
 }
+

@@ -1,7 +1,11 @@
 <nav class="navbar navbar-default">
   <div class="container-fluid">
-    <div class="pull-left">
-      <%= link_to "TaxTrax", root_url, class: "navbar-brand" %>
+    <div class="pull-left" role="button"  >
+    <!--%- if < (width: 300px) %-->
+      <a href="#" style="display: inline" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><%= link_to "TaxTrax", class: "navbar-brand col-md-1 col-md-offset-3 navbar-toggle collapsed glyphicon-list" %></a>
+    <!--% else %-->
+      <%= link_to "TaxTrax", root_url, class: "navbar-brand col-md-1 col-md-offset-3" %>
+    <!--% end -%-->
     </div>
 
     <ul class="pull-right list-inline">
@@ -11,9 +15,7 @@
             <a href="#" style="display: inline" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><%= current_user.first_name %></a>
             <ul id="nav-drop" style="float: right" class="dropdown-menu" role="menu">
 
-             <%- if controller_name != 'static_pages' %>
               <li><%= link_to "Dashboard", main_menu_url %></li>
-             <% end -%>
 
               <li><%= link_to "Vehicles", vehicles_url %></li>
 

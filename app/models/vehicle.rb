@@ -29,13 +29,15 @@ class Vehicle < ActiveRecord::Base
   end
 
   def service_start_date
-    self.trips.order("created_at ASC").first.created_at
+    self.trips.order("trips.created_at ASC").first.created_at
   end
 
   def total_miless
     total = 0
     self.trips.each do |trip|
-      total += trip.miles
+      if trip.miles.present?
+        (total += trip.miles)
+      end
     end
     return total
   end
@@ -48,7 +50,9 @@ class Vehicle < ActiveRecord::Base
     running_total = 0
 
     self.trips_for_year(year).each do |trip|
+     if trip.miles.present?
       running_total = running_total + trip.miles
+     end
     end
 
     return running_total
@@ -75,7 +79,12 @@ class Vehicle < ActiveRecord::Base
   end
 
   def average_daily_commute(year)
-    total_unique_days_worked = self.trips_for_year(year).group('DATE(created_at)').count('created_at').count
+    total_unique_days_worked = self
+      .trips_for_year(year)
+      .select("trips.*, DATE(trips.created_at) as date_created_at")
+      .group("trips.created_at")
+      .count("trips.created_at")
+      .inject(0) { |c, (k,v)| c += v }
 
     return self.commuting_miles(year).to_f / total_unique_days_worked
   end
@@ -85,6 +94,6 @@ class Vehicle < ActiveRecord::Base
   end
 
   def rebaite_rate
-    return (business_miles(2015) * 0.56).round(2)
+    return self.business_miles(year)
   end
 end

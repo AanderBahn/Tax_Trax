@@ -1,7 +1,7 @@
   <div id="wrapper">
     <header>
      <nav class="main-nav">
-      <h2 class="screen-title col-md-6 text-center">End trip data</h2>
+      <h2 class="screen-title text-center">End trip data</h2>
      </nav>
     </header>
 
@@ -14,7 +14,7 @@
 
       <div class="panel-body text-center">
       <div class="form-group">
-      <%= form_tag "/trips/#{@trip.id}" do %>
+      <%= form_for @trip, :html => { :class => "form-horizontal" } do |f| %>
         <fieldset>
           <label for="odometer" class="txt-center">
             Enter your ending odometer
@@ -32,10 +32,7 @@
         </div>
 
         <fieldset class="formAction">
-          <input
-            type="submit"
-            value="Log Mileage"
-            class="btn btn-success" />
+         <%= f.submit class: "btn btn-success" %>
         </fieldset>
       <% end %>
       </div>

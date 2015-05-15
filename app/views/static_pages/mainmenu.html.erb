@@ -1,11 +1,19 @@
 <header class="col-md-8 col-md-offset-2">
- <h3 class="text-center"><%= current_user.first_name.possessive %> Data</h3>
-</header>
 
+ <main id="mainmain" class="col-md-8 col-md-offset-2">
+<div class="text-center">
+<% if current_user.trips.count > 0 %>
+ <a id="NewTrip" class="btn btn-default btn-lg btn-success" href="/trips/new">&nbsp;&nbsp;&nbsp;+ Start Trip&nbsp;&nbsp;&nbsp;</a>
+<% end %>
+</div>
+
+</header>
+<div class="spacer-sm"></div>
 <div id="statBar" class="col-md-8 col-md-offset-2 table-responsive  contextual-interest">
    <% @vehicles.each do |vehicle| %>
    <!--% @current_user.vehicles.last do %-->
     <table class="col-md-5 col-md-offset-2 col-xs-8 table">
+     <tr class="col-md-8 col-md-offset-2"><h3 class="text-left col-md-offset-2">Drive Log</h3></tr>
      <tr>
       <td class="stat"><i class=""><%= vehicle.trips.count %></i>&nbsp;<strong>Trips</strong></td>
       <td class="stat"><i class="t"><%= vehicle.total_miless %></i>&nbsp;<strong>Miles</strong></td>
@@ -69,19 +77,9 @@
    </div>
    <% end %>
 
-<main id="mainmain" class="col-md-8 col-md-offset-2">
-
-<div class="text-center">
-<% if current_user.trips.count > 0 %>
- <a id="NewTrip" class="btn btn-default btn-lg btn-success" href="/trips/new">+ New Trip</a>
-<% end %>
-</div>
-
-
 <hr>
- <h3 class="screen-title text-center">Driving Log</h3>
+ <h3 class="screen-title col-md-6 col-md-offset-3 text-left">Trip Log</h3> <!-- col-md-offset-2 -->
  <div class="mainly text-center">
-
  <% if current_user.trips.count < 1 %>
   <div class="col-md-8 col-md-offset-2 text-center">
     <div class="panel panel-default text-center">
@@ -105,10 +103,9 @@
   <%= paginate @trips %>
   <% @trips.each do |trip| %>
    <dl>
-   <div class="col-md-6 col-md-offset-3 isotope-item">
+   <div class="col-md-6 col-md-offset-3 isotope-item text-left">
    <div class="panel panel-default">
-   <div class="panel-heading">
-   </div>
+    <div class="spacer-sm"></div>
     <dd class="shower"><p><strong><%= trip.vehicle.make_model %></strong>&nbsp;driven for&nbsp;<strong><%= trip.job.name %></strong></p>
     </dd>
     <dd class="shower"><p>$<strong><i class="text-interest"><%= trip.rebate %></i></strong>&nbsp; saved on <strong><i class="text-interest"><%= trip.miles %></i></strong>&nbsp;miles</p>
