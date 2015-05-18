@@ -2,9 +2,29 @@
   <div class="container-fluid">
     <div class="pull-left" role="button"  >
     <!--%- if < (width: 300px) %-->
-      <a href="#" style="display: inline" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><%= link_to "TaxTrax", class: "navbar-brand col-md-1 col-md-offset-3 navbar-toggle collapsed glyphicon-list" %></a>
+    <ul class="pull-right list-inline">
+      <% if current_user %>
+          <li class="">
+            <a href="#" style="display: inline" class="dropdown-toggle navbar-brand col-md-1 col-md-offset-3 navbar-toggle collapsed glyphicon-list" data-toggle="dropdown" role="button" aria-expanded="false">TaxTrax</a>
+            <ul id="nav-drop" style="float: right" class="dropdown-menu" role="menu">
+
+              <li><%= link_to "Dashboard", main_menu_url %></li>
+
+              <li><%= link_to "Vehicles", vehicles_url %></li>
+
+              <li><%= link_to "Jobs", jobs_url %></li>
+
+              <li><%= link_to "Tax Filing", 'disclaimer_filing' %></li>
+
+              <li class="divider"></li>
+              <li><a><%= link_to "Sign Out", destroy_user_session_path, :method =>"delete" %></a></li>
+            </ul>
+          </li>
+        <% end %>
+    </ul>
+
     <!--% else %-->
-      <%= link_to "TaxTrax", root_url, class: "navbar-brand col-md-1 col-md-offset-3" %>
+      <!--%= link_to "TaxTrax", root_url, class: "navbar-brand col-md-1 col-md-offset-3" %-->
     <!--% end -%-->
     </div>
 

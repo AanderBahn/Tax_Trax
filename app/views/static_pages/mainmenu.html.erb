@@ -23,8 +23,6 @@
    <% end %>
 </div>
 
-
-
  <% if current_user.vehicles.count < 1 and current_user.jobs.count < 1 %>
    <div class="col-md-6 col-md-offset-3 text-center">
     <div class="panel panel-default text-center ">
@@ -100,7 +98,8 @@
 
 
 
-  <%= paginate @trips %>
+  <div class="col-md-6 col-md-offset-3 text-center"><%= paginate @trips %></div>
+
   <% @trips.each do |trip| %>
    <dl>
    <div class="col-md-6 col-md-offset-3 isotope-item text-left">

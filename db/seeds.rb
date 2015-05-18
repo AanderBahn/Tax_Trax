@@ -966,9 +966,9 @@ Trip.create!([
   {job_id: 8, shift_hours: 5, starting_odometer: 3712.2, ending_odometer: 3715.2, vehicle_id: 3, created_at: "2014-09-14 18:56:01"},
    # 3 miles driven outside of worktime
 
-  {job_id: 2, shift_hours: 5, starting_odometer: 0000.0, ending_odometer: 0000.0, vehicle_id: 3, created_at: "2014-10-01 18:56:01"},
-  {job_id: 5, shift_hours: 5, starting_odometer: 0.0, ending_odometer: 0.0, vehicle_id: 3, created_at: "2014-10-01 18:56:01"},
-  {job_id: 8, shift_hours: 5, starting_odometer: .0, ending_odometer: .0, vehicle_id: 3, created_at: "2014-10-01 18:56:01"},
+  {job_id: 2, shift_hours: 5, starting_odometer: 3726.2, ending_odometer: 3731.2, vehicle_id: 3, created_at: "2014-10-01 18:56:01"},
+  {job_id: 5, shift_hours: 5, starting_odometer: 3731.2, ending_odometer: 3735.2, vehicle_id: 3, created_at: "2014-10-01 18:56:01"},
+  {job_id: 8, shift_hours: 5, starting_odometer: .2, ending_odometer: .2, vehicle_id: 3, created_at: "2014-10-01 18:56:01"},
 
   {job_id: 5, shift_hours: 5, starting_odometer: 0.0, ending_odometer: 0.0, vehicle_id: 3, created_at: "2014-10-02 18:56:01"},
 
