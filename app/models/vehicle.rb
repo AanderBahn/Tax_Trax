@@ -96,4 +96,8 @@ class Vehicle < ActiveRecord::Base
   def rebaite_rate
     return self.business_miles(year)
   end
+
+  def running_rate
+    return self.total_miless
+  end
 end

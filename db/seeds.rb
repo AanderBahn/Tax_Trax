@@ -935,48 +935,52 @@ Trip.create!([
   {job_id: 2, shift_hours: 5, starting_odometer: 3505.2, ending_odometer: 3510.2, vehicle_id: 3, created_at: "2014-09-01 18:56:01"},
   {job_id: 5, shift_hours: 5, starting_odometer: 3510.2, ending_odometer: 3514.2, vehicle_id: 3, created_at: "2014-09-01 18:56:01"},
   {job_id: 8, shift_hours: 5, starting_odometer: 3514.2, ending_odometer: 3517.2, vehicle_id: 3, created_at: "2014-09-01 18:56:01"},
-
   {job_id: 2, shift_hours: 5, starting_odometer: 3525.2, ending_odometer: 3530.2, vehicle_id: 3, created_at: "2014-09-02 18:56:01"},
   {job_id: 5, shift_hours: 5, starting_odometer: 3530.2, ending_odometer: 3534.2, vehicle_id: 3, created_at: "2014-09-02 18:56:01"},
   {job_id: 8, shift_hours: 5, starting_odometer: 3534.2, ending_odometer: 3537.2, vehicle_id: 3, created_at: "2014-09-02 18:56:01"},
+  {job_id: 2, shift_hours: 5, starting_odometer: 3545.2, ending_odometer: 3550.2, vehicle_id: 3, created_at: "2014-09-03 18:56:01"},
+  {job_id: 5, shift_hours: 5, starting_odometer: 3550.2, ending_odometer: 3554.2, vehicle_id: 3, created_at: "2014-09-03 18:56:01"},
+  {job_id: 8, shift_hours: 5, starting_odometer: 3554.2, ending_odometer: 3557.2, vehicle_id: 3, created_at: "2014-09-03 18:56:01"},
+  {job_id: 2, shift_hours: 5, starting_odometer: 3565.2, ending_odometer: 3570.2, vehicle_id: 3, created_at: "2014-09-04 18:56:01"},
+  {job_id: 5, shift_hours: 5, starting_odometer: 3570.2, ending_odometer: 3574.2, vehicle_id: 3, created_at: "2014-09-04 18:56:01"},
+  {job_id: 8, shift_hours: 5, starting_odometer: 3574.2, ending_odometer: 3577.2, vehicle_id: 3, created_at: "2014-09-04 18:56:01"},
+  {job_id: 2, shift_hours: 5, starting_odometer: 3585.2, ending_odometer: 3590.2, vehicle_id: 3, created_at: "2014-09-05 18:56:01"},
+  {job_id: 5, shift_hours: 5, starting_odometer: 3590.2, ending_odometer: 3594.2, vehicle_id: 3, created_at: "2014-09-05 18:56:01"},
+  {job_id: 8, shift_hours: 5, starting_odometer: 3594.2, ending_odometer: 3597.2, vehicle_id: 3, created_at: "2014-09-05 18:56:01"},
+  {job_id: 2, shift_hours: 5, starting_odometer: 3605.2, ending_odometer: 3610.2, vehicle_id: 3, created_at: "2014-09-06 18:56:01"},
+  {job_id: 5, shift_hours: 5, starting_odometer: 3610.2, ending_odometer: 3614.2, vehicle_id: 3, created_at: "2014-09-06 18:56:01"},
+  {job_id: 8, shift_hours: 5, starting_odometer: 3614.2, ending_odometer: 3617.2, vehicle_id: 3, created_at: "2014-09-06 18:56:01"},
+  {job_id: 2, shift_hours: 5, starting_odometer: 3625.2, ending_odometer: 3630.2, vehicle_id: 3, created_at: "2014-09-07 18:56:01"},
+  {job_id: 5, shift_hours: 5, starting_odometer: 3630.2, ending_odometer: 3634.2, vehicle_id: 3, created_at: "2014-09-07 18:56:01"},
+  {job_id: 8, shift_hours: 5, starting_odometer: 3634.2, ending_odometer: 3637.2, vehicle_id: 3, created_at: "2014-09-07 18:56:01"},
+  {job_id: 2, shift_hours: 5, starting_odometer: 3645.2, ending_odometer: 3650.2, vehicle_id: 3, created_at: "2014-09-08 18:56:01"},
+  {job_id: 5, shift_hours: 5, starting_odometer: 3650.2, ending_odometer: 3654.2, vehicle_id: 3, created_at: "2014-09-08 18:56:01"},
+  {job_id: 8, shift_hours: 5, starting_odometer: 3654.2, ending_odometer: 3657.2, vehicle_id: 3, created_at: "2014-09-08 18:56:01"},
+  {job_id: 2, shift_hours: 5, starting_odometer: 3665.2, ending_odometer: 3670.2, vehicle_id: 3, created_at: "2014-09-09 18:56:01"},
+  {job_id: 5, shift_hours: 5, starting_odometer: 3670.2, ending_odometer: 3674.2, vehicle_id: 3, created_at: "2014-09-09 18:56:01"},
+  {job_id: 8, shift_hours: 5, starting_odometer: 3674.2, ending_odometer: 3677.2, vehicle_id: 3, created_at: "2014-09-09 18:56:01"},
+  {job_id: 8, shift_hours: 5, starting_odometer: 3682.4, ending_odometer: 3685.4, vehicle_id: 3, created_at: "2014-09-10 18:56:01"},
+  {job_id: 8, shift_hours: 5, starting_odometer: 3690.6, ending_odometer: 3690.6, vehicle_id: 3, created_at: "2014-09-11 18:56:01"},
+  {job_id: 8, shift_hours: 5, starting_odometer: 3695.8, ending_odometer: 3698.8, vehicle_id: 3, created_at: "2014-09-12 18:56:01"},
+  {job_id: 8, shift_hours: 5, starting_odometer: 3704.0, ending_odometer: 3707.0, vehicle_id: 3, created_at: "2014-09-13 18:56:01"},
+  {job_id: 8, shift_hours: 5, starting_odometer: 3712.2, ending_odometer: 3715.2, vehicle_id: 3, created_at: "2014-09-14 18:56:01"},
+   # 3 miles driven outside of worktime
 
-  {job_id: 2, shift_hours: 5, starting_odometer: 0000.0, ending_odometer: 0000.0, vehicle_id: 3, created_at: "2014-09-03 18:56:01"},
-  {job_id: 5, shift_hours: 5, starting_odometer: 0.0, ending_odometer: 0.0, vehicle_id: 3, created_at: "2014-09-03 18:56:01"},
-  {job_id: 8, shift_hours: 5, starting_odometer: ., ending_odometer: ., vehicle_id: 3, created_at: "2014-09-03 18:56:01"},
+  {job_id: 2, shift_hours: 5, starting_odometer: 0000.0, ending_odometer: 0000.0, vehicle_id: 3, created_at: "2014-10-01 18:56:01"},
+  {job_id: 5, shift_hours: 5, starting_odometer: 0.0, ending_odometer: 0.0, vehicle_id: 3, created_at: "2014-10-01 18:56:01"},
+  {job_id: 8, shift_hours: 5, starting_odometer: .0, ending_odometer: .0, vehicle_id: 3, created_at: "2014-10-01 18:56:01"},
 
-  {job_id: 2, shift_hours: 5, starting_odometer: 0000.0, ending_odometer: 0000.0, vehicle_id: 3, created_at: "2014-09-04 18:56:01"},
-  {job_id: 5, shift_hours: 5, starting_odometer: 0.0, ending_odometer: 0.0, vehicle_id: 3, created_at: "2014-09-04 18:56:01"},
-  {job_id: 8, shift_hours: 5, starting_odometer: ., ending_odometer: ., vehicle_id: 3, created_at: "2014-09-04 18:56:01"},
+  {job_id: 5, shift_hours: 5, starting_odometer: 0.0, ending_odometer: 0.0, vehicle_id: 3, created_at: "2014-10-02 18:56:01"},
 
-  {job_id: 2, shift_hours: 5, starting_odometer: 0000.0, ending_odometer: 0000.0, vehicle_id: 3, created_at: "2014-09-05 18:56:01"},
-  {job_id: 5, shift_hours: 5, starting_odometer: 0.0, ending_odometer: 0.0, vehicle_id: 3, created_at: "2014-09-05 18:56:01"},
-  {job_id: 8, shift_hours: 5, starting_odometer: ., ending_odometer: ., vehicle_id: 3, created_at: "2014-09-05 18:56:01"},
+  {job_id: 5, shift_hours: 5, starting_odometer: 0.0, ending_odometer: 0.0, vehicle_id: 3, created_at: "2014-10-03 18:56:01"},
 
-  {job_id: 2, shift_hours: 5, starting_odometer: 0000.0, ending_odometer: 0000.0, vehicle_id: 3, created_at: "2014-09-06 18:56:01"},
-  {job_id: 5, shift_hours: 5, starting_odometer: 0.0, ending_odometer: 0.0, vehicle_id: 3, created_at: "2014-09-06 18:56:01"},
-  {job_id: 8, shift_hours: 5, starting_odometer: ., ending_odometer: ., vehicle_id: 3, created_at: "2014-09-06 18:56:01"},
+  {job_id: 5, shift_hours: 5, starting_odometer: 0.0, ending_odometer: 0.0, vehicle_id: 3, created_at: "2014-10-04 18:56:01"},
 
-  {job_id: 2, shift_hours: 5, starting_odometer: 0000.0, ending_odometer: 0000.0, vehicle_id: 3, created_at: "2014-09-07 18:56:01"},
-  {job_id: 5, shift_hours: 5, starting_odometer: 0.0, ending_odometer: 0.0, vehicle_id: 3, created_at: "2014-09-07 18:56:01"},
-  {job_id: 8, shift_hours: 5, starting_odometer: ., ending_odometer: ., vehicle_id: 3, created_at: "2014-09-07 18:56:01"},
+  {job_id: 5, shift_hours: 5, starting_odometer: 0.0, ending_odometer: 0.0, vehicle_id: 3, created_at: "2014-10-05 18:56:01"},
 
-  {job_id: 2, shift_hours: 5, starting_odometer: 0000.0, ending_odometer: 0000.0, vehicle_id: 3, created_at: "2014-09-08 18:56:01"},
-  {job_id: 5, shift_hours: 5, starting_odometer: 0.0, ending_odometer: 0.0, vehicle_id: 3, created_at: "2014-09-08 18:56:01"},
-  {job_id: 8, shift_hours: 5, starting_odometer: ., ending_odometer: ., vehicle_id: 3, created_at: "2014-09-08 18:56:01"},
+  {job_id: 5, shift_hours: 5, starting_odometer: 0.0, ending_odometer: 0.0, vehicle_id: 3, created_at: "2014-10-06 18:56:01"},
 
-  {job_id: 2, shift_hours: 5, starting_odometer: 0000.0, ending_odometer: 0000.0, vehicle_id: 3, created_at: "2014-09-09 18:56:01"},
-  {job_id: 5, shift_hours: 5, starting_odometer: 0.0, ending_odometer: 0.0, vehicle_id: 3, created_at: "2014-09-09 18:56:01"},
-  {job_id: 8, shift_hours: 5, starting_odometer: ., ending_odometer: ., vehicle_id: 3, created_at: "2014-09-09 18:56:01"},
-
-  {job_id: 8, shift_hours: 5, starting_odometer: ., ending_odometer: ., vehicle_id: 3, created_at: "2014-09-10 18:56:01"},
-
-  {job_id: 8, shift_hours: 5, starting_odometer: ., ending_odometer: ., vehicle_id: 3, created_at: "2014-09-11 18:56:01"},
-
-  {job_id: 8, shift_hours: 5, starting_odometer: ., ending_odometer: ., vehicle_id: 3, created_at: "2014-09-12 18:56:01"},
-
-  {job_id: 8, shift_hours: 5, starting_odometer: ., ending_odometer: ., vehicle_id: 3, created_at: "2014-09-13 18:56:01"},
-
-  {job_id: 8, shift_hours: 5, starting_odometer: ., ending_odometer: ., vehicle_id: 3, created_at: "2014-09-14 18:56:01"},
+  {job_id: 5, shift_hours: 5, starting_odometer: 0.0, ending_odometer: 0.0, vehicle_id: 3, created_at: "2014-10-07 18:56:01"},
 
 ])
 puts "Created #{Trip.count} trips."
