@@ -10,14 +10,26 @@ gem "font-awesome-rails"
 
 gem 'carrierwave'
 gem "paperclip", "~> 4.2"
-
+gem 'aws-sdk'
 gem 'starter_generators', :git => 'https://github.com/rbetina/starter_generators', :branch => 'kiei925'
 
 gem 'bootstrap-sass', '~> 3.3.4'
 
 gem 'kaminari'
 
-gem 'twilio-ruby', '~> 4.1.0'
+# Get twilio-ruby from twilio.com/docs/ruby/install
+require 'rubygems'          # This line not needed for ruby > 1.8
+require 'twilio-ruby'
+
+# Get your Account Sid and Auth Token from twilio.com/user/account
+#account_sid = 'AC0440041f9277144fd0b227459e6c1cc6'
+#auth_token = '{{ auth_token }}'
+#@client = Twilio::REST::Client.new account_sid, auth_token
+
+#sms = @client.account.sms.messages.create(:body => "All in the game, yo",
+ #   :to => "+14108675309",
+  #  :from => "+15005550006")
+# => puts sms.body
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.8'

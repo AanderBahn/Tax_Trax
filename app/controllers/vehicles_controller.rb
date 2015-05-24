@@ -2,7 +2,6 @@ class VehiclesController < ApplicationController
   before_action :authenticate_user!
 
   def index
-    #@vehicle = Vehicle.all
     @vehicles = current_user.vehicles
 
     respond_to do |format|

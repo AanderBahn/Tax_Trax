@@ -58,6 +58,8 @@ Rails.application.routes.draw do
   get    "/my_jobs"           => "jobs#my_jobs"
   #delete "/jobs/:id"          => "jobs#destroy"
 
+  post 'twilio/voice' => 'twilio#voice'
+
   # PROTOTYPE
   get "/go",      :controller => 'static_pages', :action => 'go'
   get "/stop",    :controller => 'static_pages', :action => 'stop'

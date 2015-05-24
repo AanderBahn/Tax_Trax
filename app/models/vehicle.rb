@@ -59,7 +59,7 @@ class Vehicle < ActiveRecord::Base
   end
 
   def percent_business_use(year)
-    return self.business_miles(year).to_f / self.total_miles(year)
+    return (self.business_miles(year).to_f / self.total_miles(year)).round(2)
   end
 
   def commuting_miles(year)

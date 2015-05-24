@@ -25,6 +25,7 @@ class FilingsController < ApplicationController
     @filing.user = current_user
     @filing.save
     respond_with(@filing)
+
   end
 
   def update
@@ -48,5 +49,8 @@ class FilingsController < ApplicationController
 
     def filing_params
       params.require(:filing).permit(:average_daily_commute, :personal_use_off_duty, :another_vehicle_personal, :has_evidence, :written_evidence, :user_id, :for_year)
+      #if filing_params(for_year) < current_user.vehicle.trips.created_at.year
+        #redirect_to filings_path :notice => "No trips entered for that year."
+      #end
     end
 end

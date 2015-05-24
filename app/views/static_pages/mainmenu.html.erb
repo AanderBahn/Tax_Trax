@@ -87,7 +87,9 @@
      <h3 class="panel-title"><a href="#triggerModal" title="Close" class="close"></a></h3>
      <h2 class="screen-title text-center">No trips yet entered</h2>
      <h5 class="text-center">
+     <%- if current_user.vehicles.count > 0 && current_user.jobs.count > 0 %>
        <a id="NewTrip" class="btn btn-default btn-lg btn-success" href="/trips/new">+ New Trip</a>
+     <% end -%>
      </h5>
     </div>
    </div>

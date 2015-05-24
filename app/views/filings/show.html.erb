@@ -34,6 +34,9 @@
       <th>Job</th>
       <th>Job Distance</th>
     </tr>
+
+
+<% if vehicle.trips_for_year(@filing.for_year).present? %>
   <% vehicle.trips_for_year(@filing.for_year).each do |trip| %>
     <tr>
       <td><%= trip.id %></td>
@@ -45,10 +48,16 @@
       <td><%= trip.job.daily_commute %></td>
     </tr>
   <% end %>
+<% else %>
+    <tr>
+     <td  colspan="7"><h4>No trips made in this year.</h4></td>
+    </tr>
+<% end %>
   </table>
   </div>
   </div>
 
+<% if vehicle.trips_for_year(@filing.for_year).present? %>
 <h2>Calculated 2106 Section A:</h2>
   <main>
      <table class="table table-bordered">
@@ -129,6 +138,8 @@
   <td><%= vehicle.business_miles(@filing.for_year) * 0.56 %><td>
   </tr>
 </table>
+<% end %>
+
 </main>
 <% end %>
 

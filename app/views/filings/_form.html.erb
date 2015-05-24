@@ -21,41 +21,41 @@
 
   <div class="form-group">
     <%= f.label :tax_year %><br>
-    <%= f.number_field :for_year, placeholder: "Year you are filing for", :class => "form-control" %>
+    <%= f.number_field :for_year, placeholder: "The year you are filing for.", :class => "form-control" %>
   </div>
   <br>
 
   <div class="form-group">
     <%= f.label :average_daily_commute %><br>
-    <%= f.text_field :average_daily_commute, placeholder: "Your best average commute estimate", :class => "form-control" %>
+    <%= f.text_field :average_daily_commute, placeholder: "Your best average commute estimate, one way.", :class => "form-control" %>
   </div>
   <br>
   <hr>
 
   <div class="form-group">
-   <p class="text-center"><strong>Click the sections below if True</strong></p>
+   <h3 class="text-center"><strong>Click the checkboxes below if True</strong></h3>
   </div>
 
   <div class="form-group">
-    <%= f.label :vehicle_available_for_personal_use_outside_of_work %><br>
+    <%= f.label :the_vehicle_was_available_for_personal_use_outside_of_work %><br>
     <%= f.check_box :personal_use_off_duty, :class => "form-control" %>
   </div>
   <br>
   <hr>
   <div class="form-group">
-    <%= f.label :another_vehicle_available_your_use %><br>
+    <%= f.label :you_had_another_vehicle_available_your_use %><br>
     <%= f.check_box :another_vehicle_personal, :class => "form-control" %>
   </div>
   <br>
   <hr>
   <div class="form-group">
-    <%= f.label :you_have_other_evidence %><br>
+    <%= f.label :you_have_other_evidence_to_suport_this_claim %><br>
     <%= f.check_box :has_evidence, :class => "form-control"  %>
   </div>
   <br>
   <hr>
   <div class="form-group">
-    <%= f.label :is_the_other_evidence_written %><br>
+    <%= f.label :the_other_evidence_in_written_form %><br>
     <%= f.check_box :written_evidence %>
   </div>
   <br>
