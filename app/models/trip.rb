@@ -26,27 +26,14 @@ class Trip < ActiveRecord::Base
    end
   end
 
-# def roundtrip_commute
-#  daily_commute * days_worked
-# end
+  def trip_message(user)
+    client = Twilio::REST::Client.new ENV['twilio_account_sid'], ENV['twilio_auth_token']
 
-# def years_mileage
-#   starting_odometer - year_ending_odometer
-# end
-
-# def biz_mileage
-# end
-
-# def percent_biz_useage
-#  biz_mileage / years_mileage
-# end
-
-# def work_mileage
-#  biz_mileage + roundtrip_commute
-# end
-
-#  def other_mileage
-#   years_mileage - work_mileage
-#  end
+    client.account.messages.create({
+      :from => '+12816561311',
+      :to   => "+1#{user.phone}",
+      :body => "Please remember to enter your end trip information.",
+    })
+  end
 
 end
