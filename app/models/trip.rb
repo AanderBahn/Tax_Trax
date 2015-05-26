@@ -36,7 +36,6 @@ class Trip < ActiveRecord::Base
     "+12816561311"
   end
 
-
   def notify
     Message.new(from_number).send(to_number, "Your trip #{id} is completed")
     update notified: true
@@ -64,5 +63,14 @@ class Trip < ActiveRecord::Base
 #  def other_mileage
 #   years_mileage - work_mileage
 #  end
+  def trip_message(user)
+    client = Twilio::REST::Client.new ENV['twilio_account_sid'], ENV['twilio_auth_token']
+
+    client.account.messages.create({
+      :from => '+12816561311',
+      :to   => "+1#{user.phone}",
+      :body => "Please remember to enter your end trip information.",
+    })
+  end
 
 end
