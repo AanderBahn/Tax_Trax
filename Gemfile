@@ -31,6 +31,7 @@ gem 'seed_dump'
 
 gem "font-awesome-rails"
 
+gem 'carrierwave'
 gem "paperclip", "~> 4.2"
 gem 'aws-sdk'
 gem 'starter_generators', :git => 'https://github.com/rbetina/starter_generators', :branch => 'kiei925'
