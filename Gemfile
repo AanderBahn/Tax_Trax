@@ -32,7 +32,7 @@ gem 'seed_dump'
 gem "font-awesome-rails"
 
 gem "paperclip", "~> 4.2"
-gem 'aws-sdk'
+gem 'aws-sdk', '< 2.0' # http://stackoverflow.com/questions/28374401/nameerror-uninitialized-constant-paperclipstorages3aws
 gem 'starter_generators', :git => 'https://github.com/rbetina/starter_generators', :branch => 'kiei925'
 
 gem 'bootstrap-sass', '~> 3.3.4'
