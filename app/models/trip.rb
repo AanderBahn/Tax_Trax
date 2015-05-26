@@ -28,12 +28,18 @@ class Trip < ActiveRecord::Base
    end
   end
 
+  def to_number
+    "+16182464828"
+  end
+
+  def from_number
+    "+12816561311"
+  end
+
+
   def notify
-    puts "Sending Message to twillo about trip #{id}"
-
-    # update notified: true
-    # send_notification_to_twilio
-
+    Message.new(from_number).send(to_number, "Your trip #{id} is completed")
+    update notified: true
   end
 
 # def roundtrip_commute
