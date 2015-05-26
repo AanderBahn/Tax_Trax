@@ -28,17 +28,6 @@ class Trip < ActiveRecord::Base
    end
   end
 
-<<<<<<< HEAD
-  def trip_message(user)
-    client = Twilio::REST::Client.new ENV['twilio_account_sid'], ENV['twilio_auth_token']
-
-    client.account.messages.create({
-      :from => '+12816561311',
-      :to   => "+1#{user.phone}",
-      :body => "Please remember to enter your end trip information.",
-    })
-  end
-=======
   def notify
     puts "Sending Message to twillo about trip #{id}"
 
@@ -69,6 +58,5 @@ class Trip < ActiveRecord::Base
 #  def other_mileage
 #   years_mileage - work_mileage
 #  end
->>>>>>> 86ad524397412e68a1be1965244fbc4a03cdc0da
 
 end

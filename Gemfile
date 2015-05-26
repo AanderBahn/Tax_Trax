@@ -19,8 +19,6 @@ gem 'bootstrap-sass', '~> 3.3.4'
 
 gem 'kaminari'
 
-<<<<<<< HEAD
-=======
 # Get twilio-ruby from twilio.com/docs/ruby/install
 gem 'twilio-ruby'
 
@@ -34,7 +32,6 @@ gem 'twilio-ruby'
   #  :from => "+15005550006")
 # => puts sms.body
 
->>>>>>> 86ad524397412e68a1be1965244fbc4a03cdc0da
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.8'
 # Use sqlite3 as the database for Active Record
