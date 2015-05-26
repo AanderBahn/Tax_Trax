@@ -18,8 +18,7 @@ gem 'bootstrap-sass', '~> 3.3.4'
 gem 'kaminari'
 
 # Get twilio-ruby from twilio.com/docs/ruby/install
-require 'rubygems'          # This line not needed for ruby > 1.8
-require 'twilio-ruby'
+gem 'twilio-ruby'
 
 # Get your Account Sid and Auth Token from twilio.com/user/account
 #account_sid = 'AC0440041f9277144fd0b227459e6c1cc6'
@@ -74,4 +73,3 @@ ruby "2.2.0"
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
-
