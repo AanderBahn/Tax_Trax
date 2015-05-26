@@ -10,6 +10,8 @@ class Trip < ActiveRecord::Base
 
   default_scope { order("date(trips.created_at) DESC") }
 
+  scope :not_notified, -> {where '1=1' }  # an example could be { where notified: false }
+
   Trip.page(1).per(50)
 
   #@trip = Trip.order('created_at').page params[:page]
@@ -24,6 +26,14 @@ class Trip < ActiveRecord::Base
    if miles.present?
    (miles * 0.56).round(2)
    end
+  end
+
+  def notify
+    puts "Sending Message to twillo about trip #{id}"
+
+    # update notified: true
+    # send_notification_to_twilio
+
   end
 
 # def roundtrip_commute
