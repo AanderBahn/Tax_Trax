@@ -10,6 +10,8 @@ class Trip < ActiveRecord::Base
 
   default_scope { order("date(trips.created_at) DESC") }
 
+  scope :not_notified, -> {where '1=1' }  # an example could be { where notified: false }
+
   Trip.page(1).per(50)
 
   #@trip = Trip.order('created_at').page params[:page]
@@ -26,6 +28,7 @@ class Trip < ActiveRecord::Base
    end
   end
 
+<<<<<<< HEAD
   def trip_message(user)
     client = Twilio::REST::Client.new ENV['twilio_account_sid'], ENV['twilio_auth_token']
 
@@ -35,5 +38,37 @@ class Trip < ActiveRecord::Base
       :body => "Please remember to enter your end trip information.",
     })
   end
+=======
+  def notify
+    puts "Sending Message to twillo about trip #{id}"
+
+    # update notified: true
+    # send_notification_to_twilio
+
+  end
+
+# def roundtrip_commute
+#  daily_commute * days_worked
+# end
+
+# def years_mileage
+#   starting_odometer - year_ending_odometer
+# end
+
+# def biz_mileage
+# end
+
+# def percent_biz_useage
+#  biz_mileage / years_mileage
+# end
+
+# def work_mileage
+#  biz_mileage + roundtrip_commute
+# end
+
+#  def other_mileage
+#   years_mileage - work_mileage
+#  end
+>>>>>>> 86ad524397412e68a1be1965244fbc4a03cdc0da
 
 end
