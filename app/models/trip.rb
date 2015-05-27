@@ -29,7 +29,7 @@ class Trip < ActiveRecord::Base
   end
 
   def to_number
-    "+16182464828"
+    "+1 #{user.phone}"
   end
 
   def from_number
