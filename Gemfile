@@ -1,25 +1,6 @@
 ruby "2.2.0"
 source 'https://rubygems.org'
 
-gem 'twilio-ruby'
-
-gem 'devise'
-
-gem 'possessive'
-
-gem 'seed_dump'
-
-gem "font-awesome-rails"
-
-gem 'carrierwave'
-gem "paperclip", "~> 4.2"
-gem 'aws-sdk'
-gem 'starter_generators', :git => 'https://github.com/rbetina/starter_generators', :branch => 'kiei925'
-
-gem 'bootstrap-sass', '~> 3.3.4'
-
-gem 'kaminari'
-
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.8'
 # Use sqlite3 as the database for Active Record
