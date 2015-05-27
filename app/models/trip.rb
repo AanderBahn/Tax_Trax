@@ -10,7 +10,9 @@
 
   default_scope { order("date(trips.created_at) DESC") }
 
-  scope :not_notified, -> {where '1=1' }  # an example could be { where notified: false }
+  #scope :not_notified, -> {where '1=1' }  # an example could be { where notified: false }
+  #scope :not_notified, -> { where(notified: false).where('end_time > ? ', Time.now) }
+  scope :not_notified, -> { where(notified: false).where('end_time < ? ', Time.now) }
 
   Trip.page(1).per(50)
 
@@ -29,7 +31,7 @@
   end
 
   def to_number
-    "+1 #{user.phone}"
+    "+1#{user.phone}"
   end
 
   def from_number
@@ -37,31 +39,14 @@
   end
 
   def notify
-    Message.new(from_number).send(to_number, "Your trip #{id} is completed")
+    Message.new(from_number).send(to_number, "Please enter your end trip #{id} data.") #{}"Your trip #{id} is completed")
     update notified: true
   end
 
-# def roundtrip_commute
-#  daily_commute * days_worked
-# end
+before_save :calculate_end_time
+def calculate_end_time
+  self.end_time = Time.now + shift_hours.hours
+end
 
-# def years_mileage
-#   starting_odometer - year_ending_odometer
-# end
-
-# def biz_mileage
-# end
-
-# def percent_biz_useage
-#  biz_mileage / years_mileage
-# end
-
-# def work_mileage
-#  biz_mileage + roundtrip_commute
-# end
-
-#  def other_mileage
-#   years_mileage - work_mileage
-#  end
 
 end

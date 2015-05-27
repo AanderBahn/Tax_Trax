@@ -1,4 +1,4 @@
-class TripsController < ApplicationController
+  class TripsController < ApplicationController
   before_action :authenticate_user!
 
  #@trips = Trip.order('created_at').page params[:page]
