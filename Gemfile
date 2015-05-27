@@ -20,19 +20,6 @@ gem 'bootstrap-sass', '~> 3.3.4'
 
 gem 'kaminari'
 
-# Get twilio-ruby from twilio.com/docs/ruby/install
-gem 'twilio-ruby'
-
-# Get your Account Sid and Auth Token from twilio.com/user/account
-#account_sid = 'AC0440041f9277144fd0b227459e6c1cc6'
-#auth_token = '{{ auth_token }}'
-#@client = Twilio::REST::Client.new account_sid, auth_token
-
-#sms = @client.account.sms.messages.create(:body => "All in the game, yo",
- #   :to => "+14108675309",
-  #  :from => "+15005550006")
-# => puts sms.body
-
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.8'
 # Use sqlite3 as the database for Active Record
