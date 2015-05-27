@@ -34,8 +34,6 @@ gem 'twilio-ruby'
   #  :from => "+15005550006")
 # => puts sms.body
 
-=======
->>>>>>> 160239a971df2c01ba6242b1064f7d1df8efdd2d
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.8'
 # Use sqlite3 as the database for Active Record
