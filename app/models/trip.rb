@@ -1,4 +1,4 @@
-class Trip < ActiveRecord::Base
+  class Trip < ActiveRecord::Base
   belongs_to :job
   belongs_to :vehicle
   has_one    :user, through: :job
@@ -35,7 +35,6 @@ class Trip < ActiveRecord::Base
   def from_number
     "+12816561311"
   end
-
 
   def notify
     Message.new(from_number).send(to_number, "Your trip #{id} is completed")

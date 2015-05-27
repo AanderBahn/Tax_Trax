@@ -1,5 +1,7 @@
+ruby "2.2.0"
 source 'https://rubygems.org'
 
+<<<<<<< HEAD
 gem 'twilio-ruby'
 
 gem 'devise'
@@ -32,6 +34,8 @@ gem 'twilio-ruby'
   #  :from => "+15005550006")
 # => puts sms.body
 
+=======
+>>>>>>> 160239a971df2c01ba6242b1064f7d1df8efdd2d
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.8'
 # Use sqlite3 as the database for Active Record
@@ -54,6 +58,24 @@ gem 'jbuilder', '~> 2.0'
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0',          group: :doc
 
+gem 'devise'
+
+gem 'possessive'
+
+gem 'seed_dump'
+
+gem "font-awesome-rails"
+
+gem "paperclip", "~> 4.2"
+gem 'aws-sdk', '< 2.0' # http://stackoverflow.com/questions/28374401/nameerror-uninitialized-constant-paperclipstorages3aws
+gem 'starter_generators', :git => 'https://github.com/rbetina/starter_generators', :branch => 'kiei925'
+
+gem 'bootstrap-sass', '~> 3.3.4'
+
+gem 'kaminari'
+
+gem 'twilio-ruby'
+
 group :development do
   gem 'spring'
   gem 'byebug'
@@ -62,16 +84,3 @@ end
 group :production, :test do
   gem 'rails_12factor'
 end
-
-ruby "2.2.0"
-# Use ActiveModel has_secure_password
-# gem 'bcrypt', '~> 3.1.7'
-
-# Use unicorn as the app server
-# gem 'unicorn'
-
-# Use Capistrano for deployment
-# gem 'capistrano-rails', group: :development
-
-# Use debugger
-# gem 'debugger', group: [:development, :test]
