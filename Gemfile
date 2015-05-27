@@ -1,7 +1,6 @@
 ruby "2.2.0"
 source 'https://rubygems.org'
 
-<<<<<<< HEAD
 gem 'twilio-ruby'
 
 gem 'devise'
