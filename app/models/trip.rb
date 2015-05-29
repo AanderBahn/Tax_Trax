@@ -12,7 +12,7 @@
 
   #scope :not_notified, -> {where '1=1' }  # an example could be { where notified: false }
   #scope :not_notified, -> { where(notified: false).where('end_time > ? ', Time.now) }
-  scope :not_notified, -> { where(notified: false).where('end_time < ? ', Time.now) }
+  scope :not_notified, -> { where(notified: false).where('end_time < ? ', Time.current) }
 
   Trip.page(1).per(50)
 

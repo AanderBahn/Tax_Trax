@@ -13,6 +13,7 @@
     @trip.shift_hours = params[:shift_hours]
     @trip.vehicle_id = params[:vehicle_id]
     @trip.starting_odometer = params[:starting_odometer]
+    #@trip.created_at = created_at - 6
 
     if @trip.save
       redirect_to "/trips/#{@trip.id}"
