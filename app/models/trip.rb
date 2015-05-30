@@ -42,7 +42,7 @@
     if user.valid?
       Message.new(from_number).send(to_number, "Please enter your end trip #{id} data.") #{}"Your trip #{id} is completed")
     end
-    update notified: true
+    update_column :notified, true
   end
 
 
