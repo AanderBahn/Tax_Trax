@@ -45,6 +45,14 @@
     update_column :notified, true
   end
 
+  def completed?
+    end_time < Time.current
+  end
+
+  def remaining_time
+    Time.current.at_beginning_of_day + (end_time - Time.current)
+  end
+
 
 
 before_save :calculate_end_time

@@ -13,8 +13,12 @@
        <strong class="text-center">Please drive safely. </strong>
       </div>
        <div class="panel-body text-center">
-        <p class="timer-caption">Time until reminder</p>
-        <h2 class="timer" id="timer"><%= @trip.shift_hours %>:00:00</h2>
+         <% if @trip.completed? %>
+          <h2>Completed!</h2>
+         <%else%>
+          <p class="timer-caption">Time until reminder</p>
+          <h2 class="timer" id="timer"><%= @trip.remaining_time.strftime("%H:%M:%S") %></h2>
+        <%end%>
 
       <p>You have not yet entered your trip data.<br>
          Please click below when finished driving.</p>
@@ -63,6 +67,6 @@
         document.getElementById("timer").innerHTML = (hours + ":" + minutes + ":" + seconds);
       }
 
-      var interval = setInterval(tickTock, 1);
+      var interval = setInterval(tickTock, 1000);
     };
   </script>
