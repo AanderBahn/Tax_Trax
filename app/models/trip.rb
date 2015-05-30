@@ -39,9 +39,13 @@
   end
 
   def notify
-    Message.new(from_number).send(to_number, "Please enter your end trip #{id} data.") #{}"Your trip #{id} is completed")
+    if user.valid?
+      Message.new(from_number).send(to_number, "Please enter your end trip #{id} data.") #{}"Your trip #{id} is completed")
+    end
     update notified: true
   end
+
+
 
 before_save :calculate_end_time
 def calculate_end_time

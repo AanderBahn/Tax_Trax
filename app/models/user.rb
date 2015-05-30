@@ -3,6 +3,7 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   validates :email, presence: true, uniqueness: true
+  validates :phone, presence: true, format: { with: /\d{10}/, message: "just numbers please" }
 
   has_many :vehicles
   has_many :jobs
