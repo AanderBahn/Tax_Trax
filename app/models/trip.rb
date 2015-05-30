@@ -45,7 +45,7 @@
     update_column :notified, true
   end
 
-  def completed?
+  def timer_complete?
     end_time < Time.current
   end
 
