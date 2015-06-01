@@ -13,7 +13,7 @@
        <strong class="text-center">Please drive safely. </strong>
       </div>
        <div class="panel-body text-center">
-         <% if @trip.completed? %>
+         <% if @trip.timer_complete? %>
           <h2>Completed!</h2>
          <%else%>
           <p class="timer-caption">Time until reminder</p>
