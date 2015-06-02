@@ -12,7 +12,11 @@
 
   #scope :not_notified, -> {where '1=1' }  # an example could be { where notified: false }
   #scope :not_notified, -> { where(notified: false).where('end_time > ? ', Time.now) }
-  scope :not_notified, -> { where(notified: false).where('end_time < ? ', Time.current) }
+  scope :not_completed, -> { where(ending_odometer: nil)}
+  scope :expired,       -> { where('end_time < ?', Time.current)}
+  scope :not_notified,  -> { where(notified: false) }
+
+  scope :to_notify,     -> { not_notified.expired.not_completed }
 
   Trip.page(1).per(50)
 
