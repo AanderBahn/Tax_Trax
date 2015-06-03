@@ -11,6 +11,7 @@
     @trip = Trip.new
     @trip.job_id = params[:job_id]
     @trip.shift_hours = params[:shift_hours]
+    @trip.shift_minutes = params[:shift_minutes]
     @trip.vehicle_id = params[:vehicle_id]
     @trip.starting_odometer = params[:starting_odometer]
     #@trip.created_at = created_at - 6

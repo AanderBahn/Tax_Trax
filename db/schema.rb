@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150527204432) do
+ActiveRecord::Schema.define(version: 20150603144109) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -51,6 +51,7 @@ ActiveRecord::Schema.define(version: 20150527204432) do
     t.integer  "vehicle_id"
     t.boolean  "notified",          default: false
     t.datetime "end_time"
+    t.integer  "shift_minutes",     default: 0
   end
 
   create_table "users", force: true do |t|

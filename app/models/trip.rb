@@ -61,7 +61,7 @@
 
 before_save :calculate_end_time
 def calculate_end_time
-  self.end_time = Time.now + shift_hours.hours
+  self.end_time = Time.now + shift_hours.hours + shift_minutes.minutes
 end
 
 

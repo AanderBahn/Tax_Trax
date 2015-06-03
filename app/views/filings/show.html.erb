@@ -70,7 +70,7 @@
   <tr>
     <td>11. Enter the date the vehicle was placed in service</td>
     <td>11</td>
-    <td><%= vehicle.service_start_date %></td>
+    <td><%= l vehicle.service_start_date %></td>
     <td></td>
   </tr>
   <tr>
@@ -133,9 +133,9 @@
   <th>Section B -Standard Mileage Rate</th>
   </tr>
   <tr>
-  <td>22. Multiply line 13 by .56 cents(.56)</td>
+  <td>22. Multiply line 13 by <%= @filing.rate %> cents(.56)</td>
   <td>22</td>
-  <td><%= vehicle.business_miles(@filing.for_year) * 0.56 %><td>
+  <td><%= number_to_currency vehicle.business_miles(@filing.for_year) * @filing.rate %><td>
   </tr>
 </table>
 <% end %>
