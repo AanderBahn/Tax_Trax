@@ -27,6 +27,41 @@
    </div>
    <% end %>
 
+ <% if current_user.jobs.count == 0 and current_user.vehicles.count >= 1  %>
+   <div class="col-md-6 col-md-offset-3 text-center">
+    <div class="panel panel-default text-center ">
+    <div class="panel-heading"><h3 class="panel-title"></h3></div>
+   <div id="triggerModal" class="modalDialog">
+    <div class="text-center">
+     <h3 class="panel-title"><a href="#triggerModal" title="Close" class="close"></a></h3>
+     <h2 class="screen-title text-center">No job entered</h2>
+     <h5 class="text-center">
+       To continue your <strong>Tax Trax</strong> setup you still need enter a <%= link_to('job', new_job_path) %>
+     </h5>
+    </div>
+   </div>
+    </div>
+   </div>
+   <% end %>
+
+   <% if current_user.vehicles.count >= 1 and current_user.jobs.count >= 1 and current_user.trips.count < 1  %>
+   <div class="col-md-6 col-md-offset-3 text-center">
+    <div class="panel panel-default text-center ">
+    <div class="panel-heading"><h3 class="panel-title"></h3></div>
+   <div id="triggerModal" class="modalDialog">
+    <div class="text-center">
+     <h3 class="panel-title"><a href="#triggerModal" title="Close" class="close"></a></h3>
+     <h2 class="screen-title text-center">Ready to Drive</h2>
+     <h5 class="text-center">
+       Your <strong>Tax Trax</strong> setup is complete.
+     </h5>
+     <a id="NewTrip" class="btn btn-default btn-lg btn-success" href="/trips/new">&nbsp;&nbsp;&nbsp;+ Start Trip&nbsp;&nbsp;&nbsp;</a>
+    </div>
+   </div>
+    </div>
+   </div>
+   <% end %>
+
   <div>
   <% @vehicles.each do |vehicle| %>
 
