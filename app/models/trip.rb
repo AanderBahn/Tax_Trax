@@ -30,7 +30,7 @@
 
   def rebate
    if miles.present?
-   (miles * 0.56).round(2)
+   (miles * Filing::RATES[created_at.year])
    end
   end
 

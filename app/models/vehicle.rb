@@ -32,7 +32,7 @@ class Vehicle < ActiveRecord::Base
     self.trips.order("trips.created_at ASC").first.created_at
   end
 
-  def total_miless
+  def total_miles_yearly(year)
     total = 0
     self.trips.each do |trip|
       if trip.miles.present?
@@ -97,7 +97,7 @@ class Vehicle < ActiveRecord::Base
     return self.business_miles(year)
   end
 
-  def running_rate
-    return self.total_miless
+  def running_rate(year)
+    return self.total_miles_yearly(year) * Filing::RATES[year]
   end
 end

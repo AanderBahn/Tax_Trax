@@ -16,8 +16,8 @@
      <tr class="col-md-8 col-md-offset-2"><h3 class="text-left col-md-offset-2">Drive Log</h3></tr>
      <tr>
       <td class="stat"><i class=""><%= vehicle.trips.count %></i>&nbsp;<strong>Trips</strong></td>
-      <td class="stat"><i class="t"><%= vehicle.total_miless %></i>&nbsp;<strong>Miles</strong></td>
-      <td class="stat"><strong>$</strong>&nbsp;<i class="text-interest"><%= vehicle.running_rate %></i>&nbsp;<strong>savings</strong></td>
+      <td class="stat"><i class="t"><%= vehicle.total_miles_yearly(Time.current.year) %></i>&nbsp;<strong>Miles</strong></td>
+      <td class="stat">&nbsp;<i class="text-interest"><%= number_to_currency vehicle.running_rate(Time.current.year) %></i>&nbsp;<strong>savings</strong></td>
      </tr>
     </table>
    <% end %>
@@ -109,7 +109,7 @@
     <div class="spacer-sm"></div>
     <dd class="shower"><p><strong><%= trip.vehicle.make_model %></strong>&nbsp;driven for&nbsp;<strong><%= trip.job.name %></strong></p>
     </dd>
-    <dd class="shower"><p>$<strong><i class="text-interest"><%= trip.rebate %></i></strong>&nbsp; saved on <strong><i class="text-interest"><%= trip.miles %></i></strong>&nbsp;miles</p>
+    <dd class="shower"><p><strong><i class="text-interest"><%= number_to_currency trip.rebate %></i></strong>&nbsp; saved on <strong><i class="text-interest"><%= trip.miles %></i></strong>&nbsp;miles</p>
     </dd>
     <br>
 
