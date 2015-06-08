@@ -1,8 +1,10 @@
 <h1 class="text-center">Your Vehicles</h1>
 <div class="text-center">
-<% if current_user.vehicles.count > 0 %>
+<% if current_user.vehicles.count > 0 and current_user.jobs.count > 0 %>
  <a class="btn btn-success" href="/vehicles/new">Add New Vehicle</a>
+ <div class="spacer-mic"></div>
 <% end %>
+
 </div>
 
 
@@ -36,7 +38,9 @@
      <h3 class="panel-title"><a href="#triggerModal" title="Close" class="close"></a></h3>
      <h2 class="screen-title text-center">No job entered</h2>
      <h5 class="text-center">
-       To continue your <strong>Tax Trax</strong> setup you still need enter a <%= link_to('job', new_job_path) %>
+       To continue your <strong>Tax Trax</strong> setup you still need to
+       <div class="spacer-mic"></div>
+       <a class="btn btn-success" href="/jobs/new">Add A Job</a>
      </h5>
     </div>
    </div>
@@ -51,12 +55,13 @@
    <div id="triggerModal" class="modalDialog">
     <div class="text-center">
      <h3 class="panel-title"><a href="#triggerModal" title="Close" class="close"></a></h3>
-     <h2 class="screen-title text-center">Ready to Drive</h2>
+     <h2 class="screen-title text-center">Ready to Go</h2>
      <h5 class="text-center">
        Your <strong>Tax Trax</strong> setup is complete.
      </h5>
-     <a id="NewTrip" class="btn btn-default btn-lg btn-success" href="/trips/new">&nbsp;&nbsp;&nbsp;+ Start Trip&nbsp;&nbsp;&nbsp;</a>
+     <a id="NewTrip" class="btn btn-default btn-lg btn-success" href="/trips/new">&nbsp;&nbsp;&nbsp;Start Driving&nbsp;&nbsp;&nbsp;</a>
     </div>
+    <div class="spacer-mic"></div>
    </div>
     </div>
    </div>

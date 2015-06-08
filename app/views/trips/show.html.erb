@@ -23,7 +23,7 @@
       <p>You have not yet entered your trip data.<br>
          Please click below when finished driving.</p>
       <p>
-        <%= link_to "End Trip", edit_trip_path(@trip), :class =>"btn btn-success", "data-no-turbolink" => true %>
+        <%= link_to "End Shift", edit_trip_path(@trip), :class =>"btn btn-success", "data-no-turbolink" => true %>
       </p>
       </div>
      </div>
@@ -57,8 +57,6 @@
               seconds = 0;
               clearInterval(interval);
             }
-
-<!-- How could I get this to trigger when the timer ran out? -->
 
         hours = (hours < 10) ? "0" + hours : hours;
         minutes = (minutes < 10) ? "0" + minutes : minutes;

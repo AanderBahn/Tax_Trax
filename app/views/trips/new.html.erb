@@ -1,7 +1,7 @@
 <div id="wrapper">
  <header>
   <nav class="main-nav">
-   <h2 class="screen-title text-center">Starting Trip Info</h2>
+   <h2 class="screen-title text-center">Starting A New Drive</h2>
   </nav>
  </header>
 
@@ -16,7 +16,7 @@
      <div class="form-group">
       <fieldset>
         <label for="company">
-          Who are you driving for?
+          What company are you driving for?
         </label>
 
         <select id="job" class="form-control" name="job_id" required>
@@ -30,18 +30,12 @@
     <div class="form-group">
       <fieldset>
         <label for="shift">
-          How many hours is your trip?
+          How long is your drive?
         </label>
-        <input id="shift" class="form-control" type="number" name="shift_hours" required>
-      </fieldset>
-    </div>
-
-    <div class="form-group">
-      <fieldset>
-        <label for="shift">
-          Minutes?
-        </label>
-        <input id="shift" class="form-control" type="number" name="shift_minutes" required>
+        <div class="spacer-mic"></div>
+        <input id="shift" class="" type="number" name="shift_hours" placeholder="Hours" required>
+        :
+        <input id="shift" class="" type="number" name="shift_minutes" placeholder="Minutes" required>
       </fieldset>
     </div>
 
@@ -62,10 +56,10 @@
      <div class="form-group">
       <fieldset>
         <label for="odometer">
-          What's your starting odometer?
+          What's your starting odometer for this shift?
         </label>
 
-        <input type="number" id="odometer" class="form-control" name="starting_odometer" placeholder="Enter starting mileage" required/>
+        <input type="number" id="odometer" class="form-control" name="starting_odometer" type="number" placeholder="Enter your starting odometer" required/>
       </fieldset>
      </div>
 

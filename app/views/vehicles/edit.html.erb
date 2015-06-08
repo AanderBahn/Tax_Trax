@@ -23,32 +23,36 @@
 
   <!-- Label and input for name -->
   <div class="form-group">
-    <%= f.label :car_type, class: "col-sm-2 control-label" %>
+    <%= f.label :the_make_and_model_of_your_car, class: "col-sm-2 control-label" %>
     <div class="col-sm-10">
-      <%= f.text_field :make_model, placeholder: "Car Make & Model", class: "form-control" %>
+      <%= f.text_field :make_model, placeholder: "Car Type, i.e. Toyota RAV 4", class: "form-control" %>
     </div>
   </div>
   <br>
 
   <!-- Label and input for bio -->
   <div class="form-group">
-    <%= f.label :year, class: "col-sm-2 control-label" %>
+    <%= f.label :model_year, class: "col-sm-2 control-label" %>
     <div class="col-sm-10">
-      <%= f.text_field :year, placeholder: "Year of the Model", class: "form-control" %>
+      <%= f.text_field :year, placeholder: "Year of the Model, i.e. 2007", :type => "number", class: "form-control" %>
     </div>
   </div>
 
   <div class="form-group">
-    <%= f.label :starting_odometer, class: "col-sm-2 control-label" %>
+    <%= f.label :odometer_reading_at_work_start_date, class: "col-sm-2 control-label" %>
     <div class="col-sm-10">
-      <%= f.text_field :starting_odometer, placeholder: "Car's Starting Odometer", class: "form-control" %>
+      <%= f.text_field :starting_odometer, placeholder: "Car's Starting Odometer, i.e. 10000", :type => "number", class: "form-control" %>
     </div>
   </div>
 
   <div class="form-group">
-    <%= f.label :personal_usage, class: "col-sm-2 control-label" %>
+    <%= f.label :will_you_use_it_outside_of_work?, class: "col-sm-2 control-label" %>
     <div class="col-sm-10">
-      <%= f.text_field :personal_usage, placeholder: "True or False? This car be availbe to  you outside of work?", class: "form-control" %>
+      <%= f.radio_button :personal_usage, true%>
+              <%= f.label :personal_usage_true, "Yes it's my personal car." %>
+              <%= f.radio_button :personal_usage, false%>
+              <%= f.label(:personal_usage_false, "No it's strictly a work car") %>
+    <p><i>(Note: If your personal use changes, please wait until the start of new year to change it's status here.)</i></p>
     </div>
   </div>
 

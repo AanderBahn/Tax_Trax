@@ -1,6 +1,5 @@
 <div id="wrapper">
  <h1 class="screen-title text-center">Sign up</h1>
- <p class="text-center"><a class ="back btn btn-info" href="/">Sign In</a></p>
 
     <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
       <%= devise_error_messages! %>
@@ -29,7 +28,7 @@
   <div class="form-group">
       <fieldset class="col-md-6 col-md-offset-3">
         <%= f.label :phone %>
-        <%= f.phone_field :phone, autofocus: true, :placeholder => "Enter your cell phone number", :class => 'form-control' %>
+        <%= f.phone_field :phone, autofocus: true, :placeholder => "Enter your cell phone number", :class => 'form-control', :type => "number" %>
       </fieldset>
   </div>
 
@@ -54,20 +53,25 @@
       <%= f.label :password_confirmation %><br />
       <%= f.password_field :password_confirmation,
             autocomplete: "off",
-            :placeholder => "Confirm Password", :class => 'form-control'  %>
+            :placeholder => "Re-eneter Password", :class => 'form-control'  %>
      </fieldset>
   </div>
-
+  <div class="spacer-sm"></div>
       <fieldset class="formAction col-md-6 col-md-offset-3 text-center">
         <%= f.submit "Sign up", :class => 'btn btn-success submit' %>
       </fieldset>
     <% end %>
+
   <hr>
+  <div class="spacer-sm"></div>
   <p class="col-md-6 col-md-offset-3 text-center">Want to know how Tax Trax can start helping you today?</p>
-  <a href="#" class="col-md-6 text-center">About Us</a>
+  <a href="#" class="col-md-6 col-md-offset-3 text-center">About Us</a>
   <p class="col-md-6 col-md-offset-3 text-center">Want to get a hold of us?</p>
-  <a href="#" class="col-md-6 text-center">Contact Us</a>
+  <a href="#" class="col-md-6 col-md-offset-3 text-center">Contact Us</a>
 </div>
+<div class="spacer-sm"></div>
+<p class="col-md-6 col-md-offset-3 text-center">Already have an account?</p>
+<p class="col-md-6 col-md-offset-3 text-center"><a class ="back btn btn-info" href="/">Sign In</a></p>
 
 
 

@@ -3,7 +3,7 @@
  <main id="mainmain" class="col-md-8 col-md-offset-2">
 <div class="text-center">
 <% if current_user.trips.count > 0 %>
- <a id="NewTrip" class="btn btn-default btn-lg btn-success" href="/trips/new">&nbsp;&nbsp;&nbsp;+ Start Trip&nbsp;&nbsp;&nbsp;</a>
+ <a id="NewTrip" class="btn btn-default btn-lg btn-success" href="/trips/new">&nbsp;&nbsp;&nbsp;+ New Drive&nbsp;&nbsp;&nbsp;</a>
 <% end %>
 </div>
 
@@ -32,16 +32,19 @@
      <h3 class="panel-title"><a href="#triggerModal" title="Close" class="close"></a></h3>
      <h2 class="screen-title text-center">Welcome to Tax Trax</h2>
      <h5 class="text-center">
-       To get started you need to enter your <%= link_to('job', new_job_path) %> and <%= link_to('vehicle', new_vehicle_path) %> information.
+       <p>To get started you need to</p>
+       <a class="btn btn-success" href="/vehicles/new">Add A New Vehicle</a>
+       and
+       <a class="btn btn-success" href="/jobs/new">Add A New Job</a>
      </h5>
     </div>
    </div>
     </div>
    </div>
-   <% end %>
+  <% end %>
 
 <% if current_user.jobs.count == 0 and current_user.vehicles.count >= 1  %>
-   <div class="col-md-6 col-md-offset-3 text-center">
+ <div class="col-md-6 col-md-offset-3 text-center">
     <div class="panel panel-default text-center ">
     <div class="panel-heading"><h3 class="panel-title"></h3></div>
    <div id="triggerModal" class="modalDialog">
@@ -49,17 +52,19 @@
      <h3 class="panel-title"><a href="#triggerModal" title="Close" class="close"></a></h3>
      <h2 class="screen-title text-center">No job entered</h2>
      <h5 class="text-center">
-       To get the most out of <strong>Tax Trax</strong> you still need enter a <%= link_to('job', new_job_path) %>
+       To continue your <strong>Tax Trax</strong> setup you still need to
+       <div class="spacer-mic"></div>
+       <a class="btn btn-success" href="/jobs/new">Add A Job</a>
      </h5>
     </div>
    </div>
     </div>
    </div>
-   <% end %>
+<% end %>
 
 
 <% if current_user.vehicles.count == 0 and current_user.jobs.count >= 1   %>
-   <div class="col-md-6 col-md-offset-3 text-center">
+ <div class="col-md-6 col-md-offset-3 text-center">
     <div class="panel panel-default text-center ">
     <div class="panel-heading"><h3 class="panel-title"></h3></div>
    <div id="triggerModal" class="modalDialog">
@@ -67,16 +72,18 @@
      <h3 class="panel-title"><a href="#triggerModal" title="Close" class="close"></a></h3>
      <h2 class="screen-title text-center">No vehicle entered</h2>
      <h5 class="text-center">
-       To get the most out of <strong>Tax Trax</strong> you still need enter a <%= link_to('vehicle', new_vehicle_path) %>
+       To continue your <strong>Tax Trax</strong> setup you still need to
+       <div class="spacer-mic"></div>
+       <a class="btn btn-success" href="/vehicles/new">Add A Vehicle</a>
      </h5>
     </div>
    </div>
     </div>
    </div>
-   <% end %>
+<% end %>
 
 <hr>
- <h3 class="screen-title col-md-6 col-md-offset-3 text-left">Trip Log</h3> <!-- col-md-offset-2 -->
+ <h3 class="screen-title col-md-6 col-md-offset-3 text-left">Drive Log</h3> <!-- col-md-offset-2 -->
  <div class="mainly text-center">
  <% if current_user.trips.count < 1 %>
   <div class="col-md-8 col-md-offset-2 text-center">
@@ -87,7 +94,9 @@
      <h3 class="panel-title"><a href="#triggerModal" title="Close" class="close"></a></h3>
      <h2 class="screen-title text-center">No trips yet entered</h2>
      <h5 class="text-center">
+     This is where your list of trips will show up once you have done the inital set up and make some trips.
      <%- if current_user.vehicles.count > 0 && current_user.jobs.count > 0 %>
+       <div class="spacer-mic"></div>
        <a id="NewTrip" class="btn btn-default btn-lg btn-success" href="/trips/new">+ New Trip</a>
      <% end -%>
      </h5>
@@ -115,6 +124,7 @@
 
     <%= link_to 'Edit', "/trips/#{trip.id}/edit", :class => 'btn btn-default btn-xs' %>
     <%= link_to 'Destroy', "/trips/#{trip.id}", method: :delete, :class => 'btn btn-default btn-xs' %>
+    <div class="spacer-mic"></div>
     </div>
     <br>
 

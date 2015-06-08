@@ -1,7 +1,7 @@
   <div id="wrapper">
     <header>
      <nav class="main-nav">
-      <h2 class="screen-title text-center">End trip data</h2>
+      <h2 class="screen-title text-center">Shift Ended</h2>
      </nav>
     </header>
 
@@ -9,7 +9,7 @@
      <div class="col-md-6 col-md-offset-3 isotope-item">
      <div class="panel panel-default">
      <div class="panel-heading">
-      <p class="text-center"><strong>Enter your data.</strong></p>
+      <p class="text-center"><strong></strong></p>
      </div>
 
       <div class="panel-body text-center">
@@ -27,7 +27,8 @@
             id="odometer"
             placeholder="<%= @trip.starting_odometer %>"
             name="ending_odometer"
-            min="<%= @trip.starting_odometer %>" />
+            min="<%= @trip.starting_odometer %>"
+            type="number" />
         </fieldset>
         </div>
 

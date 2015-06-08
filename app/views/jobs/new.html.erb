@@ -28,26 +28,39 @@
 
           <!-- Label and input for name -->
           <div class="form-group">
-            <%= f.label :name, class: "col-sm-2 control-label" %>
+            <%= f.label :name_of_the_company, class: "col-sm-2 control-label" %>
             <div class="col-sm-10">
-              <%= f.text_field :name, placeholder: "Company Name", class: "form-control" %>
+              <%= f.text_field :name, placeholder: "Company Name, i.e. Pizza Place", class: "form-control" %>
             </div>
           </div>
           <br>
 
+          <div class="form-group ">
+           <%= f.label :industry, class: "col-sm-2 control-label" %>
+          <div class="col-sm-10">
+           <%= f.select :industry, [['Delivery','delivery'],['Transportation','transportation'],['Food service','food service']]%>
+          </div>
+          </div>
+          <br>
+
           <div class="form-group">
-            <%= f.label :industry, class: "col-sm-2 control-label" %>
+            <%= f.label :Employment_Status, class: "col-sm-2 control-label" %>
             <div class="col-sm-10">
-              <%= f.text_field :industry, placeholder: "Company Industry", class: "form-control" %>
+              <%= f.radio_button :employee, true%>
+              <%= f.label :employee_true, "I'm a Employee" %>
+              &nbsp;&nbsp;
+              <%= f.radio_button :employee, false%>
+              <%= f.label(:employee_false, "I'm a Independent Contractor") %>
+
             </div>
           </div>
           <br>
 
           <!-- Label and input for bio -->
           <div class="form-group">
-            <%= f.label :daily_commute, class: "col-sm-2 control-label" %>
+            <%= f.label :how_many_miles_do_you_drive_to_work?, class: "col-sm-2 control-label" %>
             <div class="col-sm-10">
-              <%= f.text_field :daily_commute, placeholder: "Your daily, one way, commute", class: "form-control" %>
+              <%= f.text_field :daily_commute, placeholder: "Your daily driving commute (one way)",:type => "number", class: "form-control" %>
             </div>
           </div>
           <br>
