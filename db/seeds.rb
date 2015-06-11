@@ -1076,30 +1076,40 @@ Trip.create!([
   {job_id: 5, shift_hours: 5, starting_odometer: 4707.2, ending_odometer: 4711.2, vehicle_id: 3, created_at: "2015-02-05 18:56:01"} # 15 miles driven outside of worktime
   ])
 
-  {job_id: 2, shift_hours: 5, starting_odometer: 0000.0, ending_odometer: 0000.0, vehicle_id: 3, created_at: "2015-03-01 18:56:01"},
-  {job_id: 8, shift_hours: 5, starting_odometer: 4740.6, ending_odometer: 4744.6, vehicle_id: 3, created_at: "2015-03-01 18:56:01"},
+  {job_id: 2, shift_hours: 5, starting_odometer: 4735.6, ending_odometer: 4740.6, vehicle_id: 3, created_at: "2015-03-01 18:56:01"},
+  {job_id: 8, shift_hours: 5, starting_odometer: 4740.6, ending_odometer: 4743.6, vehicle_id: 3, created_at: "2015-03-01 18:56:01"},
+  {job_id: 2, shift_hours: 5, starting_odometer: 4751.6, ending_odometer: 4756.6, vehicle_id: 3, created_at: "2015-03-02 18:56:01"},
+  {job_id: 8, shift_hours: 5, starting_odometer: 4756.6, ending_odometer: 4759.6, vehicle_id: 3, created_at: "2015-03-02 18:56:01"},
+  {job_id: 2, shift_hours: 5, starting_odometer: 4767.6, ending_odometer: 4772.6, vehicle_id: 3, created_at: "2015-03-03 18:56:01"},
+  {job_id: 8, shift_hours: 5, starting_odometer: 4772.6, ending_odometer: 4775.6, vehicle_id: 3, created_at: "2015-03-03 18:56:01"},
+  {job_id: 2, shift_hours: 5, starting_odometer: 4783.6, ending_odometer: 4788.6, vehicle_id: 3, created_at: "2015-03-04 18:56:01"},
+  {job_id: 8, shift_hours: 5, starting_odometer: 4788.6, ending_odometer: 4791.6, vehicle_id: 3, created_at: "2015-03-04 18:56:01"},
+  {job_id: 2, shift_hours: 5, starting_odometer: 4799.6, ending_odometer: 4804.6, vehicle_id: 3, created_at: "2015-03-05 18:56:01"},
+  {job_id: 8, shift_hours: 5, starting_odometer: 4804.6, ending_odometer: 4807.6, vehicle_id: 3, created_at: "2015-03-05 18:56:01"},
+  {job_id: 2, shift_hours: 5, starting_odometer: 4815.6, ending_odometer: 4820.6, vehicle_id: 3, created_at: "2015-03-06 18:56:01"},
+  {job_id: 8, shift_hours: 5, starting_odometer: 4820.6, ending_odometer: 4823.6, vehicle_id: 3, created_at: "2015-03-06 18:56:01"},
+  {job_id: 2, shift_hours: 5, starting_odometer: 4831.6, ending_odometer: 4836.6, vehicle_id: 3, created_at: "2015-03-07 18:56:01"},
+  {job_id: 2, shift_hours: 5, starting_odometer: 4847.4, ending_odometer: 4852.4, vehicle_id: 3, created_at: "2015-03-08 18:56:01"}, # 2 miles driven outside of worktime
 
-  {job_id: 2, shift_hours: 5, starting_odometer: 0000.0, ending_odometer: 0000.0, vehicle_id: 3, created_at: "2015-03-02 18:56:01"},
-  {job_id: 8, shift_hours: 5, starting_odometer: 0.0, ending_odometer: 0.0, vehicle_id: 3, created_at: "2015-03-02 18:56:01"},
-
-  {job_id: 2, shift_hours: 5, starting_odometer: 0000.0, ending_odometer: 0000.0, vehicle_id: 3, created_at: "2015-03-03 18:56:01"},
-  {job_id: 8, shift_hours: 5, starting_odometer: 0.0, ending_odometer: 0.0, vehicle_id: 3, created_at: "2015-03-03 18:56:01"},
-
-  {job_id: 2, shift_hours: 5, starting_odometer: 0000.0, ending_odometer: 0000.0, vehicle_id: 3, created_at: "2015-03-04 18:56:01"},
-  {job_id: 8, shift_hours: 5, starting_odometer: 0.0, ending_odometer: 0.0, vehicle_id: 3, created_at: "2015-03-04 18:56:01"},
-
-  {job_id: 2, shift_hours: 5, starting_odometer: 0000.0, ending_odometer: 0000.0, vehicle_id: 3, created_at: "2015-03-05 18:56:01"},
-  {job_id: 8, shift_hours: 5, starting_odometer: 0.0, ending_odometer: 0.0, vehicle_id: 3, created_at: "2015-03-05 18:56:01"},
-
-  {job_id: 2, shift_hours: 5, starting_odometer: 0000.0, ending_odometer: 0000.0, vehicle_id: 3, created_at: "2015-03-06 18:56:01"},
-  {job_id: 8, shift_hours: 5, starting_odometer: 0.0, ending_odometer: 0.0, vehicle_id: 3, created_at: "2015-03-06 18:56:01"},
-
-  {job_id: 2, shift_hours: 5, starting_odometer: 0000.0, ending_odometer: 0000.0, vehicle_id: 3, created_at: "2015-03-07 18:56:01"},
-
-  {job_id: 2, shift_hours: 5, starting_odometer: 0000.0, ending_odometer: 0000.0, vehicle_id: 3, created_at: "2015-03-08 18:56:01"}, # 2 miles driven outside of worktime
-
-  #{job_id: 2, shift_hours: 5, starting_odometer: 0000.0, ending_odometer: 0000.0, vehicle_id: 3, created_at: "2015-04-01 18:56:01"},
-  #{job_id: 8, shift_hours: 5, starting_odometer: 0.0, ending_odometer: 0.0, vehicle_id: 3, created_at: "2015-04-01 18:56:01"},
+  {job_id: 2, shift_hours: 5, starting_odometer: 4865.2, ending_odometer: 4870.2, vehicle_id: 3, created_at: "2015-04-01 18:56:01"},
+  {job_id: 8, shift_hours: 5, starting_odometer: 4870.2, ending_odometer: 4873.2, vehicle_id: 3, created_at: "2015-04-01 18:56:01"},
+  {job_id: 8, shift_hours: 5, starting_odometer: 4878.4, ending_odometer: 4881.4, vehicle_id: 3, created_at: "2015-04-02 18:56:01"},
+  {job_id: 8, shift_hours: 5, starting_odometer: 4886.6, ending_odometer: 4889.6, vehicle_id: 3, created_at: "2015-04-03 18:56:01"},
+  {job_id: 8, shift_hours: 5, starting_odometer: 4894.8, ending_odometer: 4897.8, vehicle_id: 3, created_at: "2015-04-04 18:56:01"},
+  {job_id: 8, shift_hours: 5, starting_odometer: 4903.0, ending_odometer: 4906.0, vehicle_id: 3, created_at: "2015-04-05 18:56:01"},
+  {job_id: 8, shift_hours: 5, starting_odometer: 4911.2, ending_odometer: 4914.2, vehicle_id: 3, created_at: "2015-04-06 18:56:01"},
+  {job_id: 8, shift_hours: 5, starting_odometer: 4919.4, ending_odometer: 4922.4, vehicle_id: 3, created_at: "2015-04-07 18:56:01"},
+  {job_id: 8, shift_hours: 5, starting_odometer: 4927.6, ending_odometer: 4930.6, vehicle_id: 3, created_at: "2015-04-08 18:56:01"},
+  {job_id: 8, shift_hours: 5, starting_odometer: 4935.8, ending_odometer: 4938.8, vehicle_id: 3, created_at: "2015-04-09 18:56:01"},
+  {job_id: 8, shift_hours: 5, starting_odometer: 4944.0, ending_odometer: 4947.0, vehicle_id: 3, created_at: "2015-04-10 18:56:01"},
+  {job_id: 8, shift_hours: 5, starting_odometer: 4952.2, ending_odometer: 4955.2, vehicle_id: 3, created_at: "2015-04-11 18:56:01"},
+  {job_id: 8, shift_hours: 5, starting_odometer: 4960.4, ending_odometer: 4963.4, vehicle_id: 3, created_at: "2015-04-12 18:56:01"},
+  {job_id: 8, shift_hours: 5, starting_odometer: 4968.6, ending_odometer: 4971.6, vehicle_id: 3, created_at: "2015-04-13 18:56:01"},
+  {job_id: 8, shift_hours: 5, starting_odometer: 4976.8, ending_odometer: 4979.8, vehicle_id: 3, created_at: "2015-04-14 18:56:01"},
+  {job_id: 8, shift_hours: 5, starting_odometer: 4985.0, ending_odometer: 4988.0, vehicle_id: 3, created_at: "2015-04-15 18:56:01"},
+  {job_id: 8, shift_hours: 5, starting_odometer: 4993.2, ending_odometer: 4996.2, vehicle_id: 3, created_at: "2015-04-16 18:56:01"},
+  {job_id: 8, shift_hours: 5, starting_odometer: 5001.4, ending_odometer: 5004.4, vehicle_id: 3, created_at: "2015-04-17 18:56:01"},
+  {job_id: 8, shift_hours: 5, starting_odometer: 5009.6, ending_odometer: 5012.6, vehicle_id: 3, created_at: "2015-04-18 18:56:01"}, # 9 miles drvien outside of worktime
 
 
 
