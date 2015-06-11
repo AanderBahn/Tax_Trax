@@ -3,7 +3,7 @@
  <main id="mainmain" class="col-md-8 col-md-offset-2">
 <div class="text-center">
 <% if current_user.trips.count > 0 %>
- <a id="NewTrip" class="btn btn-default btn-lg btn-success" href="/trips/new">&nbsp;&nbsp;&nbsp;+ New Drive&nbsp;&nbsp;&nbsp;</a>
+ <a id="NewTrip" class="btn btn-default btn-lg btn-success" href="/trips/new">&nbsp;&nbsp;&nbsp;Go for A Drive&nbsp;&nbsp;&nbsp;</a>
 <% end %>
 </div>
 
@@ -13,7 +13,7 @@
    <% @vehicles.each do |vehicle| %>
    <!--% @current_user.vehicles.last do %-->
     <table class="col-md-5 col-md-offset-2 col-xs-8 table">
-     <tr class="col-md-8 col-md-offset-2"><h3 class="text-left col-md-offset-2">Drive Log</h3></tr>
+     <tr class="col-md-8 col-md-offset-2"><h3 class="text-left col-md-offset-2">Driving Stats</h3></tr>
      <tr>
       <td class="stat"><i class=""><%= vehicle.trips.count %></i>&nbsp;<strong>Trips</strong></td>
       <td class="stat"><i class="t"><%= vehicle.total_miles_yearly(Time.current.year) %></i>&nbsp;<strong>Miles</strong></td>
@@ -83,7 +83,7 @@
 <% end %>
 
 <hr>
- <h3 class="screen-title col-md-6 col-md-offset-3 text-left">Drive Log</h3> <!-- col-md-offset-2 -->
+ <h3 class="screen-title col-md-6 col-md-offset-3 text-left">Driving Log</h3> <!-- col-md-offset-2 -->
  <div class="mainly text-center">
  <% if current_user.trips.count < 1 %>
   <div class="col-md-8 col-md-offset-2 text-center">
