@@ -44,7 +44,7 @@
 
   def notify
     if user.valid?
-      Message.new(from_number).send(to_number, "Please enter your end trip #{id} data.") #{}"Your trip #{id} is completed")
+      Message.new(from_number).send(to_number, "Hello, Tax Trax here.Please don't forget to enter your ending Odometer #{user.first_name}.")
     end
     update_column :notified, true
   end
