@@ -1,0 +1,62 @@
+<h2>Edit Profile</h2>
+ <div>
+       <dl>
+         <div class="col-md-4 panel-body col-md-offset-4">
+         <div class="panel panel-default">
+          <div class="panel-heading">
+           <h3 class="panel-title"></h3>
+          </div>
+
+       <div class="panel-body">
+        <dt>First Name</dt>
+        <dd class="shower"><%= @user.first_name %></dd>
+        <br>
+        <dt>Last Name</dt>
+        <dd class="shower"><%= @user.last_name%></dd>
+        <br>
+        <dt>Email Address</dt>
+        <dd class="shower"><%= @user.email %></dd>
+        <br>
+        <dt>Phone Number</dt>
+        <dd class="shower"><%= @user.phone %></dd>
+        <br>
+
+        <div class="text-center">
+          <div class="btn-group btn-group-lg" role="group">
+          <td><%= link_to 'Edit', "/profiles/edit", :class => 'btn btn-warning btn-group btn-group-xs' %></td>
+          </div>
+
+           </div>
+          </div>
+          </div>
+         </div>
+        </div>
+
+<%= form_for(@user, url: profiles_path) do |f| %>
+
+  <div class="field">
+    <%= f.label :first_name %><br />
+    <%= f.text_field :first_name, autofocus: true %>
+  </div>
+
+  <div class="field">
+    <%= f.label :email %><br />
+    <%= f.email_field :email, autofocus: true %>
+  </div>
+
+  <div class="field">
+     <%= f.label :phone %><br />
+     <%= f.phone_field :phone, autofocus: true %>
+  </div>
+
+  <div class="form-group">
+      <fieldset class="col-md-6 col-md-offset-3">
+      <%= f.label :profile_picture %>
+      <%= f.file_field :avatar, :class => 'form-control' %>
+      </fieldset>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "Update" %>
+  </div>
+<% end %>

@@ -1,6 +1,26 @@
 /* BOOSTRAP */
 @import "bootstrap-sprockets";
 @import "bootstrap";
+@import url(http://fonts.googleapis.com/css?family=Monda:400,700);
+@import url(http://fonts.googleapis.com/css?family=Raleway);
+@import url(http://fonts.googleapis.com/css?family=Cantarell);
+
+ html, #wrapper   {
+ background-color: #DCEEF2;
+ font-family: 'Raleway', serif;
+}
+
+ .navbar-default {
+ background-color: #2C3E50;
+}
+
+.shower, .panel {
+ background-color: #FFF6BE;
+}
+
+ .panel-heading {
+ background-color: #FFF6BE;
+}
 
 .nav-profile-picture{
   height: 50px;

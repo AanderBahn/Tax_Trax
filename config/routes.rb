@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
-  root to: 'static_pages#mainmenu'
+  #root to: 'static_pages#mainmenu'
+  root to: 'static_pages#landing'
 
   resources :year_ending_odometers
 
@@ -10,9 +11,13 @@ Rails.application.routes.draw do
   end
 
   # Routes for Static Pages
+  get "/landing", :controller  => 'static_pages', :action => 'landing', :as => 'landing'
   get "/mainmenu", :controller => 'static_pages', :action => 'mainmenu', :as => 'main_menu'
   get "/mileagefilingdisplay"  => 'static_pages#mileagefilingdisplay'
   get "/disclaimer_filing"     => 'static_pages#disclaimer_filing'
+
+  #PROFILES
+  resource :profiles
 
   # TRIPS
   resources :trips

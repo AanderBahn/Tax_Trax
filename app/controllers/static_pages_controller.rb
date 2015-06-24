@@ -9,6 +9,15 @@ class StaticPagesController < ApplicationController
 
   end
 
+  def landing
+  end
+
+   def update
+    #@users = current_user
+    @user = User.find(params[:id])
+   end
+  end
+
   def mileagefilingdisplay
   end
 
@@ -18,4 +27,3 @@ class StaticPagesController < ApplicationController
   def profile
    @profile.user = current_user
   end
-end

@@ -1,25 +1,30 @@
 User.destroy_all
 User.create!([
-  {first_name: "Alex", last_name: "Bahn", email: "aanderbahn@gmail.com", password: "12345678", password_confirmation: "12345678", reset_password_sent_at: nil, remember_created_at: nil, sign_in_count: 0, current_sign_in_at: nil, last_sign_in_at: nil, current_sign_in_ip: nil, last_sign_in_ip: nil},
-  {first_name: "Daniel", last_name: "Lopes", email: "danielvlopes@gmail.com", password: "12345678", password_confirmation: "12345678", reset_password_token: nil, reset_password_sent_at: nil, remember_created_at: nil, sign_in_count: 0, current_sign_in_at: nil, last_sign_in_at: nil, current_sign_in_ip: nil, last_sign_in_ip: nil},
-  {first_name: "EarthWorm", last_name: "Jim", email: "sega@gmail.com", password: "12345678", password_confirmation: "12345678", reset_password_token: nil, reset_password_sent_at: nil, remember_created_at: nil, sign_in_count: 4, current_sign_in_at: "2015-02-26 15:55:33", last_sign_in_at: "2015-02-25 20:55:00", current_sign_in_ip: "127.0.0.1", last_sign_in_ip: "127.0.0.1", avatar_file_name: "SthenoProfile.jpg"},
-  {first_name: "Stheno",  last_name: "Gorgon", email: "stheno@gorgon.com", password: "12345678", password_confirmation: "12345678", reset_password_token: nil, reset_password_sent_at: nil, remember_created_at: nil, sign_in_count: 1, current_sign_in_at: "2015-02-26 15:55:33", last_sign_in_at: "2015-02-25 20:55:00", current_sign_in_ip: "127.0.0.1", last_sign_in_ip: "127.0.0.1"},
-  {first_name: "Medusa",  last_name: "Gorgon", email: "medusa@gorgon.com", password: "12345678", password_confirmation: "12345678", reset_password_token: nil, reset_password_sent_at: nil, remember_created_at: nil, sign_in_count: 1, current_sign_in_at: "2015-02-26 15:55:33", last_sign_in_at: "2015-02-25 20:55:00", current_sign_in_ip: "127.0.0.1", last_sign_in_ip: "127.0.0.1"},
-  {first_name: "Euryale", last_name: "Gorgon", email: "euryale@gorgon.com", password: "12345678", password_confirmation: "12345678", reset_password_token: nil, reset_password_sent_at: nil, remember_created_at: nil, sign_in_count: 1, current_sign_in_at: "2015-02-26 15:55:33", last_sign_in_at: "2015-02-25 20:55:00", current_sign_in_ip: "127.0.0.1", last_sign_in_ip: "127.0.0.1"}
+  {first_name: "Alex", last_name: "Bahn", email: "aanderbahn@gmail.com", phone: "6182464828", password: "12345678", password_confirmation: "12345678", reset_password_sent_at: nil, remember_created_at: nil, sign_in_count: 0, current_sign_in_at: nil, last_sign_in_at: nil, current_sign_in_ip: nil, last_sign_in_ip: nil},
+  {first_name: "Daniel", last_name: "Lopes", email: "danielvlopes@gmail.com", phone: "6182464828", password: "12345678", password_confirmation: "12345678", reset_password_token: nil, reset_password_sent_at: nil, remember_created_at: nil, sign_in_count: 0, current_sign_in_at: nil, last_sign_in_at: nil, current_sign_in_ip: nil, last_sign_in_ip: nil},
+  {first_name: "EarthWorm", last_name: "Jim", email: "sega@gmail.com", phone: "6182464828", password: "12345678", password_confirmation: "12345678", reset_password_token: nil, reset_password_sent_at: nil, remember_created_at: nil, sign_in_count: 4, current_sign_in_at: "2015-02-26 15:55:33", last_sign_in_at: "2015-02-25 20:55:00", current_sign_in_ip: "127.0.0.1", last_sign_in_ip: "127.0.0.1", avatar_file_name: "SthenoProfile.jpg"},
+  {first_name: "Stheno",  last_name: "Gorgon", email: "stheno@gorgon.com", phone: "6182464828", password: "12345678", password_confirmation: "12345678", reset_password_token: nil, reset_password_sent_at: nil, remember_created_at: nil, sign_in_count: 1, current_sign_in_at: "2015-02-26 15:55:33", last_sign_in_at: "2015-02-25 20:55:00", current_sign_in_ip: "127.0.0.1", last_sign_in_ip: "127.0.0.1"},
+  {first_name: "Medusa",  last_name: "Gorgon", email: "medusa@gorgon.com", phone: "6182464828", password: "12345678", password_confirmation: "12345678", reset_password_token: nil, reset_password_sent_at: nil, remember_created_at: nil, sign_in_count: 1, current_sign_in_at: "2015-02-26 15:55:33", last_sign_in_at: "2015-02-25 20:55:00", current_sign_in_ip: "127.0.0.1", last_sign_in_ip: "127.0.0.1"},
+  {first_name: "Euryale", last_name: "Gorgon", email: "euryale@gorgon.com", phone: "6182464828", password: "12345678", password_confirmation: "12345678", reset_password_token: nil, reset_password_sent_at: nil, remember_created_at: nil, sign_in_count: 1, current_sign_in_at: "2015-02-26 15:55:33", last_sign_in_at: "2015-02-25 20:55:00", current_sign_in_ip: "127.0.0.1", last_sign_in_ip: "127.0.0.1"}
 ])
 puts "Created #{User.count} users."
 
 Job.destroy_all
+
+stheno = User.find_by_email 'stheno@gorgon.com'
+medusa = User.find_by_email 'medusa@gorgon.com'
+euryale = User.find_by_email 'euryale@gorgon.com'
+
 Job.create!([
-  {user_id: 4, name: "Gorgoneion", daily_commute: 5.4, industry: "Greek Icon"},
-  {user_id: 5, name: "Gorgoneion", daily_commute: 5.4, industry: "Greek Icon"},
-  {user_id: 6, name: "Gorgoneion", daily_commute: 5.4, industry: "Greek Icon"},
-  {user_id: 4, name: "Temple Guard", daily_commute: 4.0, industry: "Security"},
-  {user_id: 5, name: "Temple Guard", daily_commute: 4.0, industry: "Security"},
-  {user_id: 6, name: "Temple Guard", daily_commute: 4.0, industry: "Security"},
-  {user_id: 4, name: "Pita Pete's", daily_commute: 2.6, industry: "Food Service"},
-  {user_id: 5, name: "Pita Pete's", daily_commute: 2.6, industry: "Food Service"},
-  {user_id: 6, name: "Pita Pete's", daily_commute: 2.6, industry: "Food Service"},
+  {user: stheno, name: "Gorgoneion", daily_commute: 5.4, industry: "Greek Icon"},
+  {user: medusa, name: "Gorgoneion", daily_commute: 5.4, industry: "Greek Icon"},
+  {user: euryale, name: "Gorgoneion", daily_commute: 5.4, industry: "Greek Icon"},
+  {user: stheno, name: "Temple Guard", daily_commute: 4.0, industry: "Security"},
+  {user: medusa, name: "Temple Guard", daily_commute: 4.0, industry: "Security"},
+  {user: euryale, name: "Temple Guard", daily_commute: 4.0, industry: "Security"},
+  {user: stheno, name: "Pita Pete's", daily_commute: 2.6, industry: "Food Service"},
+  {user: medusa, name: "Pita Pete's", daily_commute: 2.6, industry: "Food Service"},
+  {user: euryale, name: "Pita Pete's", daily_commute: 2.6, industry: "Food Service"},
   {user_id: 3, name: "Uber 25", daily_commute: 0.0, industry: "Transportation"},
   {user_id: 3, name: "11", daily_commute: 11.0, industry: "11"},
   {user_id: 3, name: "22", daily_commute: 22.0, industry: "22"},
@@ -1073,8 +1078,8 @@ Trip.create!([
   {job_id: 2, shift_hours: 5, starting_odometer: 4678.2, ending_odometer: 4683.2, vehicle_id: 3, created_at: "2015-02-03 18:56:01"},
   {job_id: 5, shift_hours: 5, starting_odometer: 4683.2, ending_odometer: 4687.2, vehicle_id: 3, created_at: "2015-02-03 18:56:01"},
   {job_id: 5, shift_hours: 5, starting_odometer: 4695.2, ending_odometer: 4699.2, vehicle_id: 3, created_at: "2015-02-04 18:56:01"},
-  {job_id: 5, shift_hours: 5, starting_odometer: 4707.2, ending_odometer: 4711.2, vehicle_id: 3, created_at: "2015-02-05 18:56:01"} # 15 miles driven outside of worktime
-  ])
+  {job_id: 5, shift_hours: 5, starting_odometer: 4707.2, ending_odometer: 4711.2, vehicle_id: 3, created_at: "2015-02-05 18:56:01"}, # 15 miles driven outside of worktime
+
 
   {job_id: 2, shift_hours: 5, starting_odometer: 4735.6, ending_odometer: 4740.6, vehicle_id: 3, created_at: "2015-03-01 18:56:01"},
   {job_id: 8, shift_hours: 5, starting_odometer: 4740.6, ending_odometer: 4743.6, vehicle_id: 3, created_at: "2015-03-01 18:56:01"},
@@ -1135,63 +1140,60 @@ Trip.create!([
   {job_id: 8, shift_hours: 5, starting_odometer: 5183.2, ending_odometer: 5186.2, vehicle_id: 3, created_at: "2015-05-11 18:56:01"},
   {job_id: 8, shift_hours: 5, starting_odometer: 5191.4, ending_odometer: 5194.4, vehicle_id: 3, created_at: "2015-05-12 18:56:01"}, # 4 miles driven outside of worktime
 
-  {job_id: 2, shift_hours: 5, starting_odometer: 0000.0, ending_odometer: 0000.0, vehicle_id: 3, created_at: "2015-06-01 18:56:01"},
-  {job_id: 5, shift_hours: 5, starting_odometer: 0.0, ending_odometer: 0.0, vehicle_id: 3, created_at: "2015-06-01 18:56:01"},
-  {job_id: 8, shift_hours: 5, starting_odometer: .0, ending_odometer: .0, vehicle_id: 3, created_at: "2015-06-01 18:56:01"},
+  {job_id: 2, shift_hours: 5, starting_odometer: 5206.4, ending_odometer: 5211.4, vehicle_id: 3, created_at: "2015-06-01 18:56:01"},
+  {job_id: 5, shift_hours: 5, starting_odometer: 5211.4, ending_odometer: 5215.4, vehicle_id: 3, created_at: "2015-06-01 18:56:01"},
+  {job_id: 8, shift_hours: 5, starting_odometer: 5215.4, ending_odometer: 5218.4, vehicle_id: 3, created_at: "2015-06-01 18:56:01"},
+  {job_id: 2, shift_hours: 5, starting_odometer: 5226.4, ending_odometer: 5231.4, vehicle_id: 3, created_at: "2015-06-02 18:56:01"},
+  {job_id: 5, shift_hours: 5, starting_odometer: 5231.4, ending_odometer: 5235.4, vehicle_id: 3, created_at: "2015-06-02 18:56:01"},
+  {job_id: 8, shift_hours: 5, starting_odometer: 5235.4, ending_odometer: 5238.4, vehicle_id: 3, created_at: "2015-06-02 18:56:01"},
+  {job_id: 2, shift_hours: 5, starting_odometer: 5246.4, ending_odometer: 5251.4, vehicle_id: 3, created_at: "2015-06-03 18:56:01"},
+  {job_id: 5, shift_hours: 5, starting_odometer: 5251.4, ending_odometer: 5255.4, vehicle_id: 3, created_at: "2015-06-03 18:56:01"},
+  {job_id: 8, shift_hours: 5, starting_odometer: 5255.4, ending_odometer: 5258.4, vehicle_id: 3, created_at: "2015-06-03 18:56:01"},
+  {job_id: 2, shift_hours: 5, starting_odometer: 5266.4, ending_odometer: 5271.4, vehicle_id: 3, created_at: "2015-06-04 18:56:01"},
+  {job_id: 5, shift_hours: 5, starting_odometer: 5271.4, ending_odometer: 5275.4, vehicle_id: 3, created_at: "2015-06-04 18:56:01"},
+  {job_id: 8, shift_hours: 5, starting_odometer: 5275.4, ending_odometer: 5278.4, vehicle_id: 3, created_at: "2015-06-04 18:56:01"},
 
-  {job_id: 2, shift_hours: 5, starting_odometer: 0000.0, ending_odometer: 0000.0, vehicle_id: 3, created_at: "2015-06-02 18:56:01"},
-  {job_id: 5, shift_hours: 5, starting_odometer: 0.0, ending_odometer: 0.0, vehicle_id: 3, created_at: "2015-06-02 18:56:01"},
-  {job_id: 8, shift_hours: 5, starting_odometer: .0, ending_odometer: .0, vehicle_id: 3, created_at: "2015-06-02 18:56:01"},
+  {job_id: 2, shift_hours: 5, starting_odometer: 5286.4, ending_odometer: 5291.4, vehicle_id: 3, created_at: "2015-06-05 18:56:01"},
+  {job_id: 5, shift_hours: 5, starting_odometer: 5291.4, ending_odometer: 5295.4, vehicle_id: 3, created_at: "2015-06-05 18:56:01"},
+  {job_id: 8, shift_hours: 5, starting_odometer: 5295.4, ending_odometer: 5298.4, vehicle_id: 3, created_at: "2015-06-05 18:56:01"},
 
-  {job_id: 2, shift_hours: 5, starting_odometer: 0000.0, ending_odometer: 0000.0, vehicle_id: 3, created_at: "2015-06-03 18:56:01"},
-  {job_id: 5, shift_hours: 5, starting_odometer: 0.0, ending_odometer: 0.0, vehicle_id: 3, created_at: "2015-06-03 18:56:01"},
-  {job_id: 8, shift_hours: 5, starting_odometer: .0, ending_odometer: .0, vehicle_id: 3, created_at: "2015-06-03 18:56:01"},
+  #{job_id: 2, shift_hours: 5, starting_odometer: 0000.0, ending_odometer: 0000.0, vehicle_id: 3, created_at: "2015-06-06 18:56:01"},
+  #{job_id: 5, shift_hours: 5, starting_odometer: 0.0, ending_odometer: 0.0, vehicle_id: 3, created_at: "2015-06-06 18:56:01"},
+  #{job_id: 8, shift_hours: 5, starting_odometer: .0, ending_odometer: .0, vehicle_id: 3, created_at: "2015-06-06 18:56:01"},
 
-  {job_id: 2, shift_hours: 5, starting_odometer: 0000.0, ending_odometer: 0000.0, vehicle_id: 3, created_at: "2015-06-04 18:56:01"},
-  {job_id: 5, shift_hours: 5, starting_odometer: 0.0, ending_odometer: 0.0, vehicle_id: 3, created_at: "2015-06-04 18:56:01"},
-  {job_id: 8, shift_hours: 5, starting_odometer: .0, ending_odometer: .0, vehicle_id: 3, created_at: "2015-06-04 18:56:01"},
+  #{job_id: 2, shift_hours: 5, starting_odometer: 0000.0, ending_odometer: 0000.0, vehicle_id: 3, created_at: "2015-06-07 18:56:01"},
+  #{job_id: 5, shift_hours: 5, starting_odometer: 0.0, ending_odometer: 0.0, vehicle_id: 3, created_at: "2015-06-07 18:56:01"},
+  #{job_id: 8, shift_hours: 5, starting_odometer: .0, ending_odometer: .0, vehicle_id: 3, created_at: "2015-06-07 18:56:01"},
 
-  {job_id: 2, shift_hours: 5, starting_odometer: 0000.0, ending_odometer: 0000.0, vehicle_id: 3, created_at: "2015-06-05 18:56:01"},
-  {job_id: 5, shift_hours: 5, starting_odometer: 0.0, ending_odometer: 0.0, vehicle_id: 3, created_at: "2015-06-05 18:56:01"},
-  {job_id: 8, shift_hours: 5, starting_odometer: .0, ending_odometer: .0, vehicle_id: 3, created_at: "2015-06-05 18:56:01"},
+  #{job_id: 2, shift_hours: 5, starting_odometer: 0000.0, ending_odometer: 0000.0, vehicle_id: 3, created_at: "2015-06-08 18:56:01"},
+  #{job_id: 5, shift_hours: 5, starting_odometer: 0.0, ending_odometer: 0.0, vehicle_id: 3, created_at: "2015-06-08 18:56:01"},
+  #{job_id: 8, shift_hours: 5, starting_odometer: .0, ending_odometer: .0, vehicle_id: 3, created_at: "2015-06-08 18:56:01"},
 
-  {job_id: 2, shift_hours: 5, starting_odometer: 0000.0, ending_odometer: 0000.0, vehicle_id: 3, created_at: "2015-06-06 18:56:01"},
-  {job_id: 5, shift_hours: 5, starting_odometer: 0.0, ending_odometer: 0.0, vehicle_id: 3, created_at: "2015-06-06 18:56:01"},
-  {job_id: 8, shift_hours: 5, starting_odometer: .0, ending_odometer: .0, vehicle_id: 3, created_at: "2015-06-06 18:56:01"},
+  #{job_id: 2, shift_hours: 5, starting_odometer: 0000.0, ending_odometer: 0000.0, vehicle_id: 3, created_at: "2015-06-09 18:56:01"},
+  #{job_id: 8, shift_hours: 5, starting_odometer: .0, ending_odometer: .0, vehicle_id: 3, created_at: "2015-06-09 18:56:01"},
 
-  {job_id: 2, shift_hours: 5, starting_odometer: 0000.0, ending_odometer: 0000.0, vehicle_id: 3, created_at: "2015-06-07 18:56:01"},
-  {job_id: 5, shift_hours: 5, starting_odometer: 0.0, ending_odometer: 0.0, vehicle_id: 3, created_at: "2015-06-07 18:56:01"},
-  {job_id: 8, shift_hours: 5, starting_odometer: .0, ending_odometer: .0, vehicle_id: 3, created_at: "2015-06-07 18:56:01"},
+  #{job_id: 2, shift_hours: 5, starting_odometer: 0000.0, ending_odometer: 0000.0, vehicle_id: 3, created_at: "2015-06-10 18:56:01"},
+  #{job_id: 8, shift_hours: 5, starting_odometer: .0, ending_odometer: .0, vehicle_id: 3, created_at: "2015-06-10 18:56:01"},
 
-  {job_id: 2, shift_hours: 5, starting_odometer: 0000.0, ending_odometer: 0000.0, vehicle_id: 3, created_at: "2015-06-08 18:56:01"},
-  {job_id: 5, shift_hours: 5, starting_odometer: 0.0, ending_odometer: 0.0, vehicle_id: 3, created_at: "2015-06-08 18:56:01"},
-  {job_id: 8, shift_hours: 5, starting_odometer: .0, ending_odometer: .0, vehicle_id: 3, created_at: "2015-06-08 18:56:01"},
+  #{job_id: 2, shift_hours: 5, starting_odometer: 0000.0, ending_odometer: 0000.0, vehicle_id: 3, created_at: "2015-06-11 18:56:01"},
 
-  {job_id: 2, shift_hours: 5, starting_odometer: 0000.0, ending_odometer: 0000.0, vehicle_id: 3, created_at: "2015-06-09 18:56:01"},
-  {job_id: 8, shift_hours: 5, starting_odometer: .0, ending_odometer: .0, vehicle_id: 3, created_at: "2015-06-09 18:56:01"},
+  #{job_id: 2, shift_hours: 5, starting_odometer: 0000.0, ending_odometer: 0000.0, vehicle_id: 3, created_at: "2015-06-12 18:56:01"},
 
-  {job_id: 2, shift_hours: 5, starting_odometer: 0000.0, ending_odometer: 0000.0, vehicle_id: 3, created_at: "2015-06-10 18:56:01"},
-  {job_id: 8, shift_hours: 5, starting_odometer: .0, ending_odometer: .0, vehicle_id: 3, created_at: "2015-06-10 18:56:01"},
+  #{job_id: 2, shift_hours: 5, starting_odometer: 0000.0, ending_odometer: 0000.0, vehicle_id: 3, created_at: "2015-06-13 18:56:01"},
 
-  {job_id: 2, shift_hours: 5, starting_odometer: 0000.0, ending_odometer: 0000.0, vehicle_id: 3, created_at: "2015-06-11 18:56:01"},
+  #{job_id: 2, shift_hours: 5, starting_odometer: 0000.0, ending_odometer: 0000.0, vehicle_id: 3, created_at: "2015-06-14 18:56:01"},
 
-  {job_id: 2, shift_hours: 5, starting_odometer: 0000.0, ending_odometer: 0000.0, vehicle_id: 3, created_at: "2015-06-12 18:56:01"},
-
-  {job_id: 2, shift_hours: 5, starting_odometer: 0000.0, ending_odometer: 0000.0, vehicle_id: 3, created_at: "2015-06-13 18:56:01"},
-
-  {job_id: 2, shift_hours: 5, starting_odometer: 0000.0, ending_odometer: 0000.0, vehicle_id: 3, created_at: "2015-06-14 18:56:01"},
-
-
+])
 puts "Created #{Trip.count} trips."
 
 Vehicle.destroy_all
 Vehicle.create!([
-  {user_id: 4, make_model: "Dodge Viper",       year: 187, starting_odometer: "0", personal_usage: true},
-  {user_id: 5, make_model: "Ford Cobra",        year: 187, starting_odometer: "0", personal_usage: true},
-  {user_id: 5, make_model: "Pontiac Firbird",   year: 187, starting_odometer: "0", personal_usage: true},
-  {user_id: 6, make_model: "Chevy Anaconda",    year: 187, starting_odometer: "250", personal_usage: true},
-  {user_id: 6, make_model: "Dodge Durango",     year: 187, starting_odometer: "0", personal_usage: true},
-  {user_id: 6, make_model: "Volkswagon Beetle", year: 187, starting_odometer: "0", personal_usage: true},
+  {user: stheno, make_model: "Dodge Viper",       year: 187, starting_odometer: "0", personal_usage: true},
+  {user: medusa, make_model: "Ford Cobra",        year: 187, starting_odometer: "0", personal_usage: true},
+  {user: medusa, make_model: "Pontiac Firbird",   year: 187, starting_odometer: "0", personal_usage: true},
+  {user: euryale, make_model: "Chevy Anaconda",    year: 187, starting_odometer: "250", personal_usage: true},
+  {user: euryale, make_model: "Dodge Durango",     year: 187, starting_odometer: "0", personal_usage: true},
+  {user: euryale, make_model: "Volkswagon Beetle", year: 187, starting_odometer: "0", personal_usage: true},
   {user_id: 3, make_model: "Millennium FalconzZ Corillian", year: 187, starting_odometer: "200", personal_usage: true},
   {user_id: 3, make_model: "Nimbus Cloud", year: 1997, starting_odometer: "9", personal_usage: true}
 ])

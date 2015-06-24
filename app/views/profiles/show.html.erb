@@ -1,0 +1,97 @@
+<h1 class="text-center">Your Profile</h1>
+<div class="text-center">
+</div>
+
+<main>
+
+ <% if current_user.vehicles.count < 1 %>
+ <div class="col-md-6 col-md-offset-3 text-center">
+    <div class="panel panel-default text-center ">
+    <div class="panel-heading"><h3 class="panel-title"></h3></div>
+   <div id="triggerModal" class="modalDialog">
+    <div class="text-center">
+     <h3 class="panel-title"><a href="#triggerModal" title="Close" class="close"></a></h3>
+     <h2 class="screen-title text-center">No vehicle entered</h2>
+     <h5 class="text-center">
+       <a class="btn btn-success" href="/vehicles/new">Add New Vehicle</a>
+     </h5>
+    </div>
+   </div>
+    </div>
+   </div>
+   <% end %>
+
+ <% if current_user.jobs.count == 0 and current_user.vehicles.count >= 1  %>
+   <div class="col-md-6 col-md-offset-3 text-center">
+    <div class="panel panel-default text-center ">
+    <div class="panel-heading"><h3 class="panel-title"></h3></div>
+   <div id="triggerModal" class="modalDialog">
+    <div class="text-center">
+     <h3 class="panel-title"><a href="#triggerModal" title="Close" class="close"></a></h3>
+     <h2 class="screen-title text-center">No job entered</h2>
+     <h5 class="text-center">
+       To continue your <strong>Tax Trax</strong> setup you still need to
+       <div class="spacer-mic"></div>
+       <a class="btn btn-success" href="/jobs/new">Add A Job</a>
+     </h5>
+    </div>
+   </div>
+    </div>
+   </div>
+   <% end %>
+
+   <% if current_user.vehicles.count >= 1 and current_user.jobs.count >= 1 and current_user.trips.count < 1  %>
+   <div class="col-md-6 col-md-offset-3 text-center">
+    <div class="panel panel-default text-center ">
+    <div class="panel-heading"><h3 class="panel-title"></h3></div>
+   <div id="triggerModal" class="modalDialog">
+    <div class="text-center">
+     <h3 class="panel-title"><a href="#triggerModal" title="Close" class="close"></a></h3>
+     <h2 class="screen-title text-center">Ready to Go</h2>
+     <h5 class="text-center">
+       Your <strong>Tax Trax</strong> setup is complete.
+     </h5>
+     <a id="NewTrip" class="btn btn-default btn-lg btn-success" href="/trips/new">&nbsp;&nbsp;&nbsp;Start Driving&nbsp;&nbsp;&nbsp;</a>
+    </div>
+    <div class="spacer-mic"></div>
+   </div>
+    </div>
+   </div>
+   <% end %>
+
+  <div>
+       <dl>
+         <div class="col-md-4 panel-body col-md-offset-4">
+         <div class="panel panel-default">
+          <div class="panel-heading">
+           <h3 class="panel-title"></h3>
+          </div>
+
+       <div class="panel-body">
+        <dt>First Name</dt>
+        <dd class="shower"><%= @user.first_name %></dd>
+        <br>
+        <dt>Last Name</dt>
+        <dd class="shower"><%= @user.last_name%></dd>
+        <br>
+        <dt>Email Address</dt>
+        <dd class="shower"><%= @user.email %></dd>
+        <br>
+        <dt>Phone Number</dt>
+        <dd class="shower"><%= @user.phone %></dd>
+        <br>
+
+        <div class="text-center">
+          <div class="btn-group btn-group-lg" role="group">
+          <td><%= link_to 'Edit', "/profiles/edit", :class => 'btn btn-warning btn-group btn-group-xs' %></td>
+          </div>
+
+           </div>
+          </div>
+          </div>
+         </div>
+        </div>
+       </dl>
+</div>
+</main>
+

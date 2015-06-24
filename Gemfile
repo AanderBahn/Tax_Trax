@@ -42,7 +42,6 @@ gem 'kaminari'
 gem 'twilio-ruby'
 
 group :development do
-  gem 'spring'
   gem 'byebug'
 end
 
