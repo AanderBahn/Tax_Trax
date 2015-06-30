@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
-  # root to: 'static_pages#mainmenu'
-  root to: 'static_pages#landing'
+   root to: 'static_pages#mainmenu'
+  #root to: 'static_pages#landing'
 
   resources :year_ending_odometers
 
