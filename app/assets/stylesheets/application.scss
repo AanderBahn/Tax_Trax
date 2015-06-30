@@ -4,22 +4,40 @@
 @import url(http://fonts.googleapis.com/css?family=Monda:400,700);
 @import url(http://fonts.googleapis.com/css?family=Raleway);
 @import url(http://fonts.googleapis.com/css?family=Cantarell);
+@import url(http://fonts.googleapis.com/css?family=Lato);
+@import url(http://fonts.googleapis.com/css?family=Roboto:400,300);
 
  html, #wrapper   {
- background-color: #DCEEF2;
- font-family: 'Raleway', serif;
+ background-color: #F2F2F9;
+ font-family: 'Lato', sans-serif;
+ font-weight: 300;
+ font-size: 16px;
 }
 
- .navbar-default {
+.navbar-default {
  background-color: #2C3E50;
 }
 
+@media screen and (min-width: 800px) {
+    #statBar {
+            margin-left: 14%;
+    }
+}
+
 .shower, .panel {
- background-color: #FFF6BE;
+ background-color: #FFFFFF;
 }
 
  .panel-heading {
- background-color: #FFF6BE;
+ background-color: #FDFDFD;
+}
+
+.shower {
+ padding-left: 10px;
+}
+
+.tipper1 {
+ margin-left: 10px;
 }
 
 .nav-profile-picture{

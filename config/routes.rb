@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
-  root to: 'static_pages#mainmenu'
-  #root to: 'static_pages#landing'
+  # root to: 'static_pages#mainmenu'
+  root to: 'static_pages#landing'
 
   resources :year_ending_odometers
 
@@ -72,5 +72,4 @@ Rails.application.routes.draw do
   get "/confirm", :controller => 'static_pages', :action => 'confirm'
   get 'static_pages/home'
   get 'static_pages/help'
-
 end

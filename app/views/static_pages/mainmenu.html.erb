@@ -15,9 +15,9 @@
     <table class="col-md-5 col-md-offset-2 col-xs-8 table">
      <tr class="col-md-8 col-md-offset-2"><h3 class="text-left col-md-offset-2">Driving Stats</h3></tr>
      <tr>
-      <td class="stat"><i class=""><%= vehicle.trips.count %></i>&nbsp;<strong>Trips</strong></td>
-      <td class="stat"><i class="t"><%= vehicle.total_miles_yearly(Time.current.year) %></i>&nbsp;<strong>Miles</strong></td>
-      <td class="stat">&nbsp;<i class="text-interest"><%= number_to_currency vehicle.running_rate(Time.current.year) %></i>&nbsp;<strong>savings</strong></td>
+      <td class="stat"><%= vehicle.trips.count %> Trips</td>
+      <td class="stat"><%= vehicle.total_miles_yearly(Time.current.year) %> Miles</td>
+      <td class="stat">&nbsp;<span class="text-interest"><%= number_to_currency vehicle.running_rate(Time.current.year) %></span> savings</td>
      </tr>
     </table>
    <% end %>
@@ -116,14 +116,14 @@
    <div class="col-md-6 col-md-offset-3 isotope-item text-left">
    <div class="panel panel-default">
     <div class="spacer-sm"></div>
-    <dd class="shower"><p><strong><%= trip.vehicle.make_model %></strong>&nbsp;driven for&nbsp;<strong><%= trip.job.name %></strong></p>
+    <dd class="shower"><p><%= trip.vehicle.make_model %> driven for <%= trip.job.name %></p>
     </dd>
-    <dd class="shower"><p><strong><i class="text-interest"><%= number_to_currency trip.rebate %></i></strong>&nbsp; saved on <strong><i class="text-interest"><%= trip.miles %></i></strong>&nbsp;miles</p>
+    <dd class="shower"><p><span class="text-interest"><%= number_to_currency trip.rebate %></span></strong> saved on <strong><%= trip.miles %></strong> miles</p>
     </dd>
     <br>
 
-    <%= link_to 'Edit', "/trips/#{trip.id}/edit", :class => 'btn btn-default btn-xs' %>
-    <%= link_to 'Destroy', "/trips/#{trip.id}", method: :delete, :class => 'btn btn-default btn-xs' %>
+    <%= link_to 'Edit', "/trips/#{trip.id}/edit", :class => 'tipper1 btn btn-default btn-xs' %>
+    <%= link_to 'Delete', "/trips/#{trip.id}", method: :delete, :class => 'tipper1 btn btn-default btn-xs' %>
     <div class="spacer-mic"></div>
     </div>
     <br>

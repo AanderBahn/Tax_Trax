@@ -1,5 +1,5 @@
 class StaticPagesController < ApplicationController
-  before_action :authenticate_user!
+  before_action :authenticate_user!, except: :landing
 
   def mainmenu
     @vehicles = current_user.vehicles
