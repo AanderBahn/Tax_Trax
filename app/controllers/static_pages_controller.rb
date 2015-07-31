@@ -1,10 +1,6 @@
 class StaticPagesController < ApplicationController
   before_action :authenticate_user!, except: :landing
 
-  def welcome
-
-  end
-
   def mainmenu
     @vehicles = current_user.vehicles
     @jobs = current_user.jobs
