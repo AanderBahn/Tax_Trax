@@ -37,7 +37,7 @@ ActiveRecord::Schema.define(version: 20150605160412) do
     t.string   "industry"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.boolean  "employee"
+    t.boolean  "employee",      default: true
   end
 
   add_index "jobs", ["user_id"], name: "index_jobs_on_user_id", using: :btree
