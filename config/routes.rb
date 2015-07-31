@@ -1,6 +1,9 @@
 Rails.application.routes.draw do
-   root to: 'static_pages#mainmenu'
-  #root to: 'static_pages#landing'
+ if :user present?
+  root to: 'static_pages#landing'
+ else
+  root to: 'static_pages#mainmenu'
+end
 
   resources :year_ending_odometers
 
