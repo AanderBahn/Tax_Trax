@@ -24,11 +24,7 @@ Job.create!([
   {user: euryale, name: "Temple Guard", daily_commute: 4.0, industry: "Security"},
   {user: stheno, name: "Pita Pete's", daily_commute: 2.6, industry: "Food Service"},
   {user: medusa, name: "Pita Pete's", daily_commute: 2.6, industry: "Food Service"},
-  {user: euryale, name: "Pita Pete's", daily_commute: 2.6, industry: "Food Service"},
-  {user_id: 3, name: "Uber 25", daily_commute: 0.0, industry: "Transportation"},
-  {user_id: 3, name: "11", daily_commute: 11.0, industry: "11"},
-  {user_id: 3, name: "22", daily_commute: 22.0, industry: "22"},
-  {user_id: 3, name: "33", daily_commute: 33.0, industry: "33"}
+  {user: euryale, name: "Pita Pete's", daily_commute: 2.6, industry: "Food Service"}
 ])
 puts "Created #{Job.count} jobs."
 
