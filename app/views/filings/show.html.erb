@@ -35,7 +35,7 @@
       <th>Job Distance</th>
     </tr>
 
-
+<div>
 <% if vehicle.trips_for_year(@filing.for_year).present? %>
   <% vehicle.trips_for_year(@filing.for_year).each do |trip| %>
     <tr>
@@ -54,6 +54,7 @@
     </tr>
 <% end %>
   </table>
+  </div>
   </div>
   </div>
 
@@ -106,7 +107,7 @@
   <tr>
     <td>17. Other miles. Add lines 13 and 16 and subtract the total from line 12</td>
     <td>17</td>
-    <td><%= vehicle.other_miles(@filing.for_year) %></td>
+    <td><%= vehicle.other_miles(@filing.for_year).round(2) %></td>
     <td></td>
   </tr>
   <tr>
