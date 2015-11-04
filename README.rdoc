@@ -1,28 +1,19 @@
 == README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Hello this is the Readme for Tax Trax. It is an Web App, mobile optimized, intended for use of drivers who use their own vehicles for work. Its initial starting point was to be better then the paper logbook (through calculation for the Tax Form(s), and access through anywhere.) Eventually with the idea of being fully automated by GPS and only requiring minimal input for from the User. I the User wished to maximize their savings then they could use the app in tandem with calculating "Actual Expense" method and it would be able to determine with method would save them the most. Tax Trax was also intended for use by Employees (2106 form) and Independent Contractors (1099 Form). While at current is best suited for the Employee and calculates for part of the 2106 form, Independent contractors can still gain benefit from its use with minimal modifications to their paperwork.
 
-Things you may want to cover:
+PLEASE NOTE! For your IRS protection THIS WILL NOT PROTECT YOU AGAINST FRAUDULENT OR FALSE INFORMATION SUBMITTED ON YOUR END. TaxTrax is no substitute for a Tax or Legal Professional.
 
-* Ruby version
+Please do not inculde commute to work as a business trip.
 
-* System dependencies
+*ruby "2.2.0"
+*source 'https://rubygems.org'
+*gem 'rails', '4.1.8'
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
+Dependencies
+*gem "paperclip", "~> 4.2"
+*gem 'aws-sdk', '< 2.0'
+(Set up fo Amazon web services)
 
 Please feel free to use a different markup language if you do not plan to run
 <tt>rake doc:app</tt>.
