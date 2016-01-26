@@ -4,7 +4,8 @@ class Filing < ActiveRecord::Base
 
   RATES = {
     2014 => 0.56,
-    2015 =>  0.575
+    2015 =>  0.575,
+    2016 =>  0.54
   }
 
   def rate
